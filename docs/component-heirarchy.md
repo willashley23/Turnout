@@ -2,37 +2,37 @@
 
 
 **AuthFormContainer**
-*AuthForm
+ - AuthForm
 
 **HomeContainer
-*Home
-*Navbar
+ - Home
+ - Navbar
 
 **EventsContainer
-*EventIndex
+ - EventIndex
 
 **TagContainer
-*EventIndex
+ - EventIndex
 
 **SearchResultsContainer
 *Search
 *EventIndex
 
 **EventIndex
-*EventIndexItem
-*EventDetail
-*EventSearch
-*Tags
-*Tags
-*Event
+ - EventIndexItem
+  + EventDetail
+   * EventSearch
+    - Tags
+     + Tag
+   * Event
 
 **EventSearch
-*AutoSearch
-*AutoSearchResults
+ - AutoSearch
+ - AutoSearchResults
 
 **TagsSearch
-*AutoSearch
-*AutoSearchResults
+ - AutoSearch
+ - AutoSearchResults
 
 # Routes
 
