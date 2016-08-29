@@ -86,6 +86,6 @@ Pow-wow is a web application inspired by Meetup and Eventbrite. It will be built
 
 ### Bonus Features (TBD)
 - [ ] Let the user create their own events
-– [ ] Let the user edit their own events
+- [ ] Let the user edit their own events
 - [ ] Google Maps integration
 - [ ] Multiple sessions
