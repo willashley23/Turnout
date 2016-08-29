@@ -9,6 +9,7 @@
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
+    createEvent: {errors: ["description cannot be blank"]}
     
   },
   Events: {
@@ -17,6 +18,7 @@
       description: "Events occur at this event",
       price: 10,
       date: 1/1/2017,
+      author_id: 1,
       tags: {
         1: {
           id: 1

@@ -26,6 +26,13 @@
      + Tag
    * Event
 
+**NewEventContainer**
+ - NewEvent
+  - CreateEventButton
+
+**NewTag**
+ - NewTag
+
 *EventSearch
  - AutoSearch
  - AutoSearchResults
@@ -47,6 +54,8 @@
 | "/search" | "Search"      |
 | "/event-search" | "EventSearch"    |
 | "/tag-search" | "TagSearch"     |
+| "/new-note" | "NewEventContainer" |
+| "/new-tag" | "NewTag" |
 
 
 

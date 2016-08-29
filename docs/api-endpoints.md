@@ -30,6 +30,15 @@ _ `PATCH /api/users`
 - `PATCH /api/events/:id`
 - `DELETE /api/events/:id`
 
+### Bookmarks/Tickets
+
+- `GET /api/bookmarks`
+- `POST /api/bookmarks`
+- `GET /api/bookmarks/:id`
+- `PATCH /api/bookmarks/:id`
+- `DELETE /api/bookmarks/:id`
+
+
 ### Tags
 
 - Event tags will be on the event show page

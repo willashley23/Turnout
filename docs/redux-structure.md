@@ -54,6 +54,21 @@
   0. `GET /api/events/:id` is called.
   0. `receiveSingleEvent` is set as the success callback.
 
+* `createEvent`
+  0. invoked from new event button `onClick`
+  0. `POST /api/events` is called.
+  0. `receiveSingleEvent` is set as the success callback.
+
+* `updateEvent`
+  0. invoked from `EventForm` `onSubmit`
+  0. `POST /api/events` is called.
+  0. `receiveSingleEvent` is set as the success callback.
+
+* `destroyEvent`
+  0. invoked from delete event button `onClick`
+  0. `DELETE /api/events/:id` is called.
+  0. `removeEvent` is set as the success callback.
+
 ### Events API Response Actions
 
 * `receiveAllEvents`
@@ -63,6 +78,10 @@
 * `receiveSingleEvent`
   0. invoked from an API callback
   0. the `EventReducer` updates `events[id]` in the application's state.
+
+* `removeEvent`
+  0. invoked from an API callback
+  0. the `EventReducer` removes `events[id]` from the application's state.
 
 ## SearchSuggestion Cycles
 
