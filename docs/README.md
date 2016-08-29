@@ -10,7 +10,7 @@ Pow-wow is a web application inspired by Meetup and Eventbrite. It will be built
 - [ ] New account creation, login, and guest/demo login
 - [ ] Events
 - [ ] Bookmarks
-- [ ] Tags
+- [ ] Tags (in tandem with categories)
 - [ ] Tickets
 - [ ] Infinite Scroll
 - [ ] Google Maps integration (time allowing)
@@ -70,10 +70,9 @@ Pow-wow is a web application inspired by Meetup and Eventbrite. It will be built
 **Objective:** Events will be tagged by category, and tags are searchable.
 
 - [ ] `Tag` model and `Taggings` join table
-- [ ] Fetching tags for notes
-- [ ] Adding tags to notes
-- [ ] Searching notes by tag
-- [ ] Style search & tag components
+- [ ] Fetching tags for events
+- [ ] Searching events by clicking on a tag, or home page categories
+- [ ] Style search & tag components, and category cards
 - [ ] Seed tags with seed data
 
 ### Phase 4: - Pagination / infinite scroll for Events Index (2 days, W2 Th 6pm)
