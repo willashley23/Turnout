@@ -1,10 +1,10 @@
-# Pow-wow
+# Turnout
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-Pow-wow is a web application inspired by Meetup and Eventbrite. It will be built using Rails and React/Redux. By the end of week 9, this app will, at a minimum, prodvide the following features along with an intuitive, bug-free user experience, adequate seed data and CSS styling:
+Turnout is a web application inspired by Meetup and Eventbrite. It will be built using Rails and React/Redux. By the end of week 9, this app will, at a minimum, prodvide the following features along with an intuitive, bug-free user experience, adequate seed data and CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
