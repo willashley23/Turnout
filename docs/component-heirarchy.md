@@ -8,17 +8,17 @@
  - Home
  - Navbar
 
-**EventsContainer
+*EventsContainer
  - EventIndex
 
-**TagContainer
+*TagContainer
  - EventIndex
 
-**SearchResultsContainer
-*Search
+*SearchResultsContainer
+ - Search
+ - EventIndex
+
 *EventIndex
-
-**EventIndex
  - EventIndexItem
   + EventDetail
    * EventSearch
@@ -26,11 +26,11 @@
      + Tag
    * Event
 
-**EventSearch
+*EventSearch
  - AutoSearch
  - AutoSearchResults
 
-**TagsSearch
+*TagsSearch
  - AutoSearch
  - AutoSearchResults
 
