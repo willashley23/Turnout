@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.chooseHeader = this.chooseHeader.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
   componentDidUpdate(){
@@ -30,13 +32,35 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+    this.setState({
+      username: "",
+      password: ""
+    });
   }
 
-   handleGuest(e){
+  handleGuest(e){
     e.preventDefault();
     const formData = { username: "guest", password: "password" };
-    this.setState(formData);
-    this.props.processForm({user});
+    this.setState(formData, ()=> {
+      const user = this.state;
+      this.props.processForm({user});
+    this.setState({
+      username: "",
+      password: ""
+    });
+    });
+  }
+
+  chooseHeader(e) {
+    if (e === "signup") {
+      return (
+        <h2 className="form-title">Sign Up</h2>
+      )
+    } else {
+      return (
+        <h2 className="form-title">Log In</h2>
+      )
+    }
   }
 
 
@@ -64,20 +88,23 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
+        { this.chooseHeader(this.props.formType)}
           { this.renderErrors() }
           <div className="login-form">
             <br />
-            <label className="username"> USERNAME
+            <label className="username">
               <input type="text"
-                value={this.state.username}
+                placeholder= "USERNAME"
+                // value={this.state.username}
                 onChange={this.update("username")}
                 className="login-input" />
             </label>
 
             <br />
-            <label className="password"> PASSWORD
+            <label className="password">
               <input type="password"
-                value={this.state.password}
+                placeholder="PASSWORD"
+                // value={this.state.password}
                 onChange={this.update("password")}
                 className="login-input" />
             </label>

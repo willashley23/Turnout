@@ -65,13 +65,19 @@ a:hover {
 
 /* Session forms */
 
-.login-form {
+.login-form, .form-title {
   margin: 0 auto;
   text-align: center;
 }
 
-.login-input {
-  margin-left: 10px;
+.form-title {
+  font-family: "Helvetica Neue";
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #45494E;
+  position: relative;
+  top: 12px;
 }
 
 .username {
@@ -93,6 +99,33 @@ a:hover {
 .submitButton {
   position: relative;
   top: 15px;
-
 }
+
+input[type=text], input[type=password] {
+  border-radius: 3px;
+  border: 1px solid #D2D6DF;
+  padding: 12px;
+  width: 250px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+input[type=submit] {
+  background-color: #00cc52;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  width: 276px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0.5px;
+  transition: all .2s;
+}
+
+input[type=submit]:hover {
+  background-color: #00d656;
+}
+
 
