@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* Navbar */
+
+.navbar {
+  border: 1px solid black;
+  height: 50px;
+  background-color: #FFFFFF;
+}
+
+.logo, .sessionLinks {
+  display: inline-block;
+}
+
+.logo {
+  font-size: 20px;
+  vertical-align: middle;
+  padding: 12px;
+  border-right: 1px solid #EFF2F5;
+}
+
+.sessionLinks {
+  float: right;
+}
+
+a {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  vertical-align: middle;
+  display: table-cell;
+}

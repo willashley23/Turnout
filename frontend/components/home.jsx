@@ -16,7 +16,7 @@ class Search extends React.Component {
 //what props do I pass to these?
     return (
       <div>
-        <h1>Turnout</h1>
+        
           
       </div>  
     )
