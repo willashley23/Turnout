@@ -16,9 +16,10 @@ class Search extends React.Component {
 //what props do I pass to these?
     return (
       <div>
-        
+        {this.props.children}
           
       </div>  
+        
     )
   }
 }
