@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import { login } from '../actions/session_actions'
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -30,6 +31,14 @@ class SessionForm extends React.Component {
     const user = this.state;
     this.props.processForm({user});
   }
+
+   handleGuest(e){
+    e.preventDefault();
+    const formData = { username: "guest", password: "password" };
+    this.setState(formData);
+    this.props.processForm({user});
+  }
+
 
   navLink(){
     if (this.props.formType === "login") {
@@ -76,6 +85,9 @@ class SessionForm extends React.Component {
 
             <br />
             <input type="submit" value="Submit" />
+          </div>
+          <div className="submit form-section">
+            <button onClick={this.handleDemo}>Guest Login</button>
           </div>
         </form>
       </div>
