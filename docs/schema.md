@@ -21,6 +21,15 @@ tag         | string    |
 author_id   | integer   | not null foreign key(references user)
 bookmark_id | integer   | foreign key (references events), indexed
 
+
+## tickets
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+buyer_id    | integer   | not null foreign key (references users)
+event_id    | text      | not null foreign key (references events)
+
+
 ## tags
 column name | data type | details
 ------------|-----------|-----------------------

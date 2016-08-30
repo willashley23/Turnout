@@ -4,7 +4,7 @@
     id: 1,
     username: "Will",
     bookmarks: 2, 3, 5 (event id),
-    tickets: 1 (event id) 
+    tickets: 1 (id) 
   },
   forms: {
     signUp: {errors: []},
