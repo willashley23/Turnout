@@ -14,12 +14,10 @@
  *= require_self
  */
 
-
 /* Navbar */
 
 .navbar {
-  border: 1px solid black;
-  height: 50px;
+  height: 100%;
   background-color: #FFFFFF;
 }
 
@@ -28,7 +26,9 @@
 }
 
 .logo {
-  font-size: 20px;
+  font-family: 'karbonsemibold';
+  font-size: 25px;
+  color: #f6682F;
   vertical-align: middle;
   padding: 12px;
   border-right: 1px solid #EFF2F5;
@@ -38,10 +38,61 @@
   float: right;
 }
 
+a:last-child {
+  border-right: 1px solid #EFF2F5;
+}
+
 a {
-  padding: 15px;
+  color: #45494E;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 20px;
+  padding-left: 20px;
   text-decoration: none;
-  color: black;
   vertical-align: middle;
   display: table-cell;
+  border-left: 1px solid #EFF2F5;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  height: 100%;
 }
+
+a:hover {
+  background-color: #EFF2F5;
+}
+
+
+/* Session forms */
+
+.login-form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-input {
+  margin-left: 10px;
+}
+
+.username {
+  display: block;
+  margin: 0 auto;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  letter-spacing: .5px;
+}
+
+.password {
+  padding: 15px;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  letter-spacing: .5px;
+
+}
+
+.submitButton {
+  position: relative;
+  top: 15px;
+
+}
+
