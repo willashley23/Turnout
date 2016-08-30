@@ -31,7 +31,10 @@
   color: #f6682F;
   vertical-align: middle;
   padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-right: 1px solid #EFF2F5;
+  text-decoration: none;
 }
 
 .sessionLinks {
@@ -42,7 +45,7 @@ a:last-child {
   border-right: 1px solid #EFF2F5;
 }
 
-a {
+.login-signup a {
   color: #45494E;
   padding-top: 18px;
   padding-bottom: 18px;
@@ -58,14 +61,17 @@ a {
   height: 100%;
 }
 
-a:hover {
+.login-signup a:hover {
   background-color: #EFF2F5;
 }
 
 
 /* Session forms */
 
-.login-form, .form-title {
+.login-form, 
+.form-title, 
+.guest-button, 
+.session-errors li {
   margin: 0 auto;
   text-align: center;
 }
@@ -101,6 +107,22 @@ a:hover {
   top: 15px;
 }
 
+.guest-button {
+  display: block;
+  position: relative;
+  top: 31px;
+}
+
+.session-errors li {
+  list-style-type: none;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-family: "Helvetica Neue";
+  color: red;
+  position: relative;
+  right: 21px;
+}
+
 input[type=text], input[type=password] {
   border-radius: 3px;
   border: 1px solid #D2D6DF;
@@ -111,7 +133,7 @@ input[type=text], input[type=password] {
   font-size: 12px;
 }
 
-input[type=submit] {
+input[type=submit], .guest-button {
   background-color: #00cc52;
   color: #fff;
   border-radius: 3px;
@@ -124,8 +146,10 @@ input[type=submit] {
   transition: all .2s;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, .guest-button:hover {
   background-color: #00d656;
 }
+
+
 
 

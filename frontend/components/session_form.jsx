@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
         { this.chooseHeader(this.props.formType)}
-          { this.renderErrors() }
+          <section className="session-errors">{ this.renderErrors() }</section>
           <div className="login-form">
             <br />
             <label className="username">
@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
             <input type="submit" value="Submit" className="submitButton"/>
           </div>
           <div className="submit form-section">
-            <button onClick={this.handleGuest}>Guest Login</button>
+            <button onClick={this.handleGuest} className="guest-button">Guest Login</button>
           </div>
         </form>
       </div>

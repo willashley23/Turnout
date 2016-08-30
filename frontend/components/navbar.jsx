@@ -19,14 +19,14 @@ function RenderAuthLinks({currentUser, logout}){
   if (currentUser) {
     return (
       <div className="navbar">
-      <section className="logo">Turnout</section>
+      <Link to="/" className="logo">Turnout</Link>
       <section className="sessionLinks">{personalGreeting(currentUser, logout)}</section>
       </div>
       )
   } else {
     return (
       <div className="navbar">
-      <section className="logo">Turnout</section>
+      <Link to="/" className="logo">Turnout</Link>
       <section className="sessionLinks">{sessionLinks()}</section>
       </div>
       )
