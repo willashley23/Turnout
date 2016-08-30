@@ -83,6 +83,49 @@
   0. invoked from an API callback
   0. the `EventReducer` removes `events[id]` from the application's state.
 
+
+### Tickets API Request Actions
+
+  * `fetchAllTicket`
+  0. invoked from `TicketsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/tickets` is called.
+  0. `receiveAllTickets` is set as the success callback.
+
+* `fetchSingleTicket`
+  0. invoked from `TicketDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/tickets/:id` is called.
+  0. `receiveSingleTicket` is set as the success callback.
+
+* `createTicket`
+  0. invoked from new ticket button `onClick`
+  0. `POST /api/tickets` is called.
+  0. `receiveSingleTicket` is set as the success callback.
+
+* `updateTicket`
+  0. invoked from `TicketForm` `onSubmit`
+  0. `POST /api/tickets` is called.
+  0. `receiveSingleTicket` is set as the success callback.
+
+* `destroyTicket`
+  0. invoked from delete ticket button `onClick`
+  0. `DELETE /api/tickets/:id` is called.
+  0. `removeTicket` is set as the success callback.
+
+### Tickets API Response Actions
+
+* `receiveAllTickets`
+  0. invoked from an API callback
+  0. the `TicketReducer` updates `tickets` in the application's state.
+
+* `receiveSingleTicket`
+  0. invoked from an API callback
+  0. the `TicketReducer` updates `tickets[id]` in the application's state.
+
+* `removeTicket`
+  0. invoked from an API callback
+  0. the `TicketReducer` removes `tickets[id]` from the application's state.
+
+
 ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`
