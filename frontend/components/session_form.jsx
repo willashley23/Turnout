@@ -1,21 +1,32 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import { login } from '../actions/session_actions'
+import { login } from '../actions/session_actions';
+import { withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      enter: "auto-enter"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.chooseHeader = this.chooseHeader.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
+    this.cancelForm = this.cancelForm.bind(this);
   }
 
   componentDidUpdate(){
     this.redirectIfLoggedIn();
+  }
+
+  componentDidMount() {
+    window.setTimeout(() => {
+     this.setState({enter: "auto-enter auto-enter-active"});
+
+    }, 0);
+
   }
 
   redirectIfLoggedIn(){
@@ -63,6 +74,9 @@ class SessionForm extends React.Component {
     }
   }
 
+  cancelForm() {
+    this.props.router.push("/")
+  }
 
   navLink(){
     if (this.props.formType === "login") {
@@ -87,24 +101,23 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-        { this.chooseHeader(this.props.formType)}
+        <form onSubmit={this.handleSubmit} className={"login-form-box "+this.state.enter}>
+          <img src= "assets/close.png" className="close-icon" onClick={this.cancelForm} />
+          { this.chooseHeader(this.props.formType)}
           <section className="session-errors">{ this.renderErrors() }</section>
           <div className="login-form">
             <br />
             <label className="username">
               <input type="text"
                 placeholder= "USERNAME"
-                // value={this.state.username}
                 onChange={this.update("username")}
                 className="login-input" />
             </label>
-
             <br />
+
             <label className="password">
               <input type="password"
                 placeholder="PASSWORD"
-                // value={this.state.password}
                 onChange={this.update("password")}
                 className="login-input" />
             </label>
@@ -122,4 +135,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

@@ -77,7 +77,10 @@ a:last-child {
 }
 
 .login-form-box {
-
+  background-color: #fff;
+  height: 320px;
+  border: 1px solid #D2D6DF;
+  border-radius: 5px;
 }
 
 /* Session forms */
@@ -97,7 +100,8 @@ a:last-child {
   letter-spacing: 0.5px;
   color: #45494E;
   position: relative;
-  top: 12px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 .username {
@@ -133,8 +137,7 @@ a:last-child {
   letter-spacing: 0.5px;
   font-family: "Helvetica Neue";
   color: red;
-  position: relative;
-  right: 21px;
+  
 }
 
 input[type=text], input[type=password] {
@@ -148,6 +151,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit], .guest-button {
+  transition: background-color: 0.7s ease;
   background-color: #00cc52;
   color: #fff;
   border-radius: 3px;
@@ -163,6 +167,34 @@ input[type=submit], .guest-button {
 input[type=submit]:hover, .guest-button:hover {
   background-color: #00d656;
 }
+
+.close-icon {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  height: 28px;
+  width: 28px;
+}
+
+.close-icon:hover {
+  opacity: .5;
+}
+.auto-enter {
+   opacity: 0.01;
+   transform: translateY(-500%);
+ }
+
+ .auto-enter.auto-enter-active {
+   opacity: 1;
+   transform: translateY(0);
+   transition: opacity 500ms, transform 200ms;
+ }
+
+ .auto-leave.auto-leave-active {
+   opacity: 0.01;
+   transform: translateY(500%);
+   transition: opacity 500ms, transform 200ms;
+ }
+
 
 
 
