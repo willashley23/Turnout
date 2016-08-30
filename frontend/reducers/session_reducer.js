@@ -6,7 +6,8 @@ import {
   LOGOUT,
   SIGNUP,
   RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS
 } from '../actions/session_actions';
 
 const _nullUser = Object.freeze({
@@ -23,7 +24,10 @@ const SessionReducer = function(state = _nullUser, action){
       return merge({}, _nullUser);
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullUser, {errors});
+      const newstate = merge({}, _nullUser, {errors});
+      return newstate
+    case CLEAR_ERRORS:
+      return merge({}, _nullUser);
     default:
       return state;
   }

@@ -26,8 +26,11 @@ class SessionForm extends React.Component {
      this.setState({enter: "auto-enter auto-enter-active"});
 
     }, 0);
-
   }
+
+  // componentWillUnmount() {
+  //   this.props.clearErrors();
+  // }
 
   redirectIfLoggedIn(){
     if (this.props.loggedIn){
@@ -75,6 +78,7 @@ class SessionForm extends React.Component {
   }
 
   cancelForm() {
+    this.props.resetErrors();
     this.props.router.push("/")
   }
 
@@ -103,7 +107,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className={"login-form-box "+this.state.enter}>
           <img src= "assets/close.png" className="close-icon" onClick={this.cancelForm} />
-          { this.chooseHeader(this.props.formType)}
+          { this.chooseHeader(this.props.formType) }
           <section className="session-errors">{ this.renderErrors() }</section>
           <div className="login-form">
             <br />

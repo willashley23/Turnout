@@ -186,7 +186,7 @@ input[type=submit]:hover, .guest-button:hover {
  .auto-enter.auto-enter-active {
    opacity: 1;
    transform: translateY(0);
-   transition: opacity 500ms, transform 200ms;
+   transition: opacity 500ms, transform 400ms;
  }
 
  .auto-leave.auto-leave-active {
