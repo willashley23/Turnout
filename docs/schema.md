@@ -17,6 +17,7 @@ description | text      | not null
 price       | integer   | not null
 date        | date      | not null
 tag         | string    |
+image_url   | string    |
 author_id   | integer   | not null foreign key(references user)
 bookmark_id | integer   | foreign key (references events), indexed
 
