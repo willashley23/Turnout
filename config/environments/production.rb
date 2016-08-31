@@ -15,8 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
 
-  config.serve_static_files = true
-
+config.public_file_server.enabled = true
   config.log_level = :debug
 
 
