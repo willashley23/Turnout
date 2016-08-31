@@ -13,3 +13,191 @@
  *= require_tree .
  *= require_self
  */
+
+/* Navbar */
+
+.navbar {
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+.logo, .sessionLinks {
+  display: inline-block;
+}
+
+.logo {
+  font-family: 'karbonsemibold';
+  font-size: 25px;
+  color: #f6682F;
+  vertical-align: middle;
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #EFF2F5;
+  text-decoration: none;
+}
+
+.sessionLinks {
+  float: right;
+}
+
+a:last-child {
+  border-right: 1px solid #EFF2F5;
+}
+
+.login-signup a {
+  color: #45494E;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-decoration: none;
+  vertical-align: middle;
+  display: table-cell;
+  border-left: 1px solid #EFF2F5;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  height: 100%;
+}
+
+.login-signup a:hover {
+  background-color: #EFF2F5;
+}
+
+
+.login-form-container {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+
+.login-form-box {
+  background-color: #fff;
+  height: 320px;
+  border: 1px solid #D2D6DF;
+  border-radius: 5px;
+}
+
+
+/* Session forms */
+
+.login-form, 
+.form-title, 
+.guest-button, 
+.session-errors li {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-title {
+  font-family: "Helvetica Neue";
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #45494E;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 5px;
+
+}
+
+.username {
+  display: block;
+  margin: 0 auto;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  letter-spacing: .5px;
+}
+
+.password {
+  padding: 15px;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  letter-spacing: .5px;
+
+}
+
+.submitButton {
+  position: relative;
+  top: 15px;
+}
+
+.guest-button {
+  display: block;
+  position: relative;
+  top: 31px;
+}
+
+.session-errors li {
+  list-style-type: none;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-family: "Helvetica Neue";
+  color: red;
+}
+
+input[type=text], input[type=password] {
+  border-radius: 3px;
+  border: 1px solid #D2D6DF;
+  padding: 12px;
+  width: 250px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+input[type=submit], .guest-button {
+  transition: background-color: 0.7s ease;
+  background-color: #00cc52;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  width: 276px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0.5px;
+  transition: all .2s;
+}
+
+input[type=submit]:hover, .guest-button:hover {
+  background-color: #00d656;
+}
+
+
+.close-icon {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  height: 28px;
+  width: 28px;
+}
+
+.close-icon:hover {
+  opacity: .5;
+}
+.auto-enter {
+   opacity: 0.01;
+   transform: translateY(-500%);
+ }
+
+ .auto-enter.auto-enter-active {
+   opacity: 1;
+   transform: translateY(0);
+   transition: opacity 500ms, transform 400ms;
+ }
+
+ .auto-leave.auto-leave-active {
+   opacity: 0.01;
+   transform: translateY(500%);
+   transition: opacity 500ms, transform 200ms;
+ }
+
+
+
+

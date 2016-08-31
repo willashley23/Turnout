@@ -30,7 +30,7 @@ _ `PATCH /api/users`
 - `PATCH /api/events/:id`
 - `DELETE /api/events/:id`
 
-### Bookmarks/Tickets
+### Bookmarks
 
 - `GET /api/bookmarks`
 - `POST /api/bookmarks`
@@ -38,6 +38,13 @@ _ `PATCH /api/users`
 - `PATCH /api/bookmarks/:id`
 - `DELETE /api/bookmarks/:id`
 
+### Tickets
+
+- `GET /api/tickets`
+- `POST /api/tickets`
+- `GET /api/tickets/:id`
+- `PATCH /api/tickets/:id`
+- `DELETE /api/tickets/:id`
 
 ### Tags
 

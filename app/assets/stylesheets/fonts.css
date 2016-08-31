@@ -1,0 +1,10 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'karbonsemibold';
+    src: url('karbon-semibold-webfont.eot'),
+         url('karbon-semibold-webfont.woff') format('woff'),
+         url('karbon-semibold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

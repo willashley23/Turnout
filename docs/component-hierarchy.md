@@ -1,8 +1,8 @@
 # Component Hierarchy
 
 
-**AuthFormContainer**
- - AuthForm
+**SessionContainer**
+ - SessionForm
 
 **HomeContainer
  - Home

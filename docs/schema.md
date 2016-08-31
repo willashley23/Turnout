@@ -5,7 +5,6 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
-email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -18,6 +17,7 @@ description | text      | not null
 price       | integer   | not null
 date        | date      | not null
 tag         | string    |
+image_url   | string    |
 author_id   | integer   | not null foreign key(references user)
 bookmark_id | integer   | foreign key (references events), indexed
 
