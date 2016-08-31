@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+
      "postinstall": "./node_modules/.bin/webpack"
   },
   "engines": {
@@ -16,6 +17,7 @@
   "node": "4.4.2",
   "npm": "2.15.0"
 },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willashley23/Powwow.git"

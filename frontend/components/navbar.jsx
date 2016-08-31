@@ -12,6 +12,7 @@ const personalGreeting = (currentUser, logout) => (
  <nav className="login-signup">
     <Link to="/login" className="sign-out" activeClassName="current" onClick={logout}>SIGN OUT</Link>
 </nav>
+
 );
 
 function RenderAuthLinks({currentUser, logout}){

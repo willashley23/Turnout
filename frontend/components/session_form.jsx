@@ -3,24 +3,29 @@ import { Link, hashHistory } from 'react-router';
 import { login } from '../actions/session_actions';
 import { withRouter } from 'react-router';
 
+
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       username: "",
+
       password: "",
       enter: "auto-enter"
+
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.chooseHeader = this.chooseHeader.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
     this.cancelForm = this.cancelForm.bind(this);
+
   }
 
   componentDidUpdate(){
     this.redirectIfLoggedIn();
   }
 
+<<<<<<< Updated upstream
   componentDidMount() {
     window.setTimeout(() => {
      this.setState({enter: "auto-enter auto-enter-active"});
@@ -32,6 +37,8 @@ class SessionForm extends React.Component {
   //   this.props.clearErrors();
   // }
 
+=======
+>>>>>>> Stashed changes
   redirectIfLoggedIn(){
     if (this.props.loggedIn){
       hashHistory.push("/");
@@ -77,10 +84,12 @@ class SessionForm extends React.Component {
     }
   }
 
+
   cancelForm() {
     this.props.resetErrors();
     this.props.router.push("/")
   }
+
 
   navLink(){
     if (this.props.formType === "login") {
@@ -114,6 +123,7 @@ class SessionForm extends React.Component {
             <label className="username">
               <input type="text"
                 placeholder= "USERNAME"
+
                 onChange={this.update("username")}
                 className="login-input" />
             </label>
@@ -139,4 +149,6 @@ class SessionForm extends React.Component {
 
 }
 
+
 export default withRouter(SessionForm);
+
