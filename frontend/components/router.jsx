@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import HomeContainer from './home_container';
 import SessionFormContainer from './session_form_container';
+import EventIndexContainer from './event_index_container';
 
 
 

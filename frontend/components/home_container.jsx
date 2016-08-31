@@ -1,14 +1,16 @@
 import {connect} from 'react-redux';
 import Home from './home';
+import { allEvents } from '../reducers/selector';
+import { requestEvents } from '../actions/event_actions';
 
 const mapStateToProps = (state) => ({
-  // events: allEvents(state.events)
+  events: allEvents(state.events)
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // requestBenches: () => {
-  // dispatch(requestBenches())
-  // }
+  requestEvents: () => {
+  dispatch(requestEvents())
+  }
 });
 
 export default connect (

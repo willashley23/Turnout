@@ -1,9 +1,9 @@
 import { applyMiddleware } from 'redux';
-// import BenchesMiddleware from './benches_middleware';
+import EventMiddleware from './event_middleware';
 import SessionMiddleware from './session_middleware';
 // import * from './____middleware';
 
 export default applyMiddleware(
-  // BenchesMiddleware,
+  EventMiddleware,
   SessionMiddleware
   );

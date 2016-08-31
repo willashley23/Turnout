@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+  Event.create!({title: "Oktoberfest by the Bay 2016", price: 50, description: "stuff", image_url: "", date: DateTime.new(2016,10,1,17)})
+  Event.create!({title: "2016 Sausalio Art Festival", price: 20, description: "art things", image_url: "", date: DateTime.new(2016,9,3,17)})
+  Event.create!({title: "Dent: Space Exploration Together", price: 10, description: "space", image_url: "", date: DateTime.new(2016,11,1,17)})
+  Event.create!({title: "San Francisco Comic Con", price: 150, description: "Comics!", image_url: "", date: DateTime.new(2016,9,2,17)})
+  Event.create!({title: "Small Buisness Expo 2016", price: 35, description: "business", image_url: "", date: DateTime.new(2016,10,15,17)})

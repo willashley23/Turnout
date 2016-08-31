@@ -13,6 +13,6 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:bench).permit(:description, :date, :price, :tag, :title, :image_url)
+    params.require(:event).permit(:description, :date, :price, :tag, :title, :image_url)
   end
 end

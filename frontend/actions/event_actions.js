@@ -10,13 +10,13 @@ export const requestEvents = () => ({
 });
 
 export const requestEvent = id => ({
-  type: REQUEST_BENCH,
+  type: REQUEST_EVENT,
   id
 });
 
 export const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
-  benches
+  events
 });
 
 export const receiveEvent = event => ({
