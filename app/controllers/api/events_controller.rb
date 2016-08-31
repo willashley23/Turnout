@@ -10,6 +10,11 @@ class Api::EventsController < ApplicationController
     redirect_to "api/events"
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
+
   private
 
   def event_params

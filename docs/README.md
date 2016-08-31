@@ -1,6 +1,6 @@
 # Turnout
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://stark-meadow-71118.herokuapp.com
 
 ## Minimum Viable Product
 

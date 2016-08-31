@@ -1,7 +1,8 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
+import {withRouter} from 'react-router';
 
-export default class EventIndex extends React.Component {
+class EventIndex extends React.Component {
   componentDidMount() {
     this.props.requestEvents();
   }
@@ -10,6 +11,7 @@ export default class EventIndex extends React.Component {
     // debugger
       return (
         <div>
+        {this.props.children}
           <ul className="events-container">
             {this.props.events.map(event => <EventIndexItem 
               key={`event-index-item${event.id}`} 
@@ -20,3 +22,5 @@ export default class EventIndex extends React.Component {
         )
     };
 };
+
+export default withRouter(EventIndex);

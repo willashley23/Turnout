@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
 
   redirectIfLoggedIn(){
     if (this.props.loggedIn){
-      hashHistory.push("/");
+      hashHistory.push("/home");
     }
   }
 
@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
   }
 
   chooseHeader(e) {
-    if (e === "signup") {
+    if (e === "home/signup") {
       return (
         <h2 className="form-title">Sign Up</h2>
       )
@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
 
   cancelForm() {
     this.props.resetErrors();
-    this.props.router.push("/")
+    this.props.router.push("/home")
   }
 
 

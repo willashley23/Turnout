@@ -6,6 +6,7 @@ import App from './app';
 import HomeContainer from './home_container';
 import SessionFormContainer from './session_form_container';
 import EventIndexContainer from './event_index_container';
+import EventDetailViewContainer from './event_detail_view_container';
 
 
 
@@ -14,6 +15,7 @@ class AppRouter extends React.Component{
     super(props);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
+    this._redirectToHome = this._redirectToHome.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -33,14 +35,22 @@ class AppRouter extends React.Component{
     }
   }
 
+  _redirectToHome(nextState, replace) {
+    debugger
+    if(location.hash[2] === '?') {
+      replace('/home');
+    }
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
-        <Route component={ App }>
-          <Route path="/" component={ HomeContainer } >
-          <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-          <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-        </Route>
+        <Route  path="/" component={ App } onEnter={this._redirectToHome}>
+          <Route path= "home" component={ HomeContainer } >
+            <Route path="login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
+            <Route path="signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
+          </Route>
+            <Route path="events/:id" component={ EventDetailViewContainer } />
         </Route>
       </Router>
     );

@@ -14,13 +14,10 @@ class Home extends React.Component {
     // }
 
   render() {
-    debugger
     return (
-
        <div>
-        {this.props.children}  
-  
         <EventIndex events={this.props.events} requestEvents={this.props.requestEvents}/>
+        {this.props.children}  
       </div>  
     )
   }
