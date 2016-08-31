@@ -6,10 +6,12 @@ const EventReducer = (state = {}, action) => {
   switch (action.type) {
     
     case RECEIVE_EVENTS:
-      return action.events;
+    return merge({}, state, action.events )
+      // return action.events;
     
     case RECEIVE_EVENT:
-      return action.event;
+      return merge({}, state, {eventDetail: action.event })
+      
     default: 
       return state
   }

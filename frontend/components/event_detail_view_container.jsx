@@ -1,9 +1,21 @@
 import { connect } from 'react-redux';
 import EventDetailView from './event_detail_view';
-// Actions
+import { allEvents } from '../reducers/selector';
+import { requestEvents } from '../actions/event_actions';// Actions
 
-const mapStateToProps = state => ({
- event: state.event
-})
+const mapDispatchToProps = (dispatch) => ({
+  requestEvents: () => {
+  dispatch(requestEvents())
+  }
+});
+const mapStateToProps = (state, ownProps) => 
+{
+  debugger
+   let id = parseInt(ownProps.params.id)-1;
+   return {
+     event: state.events[id]
+   }
 
-export default connect(mapStateToProps)(EventDetailView);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventDetailView);

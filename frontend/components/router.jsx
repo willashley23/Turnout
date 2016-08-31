@@ -36,7 +36,6 @@ class AppRouter extends React.Component{
   }
 
   _redirectToHome(nextState, replace) {
-    debugger
     if(location.hash[2] === '?') {
       replace('/home');
     }

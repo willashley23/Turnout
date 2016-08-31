@@ -8,7 +8,6 @@ class EventIndexItem extends React.Component {
   }
 
   handleClick() {
-    debugger
     this.props.router.push(`/events/${this.props.event.id}`)
   }
 
