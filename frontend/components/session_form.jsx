@@ -32,11 +32,6 @@ class SessionForm extends React.Component {
     }, 0);
   }
 
-  // componentWillUnmount() {
-  //   this.props.clearErrors();
-  // }
-
-
   redirectIfLoggedIn(){
     if (this.props.loggedIn){
       hashHistory.push("/");
