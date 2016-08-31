@@ -28,8 +28,8 @@ class EventDetailView extends React.Component {
     return(
       <div className="event-detail-container">
       <div style={style} className="event-detail-header">
-         <h1 className="event-detail-title">{title}</h1>
-         <h2 className="event-detail-date">{date}</h2>
+         <h1 className="event-detail-title animated fadeInDown">{title}</h1>
+         <h2 className="event-detail-date animated fadeInDown">{date}</h2>
       </div>
       <div className="event-detail-menubar">
 

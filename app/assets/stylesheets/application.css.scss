@@ -288,19 +288,25 @@ input[type=submit]:hover, .guest-button:hover {
   background-repeat: no-repeat;
   background-color: #333;
   background-blend-mode: soft-light;
-
 }
 
 .event-detail-title, .event-detail-date {
   color: #fff;
-  font-size: 60px;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica";
   letter-spacing: 0.5px;
   text-align: center;
   vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .event-detail-date {
- font-size: 40px;
+ font-size: 45px;
+ font-weight: 600;
 }
 
+.event-detail-title {
+  font-size: 55px;
+  font-weight: 600;
+}
