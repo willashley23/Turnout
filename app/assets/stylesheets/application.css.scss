@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  background-color: #F8F8FA
+}
+
 /* Navbar */
 
 .navbar {
@@ -201,11 +205,78 @@ input[type=submit]:hover, .guest-button:hover {
 /* EventIndex */
 
 .bookmark-icon {
-  height: 25px;
-  width: 18px;
+  height: auto;
+  width: 20px;
+  float: right;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 12px;
+  padding-left: 10px;
+  border-left: 1px solid #D2D6DF;
+}
+
+.event-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #282C35
+}
+
+.event-location {
+  color: #45494E;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.event-location, 
+.event-title,
+.event-date {
+  padding: 5px;
+  padding-left: 15px;
+  font-family: "Helvetica Neue";
+}
+
+.event-date {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.event-tag {
+  font-size: 12px;
+  font-weight: 400;
+  color: #45494E;
+  text-transform: capitalize;
+  margin-right: 10px;
+  line-height: 40px;
+}
+
+.event-card-footer {
+  border-top: 1px solid #EFF2F5;
+  padding-left: 15px;
+  font-family: "Helvetica Neue";
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+.event-image {
+  height: 170px;
+  width: 100%;
+}
+
+.flex-wrapper {
+  width: 33.3333%;
 }
 
 .event-card {
-  padding: 15px;
+  display: inline-block;
+  height: 285px;
+ 
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  background-color: white;
+  margin: 25px;
 }
 
