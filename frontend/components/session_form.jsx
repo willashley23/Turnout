@@ -25,7 +25,6 @@ class SessionForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
-<<<<<<< Updated upstream
   componentDidMount() {
     window.setTimeout(() => {
      this.setState({enter: "auto-enter auto-enter-active"});
@@ -37,8 +36,7 @@ class SessionForm extends React.Component {
   //   this.props.clearErrors();
   // }
 
-=======
->>>>>>> Stashed changes
+
   redirectIfLoggedIn(){
     if (this.props.loggedIn){
       hashHistory.push("/");
