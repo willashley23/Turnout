@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
     # else
     #   render json: @event.errors.full_messages;
     # end
-
+  
     @event = Event.new(event_params)
     if @event.save
         render :show
@@ -29,6 +29,6 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:description, :locaiton, :date, :price, :tag, :title, :image_url)
+    params.require(:event).permit(:description, :location, :date, :price, :tag, :title, :image_url)
   end
 end

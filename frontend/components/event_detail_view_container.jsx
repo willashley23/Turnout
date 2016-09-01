@@ -10,7 +10,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 const mapStateToProps = (state, ownProps) => 
 {
-  debugger
    let id = parseInt(ownProps.params.id)-1;
    return {
      event: state.events[id]

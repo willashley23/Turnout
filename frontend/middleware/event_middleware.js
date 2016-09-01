@@ -19,14 +19,12 @@ import {hashHistory} from 'react-router';
 
 
 const EventMiddleware = ({getState, dispatch}) => next => action => {
-  // const res = next(action);
   const EventSuccess = data => dispatch(receiveEvents(data));
   const SingleEventSuccess = data => dispatch(receiveEvent(data));
   const receiveNewEventSuccess = (data) => {
+    debugger
     dispatch(receiveEvent(data));
-    debugger;
-    hashHistory.push(`/events/${data.event.id}`);
-    //maybe events/id?
+    hashHistory.push(`/events/${data.id}`);
 };
   switch (action.type) {
     case REQUEST_EVENTS:
@@ -44,7 +42,6 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
     default:
       return next(action);
   }
-  // return res;
 };
 
 export default EventMiddleware;
