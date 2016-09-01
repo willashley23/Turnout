@@ -5,10 +5,19 @@ class EventIndexItem extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
+    this.handleImage = this.handleImage.bind(this);
   }
 
   handleClick() {
     this.props.router.push(`/events/${this.props.event.id}`)
+  }
+
+  handleImage() {
+    if (this.props.event.image_url === "") {
+      return "assets/default.png"
+    } else {
+      return this.props.event.image_url
+    }
   }
 
   render() {
@@ -17,7 +26,7 @@ class EventIndexItem extends React.Component {
     <div className="flex-wrapper">
       <div className="event-card">
           <div className="event-card-main" onClick={this.handleClick}>
-            <img src={this.props.event.image_url} className="event-image" />
+            <img src={this.handleImage()} className="event-image" />
             <p className="event-date">{this.props.event.date}</p>
             <h3 className="event-title">{this.props.event.title}</h3>
             <p className="event-location">{this.props.event.location}</p>

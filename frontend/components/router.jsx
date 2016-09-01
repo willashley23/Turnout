@@ -7,6 +7,7 @@ import HomeContainer from './home_container';
 import SessionFormContainer from './session_form_container';
 import EventIndexContainer from './event_index_container';
 import EventDetailViewContainer from './event_detail_view_container';
+import NewEventFormContainer from './new_event_form_container';
 
 
 
@@ -49,6 +50,7 @@ class AppRouter extends React.Component{
             <Route path="login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
             <Route path="signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           </Route>
+            <Route path="events/new" component={ NewEventFormContainer } />
             <Route path="events/:id" component={ EventDetailViewContainer } />
         </Route>
       </Router>

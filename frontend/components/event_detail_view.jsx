@@ -29,9 +29,15 @@ class EventDetailView extends React.Component {
       description = this.props.event.description;
       location = this.props.event.location;
       tag = this.props.event.tag;
-      style = {
-        backgroundImage: 'url(' + image_url + ')'
-      };
+      if (this.props.event.image_url === "") {
+        style = {
+          backgroundImage: 'url(assets/default.png)'
+        };
+      } else {
+        style = {
+          backgroundImage: 'url(' + image_url + ')'
+        };
+      }
     }
     return(
       <div className="event-detail-container">
@@ -48,8 +54,8 @@ class EventDetailView extends React.Component {
       <div className="event-detail-body">
           <div className="event-detail-info">
             <div className="event-pair">
-              <h2 className="detail-headings">What: </h2>
-              <p className="event-detail-p">{description}</p>
+              <h2 className="detail-headings">When: </h2>
+              <p className="event-detail-p">{date}</p>
             </div>
              <div className="event-pair">
               <h2 className="detail-headings">Where: </h2>
@@ -58,6 +64,10 @@ class EventDetailView extends React.Component {
              <div className="event-pair">
               <h2 className="detail-headings">Tags: </h2>
               <p className="event-detail-p event-detail-tag">#{tag}</p>
+            </div>
+            <div className="event-description">
+              <h2 className="event-description-header">Event Description</h2>
+              <p className="event-description-body">{description}</p>
             </div>
           </div>
       </div>

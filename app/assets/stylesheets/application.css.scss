@@ -216,6 +216,9 @@ a:last-child {
   border-radius: 5px;
 }
 
+.login-signup .create-event {
+  color: #22b8ff;
+}
 
 /* Session forms */
 
@@ -544,4 +547,42 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
 .event-detail-body-wrapper{
   background-color: #EFF2F5;
   width: 100%;
+}
+
+.event-description-header {
+  font-size: 25px;
+  font-family: "Benton Sans";
+  text-align: center;
+  border-top: 1px solid #D2D6DF;
+  margin-top: 15px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.event-description-body {
+  padding-top: 25px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Benton Sans";
+  color: #45494E;
+}
+
+/* Event Form */
+
+.event-form-h1 {
+  font-family: "Benton Sans";
+  font-size: 40px;
+  letter-spacing: 0.5px;
+  padding: 40px;
+}
+
+.event-form-button {
+  display: inline-block;
+  float: right;
+}
+
+.event-form-header {
+  border-bottom: 1px solid #D2D6DF;
+  margin-bottom: 20px;
+  // padding-bottom: 30px;
 }
