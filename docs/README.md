@@ -45,26 +45,26 @@ Turnout is a web application inspired by Meetup and Eventbrite. It will be built
 - [x] `APIUtil` to interact with the API
 - [x] Redux cycle for frontend authentication
 - [x] User signup/signin components
-- [ ] Blank landing component after signup/signin
-- [ ] Style signup/signin components
-- [ ] Style Navbar component
-- [ ] Seed users
-- [ ] Review phase 1
+- [x] Blank landing component after signup/signin
+- [x] Style signup/signin components
+- [x] Style Navbar component
+- [x] Seed users
+- [x] Review phase 1
 
 ### Phase 2: Events Model, API, and components (2 days)
 
 **Objective:** Events can be read, bookmarked, ticketed, and destroyed through the API.
 
-- [ ] `Event` model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for events (`EventsController`)
-- [ ] JBuilder views for events
+- [x] `Event` model
+- [x] Seed database with a small amount of test data
+- [x] CRUD API for events (`EventsController`)
+- [x] JBuilder views for events
 - Event components and respective Redux loops
-  - [ ] `EventsIndex`
-  - [ ] `EventIndexItem`
+  - [x] `EventsIndex`
+  - [x] `EventIndexItem`
   - [ ] `EventForm`
-- [ ] Style events components in 'card' form, including icons and effects
-- [ ] Seed events
+- [x] Style events components in 'card' form, including icons and effects
+- [x] Seed events
 
 ### Phase 3: Tags (2 days)
 
