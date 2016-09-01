@@ -18,11 +18,17 @@ class EventDetailView extends React.Component {
     let image_url;
     let style;
     let price;
+    let description;
+    let location;
+    let tag;
     if(this.props.event) {
       title = this.props.event.title;
       date = this.props.event.date;
       image_url = this.props.event.image_url;
       price = this.props.event.price;
+      description = this.props.event.description;
+      location = this.props.event.location;
+      tag = this.props.event.tag;
       style = {
         backgroundImage: 'url(' + image_url + ')'
       };
@@ -33,13 +39,28 @@ class EventDetailView extends React.Component {
          <h1 className="event-detail-title animated fadeInDown">{title}</h1>
          <h2 className="event-detail-date animated fadeInDown">{date}</h2>
       </div>
+      <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">
         <img src="assets/bookmark.png" className="event-detail-bookmark-icon"/>
         <button className="purchase-tickets-button">Tickets</button>
         <span className="event-detail-price">${price}</span>
       </div>
       <div className="event-detail-body">
-
+          <div className="event-detail-info">
+            <div className="event-pair">
+              <h2 className="detail-headings">What: </h2>
+              <p>{description}</p>
+            </div>
+             <div className="event-pair">
+              <h2 className="detail-headings">Where: </h2>
+              <p>{location}</p>
+            </div>
+             <div className="event-pair">
+              <h2 className="detail-headings">Tags: </h2>
+              <p>#{tag}</p>
+            </div>
+          </div>
+      </div>
       </div>
       </div>
     );

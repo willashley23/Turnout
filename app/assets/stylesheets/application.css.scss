@@ -15,7 +15,7 @@
  */
 
 body {
-  background-color: #F8F8FA
+  background-color: #F8F8FA;
 }
 
 /* Navbar */
@@ -313,9 +313,12 @@ input[type=submit]:hover, .guest-button:hover {
 
 .event-detail-menubar {
   padding: 15px;
-  border-bottom: 1px solid #EFF2F5;
+  border-bottom: 1px solid #D2D6DF;
   height: 40px;
-
+  background-color: white;
+  width: 67.9%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .event-detail-bookmark-icon {
@@ -347,7 +350,7 @@ input[type=submit], .purchase-tickets-button {
   color: #fff;
   border-radius: 3px;
   border: 0;
-  width: 10%;
+  width: 15%;
   padding: 12px;
   margin-right: 10px;
   font-size: 16px;
@@ -359,4 +362,35 @@ input[type=submit], .purchase-tickets-button {
 
 input[type=submit]:hover, .purchase-tickets-button:hover {
   background-color: #00d656;
+}
+
+.event-detail-body {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  width: 70%;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.event-pair {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-headings {
+  color: black;
+  font-family: "Helvetica Neue";
+  text-transform: uppercase;
+
+}
+
+.event-detail-body-wrapper{
+  background-color: #EFF2F5;
+  width: 100%;
 }
