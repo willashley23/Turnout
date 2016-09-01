@@ -574,15 +574,89 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   font-size: 40px;
   letter-spacing: 0.5px;
   padding: 40px;
-}
-
-.event-form-button {
   display: inline-block;
-  float: right;
 }
 
 .event-form-header {
   border-bottom: 1px solid #D2D6DF;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   // padding-bottom: 30px;
 }
+.event-form-button {
+  float: right;
+  transition: background-color 0.7s ease;
+  background-color: #22b8ff;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  width: 10%;
+  padding: 12px;
+  margin-right: 30px;
+  font-size: 16px;
+  font-family: "Benton Sans";
+  letter-spacing: 1px;
+  transition: all .2s;
+  text-transform: uppercase;
+  // flex-direction: column;
+  position: relative;
+  top: 38px;
+}
+
+.form-footer-button {
+  transition: background-color 0.7s ease;
+  background-color: #22b8ff;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  width: 15%;
+  padding: 12px;
+  margin-right: 30px;
+  font-size: 16px;
+  font-family: "Benton Sans";
+  letter-spacing: 1px;
+  transition: all .2s;
+  text-transform: uppercase;
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  display: block;
+  margin: 35px;
+  margin-left: 90px;
+  margin-top: 5px;
+}
+
+.event-form-subtitle {
+  font-family: "Benton Sans";
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  padding: 40px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.form-label {
+  font-family: "Benton Sans";
+  font-size: 15px;
+  margin-left: 90px;
+  color: #45494E;
+}
+
+input[type="date"], 
+input[type="number"],
+select {
+  width: 273px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #D2D6DF;
+  font-family: "Benton Sans";
+}
+
+textarea {
+  width: 373px;
+  height: 120px;
+  border-radius: 3px;
+  border: 1px solid #D2D6DF;
+}
+
