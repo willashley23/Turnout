@@ -49,15 +49,15 @@ class EventDetailView extends React.Component {
           <div className="event-detail-info">
             <div className="event-pair">
               <h2 className="detail-headings">What: </h2>
-              <p>{description}</p>
+              <p className="event-detail-p">{description}</p>
             </div>
              <div className="event-pair">
               <h2 className="detail-headings">Where: </h2>
-              <p>{location}</p>
+              <p className="event-detail-p">{location}</p>
             </div>
              <div className="event-pair">
               <h2 className="detail-headings">Tags: </h2>
-              <p>#{tag}</p>
+              <p className="event-detail-p event-detail-tag">#{tag}</p>
             </div>
           </div>
       </div>
