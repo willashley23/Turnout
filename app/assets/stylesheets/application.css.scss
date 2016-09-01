@@ -693,17 +693,33 @@ textarea {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #D2D6DF;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
-.tab-option {
+.menu-tabs {
+  display: flex;
+  text-align: center;
+}
+
+.tab-option, em {
   display: inline;
   padding-left: 70px;
   padding-right: 70px;
   flex-direction: row;
   font-family: "Benton Sans";
-  font-size: 15px;
+  font-size: 12px;
   color: #45494E;
+  text-transform: uppercase;
+}
+
+.tab-option {
+  display: inherit;
+}
+
+em {
+  padding-bottom: 10px;
+  display: inline-block;
+  justify-content: center;
 }
 
 

@@ -21,9 +21,24 @@ class UserProfile extends React.Component {
        <h1 className="profile-greeting">My <span className="profile-span">Profile</span></h1>
           <div className="user-profile-menu">
             <ul className="menu-tabs">
-               <li className="tab-option">Upcoming Events</li>
-               <li className="tab-option">Bookmarked Events</li>
-               <li className="tab-option">Past Events</li>
+              <div>
+               <li className="tab-option">
+                 <em>0</em>
+                 <div>Upcoming Events</div>
+               </li>
+               </div>
+               <div>
+               <li className="tab-option">
+                 <em>0</em>
+                 <div>Bookmarked Events</div>
+               </li>
+               </div>
+               <div>
+               <li className="tab-option">
+                 <em>0</em>
+                 <div>Past Events</div>
+               </li>
+               </div>
             </ul>
           </div>
       </div>
