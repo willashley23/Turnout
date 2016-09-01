@@ -6,12 +6,17 @@ import EventIndex from './event_index';
 class Home extends React.Component {
   constructor(props) {
     super(props)
-    // this.navigateToSearch = this.navigateToSearch.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
-    // navigateToSearch() {
-    //   this.props.router.push("events/new");
-    // }
+  // Re-write this to link to my profile after done.
+  handleClick() {
+    if (this.props.currentUser) {
+      this.props.router.push("/events/1");
+    } else {
+      this.props.router.push("/home/signup");
+    }
+  }
 
   render() {
     return (
@@ -22,7 +27,7 @@ class Home extends React.Component {
               <div>
                 <h3>Experience, Discover, Explore</h3>
                 <h4>Turnout helps you find exciting events near you.</h4>
-                <button className="get-started-button">Get Started</button>
+                <button className="get-started-button" onClick={this.handleClick}>Get Started</button>
               </div>
             </li>
             <li><span>Image 02</span></li>

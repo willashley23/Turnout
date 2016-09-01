@@ -4,7 +4,8 @@ import { allEvents } from '../reducers/selector';
 import { requestEvents } from '../actions/event_actions';
 
 const mapStateToProps = (state) => ({
-  events: allEvents(state.events)
+  events: allEvents(state.events),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
