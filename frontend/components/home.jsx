@@ -15,10 +15,28 @@ class Home extends React.Component {
 
   render() {
     return (
-       <div>
-        <EventIndex events={this.props.events} requestEvents={this.props.requestEvents}/>
-        {this.props.children}  
-      </div>  
+      <div className="home">
+        <div className="banner">
+          <ul className="cb-slideshow">
+            <li><span>Image 01</span>
+              <div>
+                <h3>Experience, Discover, Explore</h3>
+                <h4>Turnout helps you find exciting events near you.</h4>
+              </div>
+            </li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+          </ul>
+          <div className="banner-header"><h2></h2></div>
+        </div>
+         <div className="events">
+          <EventIndex events={this.props.events} requestEvents={this.props.requestEvents}/>
+          {this.props.children}  
+        </div>  
+      </div>
     )
   }
 }

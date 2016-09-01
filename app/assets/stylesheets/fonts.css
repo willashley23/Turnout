@@ -8,3 +8,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Benton Sans';
+    src: url('BentonSans-Regular.woff') format('woff'),
+         url('BentonSans-Regular.oft');
+    font-weight: normal;
+    font-style: normal;
+}
