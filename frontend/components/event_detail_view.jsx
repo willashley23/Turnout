@@ -17,10 +17,12 @@ class EventDetailView extends React.Component {
     let date;
     let image_url;
     let style;
+    let price;
     if(this.props.event) {
       title = this.props.event.title;
       date = this.props.event.date;
       image_url = this.props.event.image_url;
+      price = this.props.event.price;
       style = {
         backgroundImage: 'url(' + image_url + ')'
       };
@@ -32,7 +34,9 @@ class EventDetailView extends React.Component {
          <h2 className="event-detail-date animated fadeInDown">{date}</h2>
       </div>
       <div className="event-detail-menubar">
-
+        <img src="assets/bookmark.png" className="event-detail-bookmark-icon"/>
+        <button className="purchase-tickets-button">Tickets</button>
+        <span className="event-detail-price">${price}</span>
       </div>
       <div className="event-detail-body">
 
