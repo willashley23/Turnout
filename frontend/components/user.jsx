@@ -43,7 +43,7 @@ class UserProfile extends React.Component {
   }
 
   renderEvents() {
-    console.log(this.props.events)
+    debugger
     return (
     <div className ="user-profile-events">
       <ul>
