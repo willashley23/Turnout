@@ -8,19 +8,13 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
-<<<<<<< HEAD
-  has_many :events,
-  primary_key:  :id,
-  foreign_key: :author_id,
-  class_name: "Event"
-  
-=======
+
   has_many :bookmarks
   has_many :events,
   primary_key: :id,
   foreign_key: :author_id,
   class_name: "Event"
->>>>>>> bookmark
+
 
   def password= password
     self.password_digest = BCrypt::Password.create(password)

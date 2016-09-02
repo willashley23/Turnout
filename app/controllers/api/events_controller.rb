@@ -13,10 +13,11 @@ class Api::EventsController < ApplicationController
     # end
   
     @event = Event.new(event_params)
+    debugger
     if @event.save
         render :show
     else
-      render json: @event.errors.full_messages;
+      render json: @event.errors.full_messages, status: 422
     end
   end
 
