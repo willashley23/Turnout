@@ -13,6 +13,7 @@ Turnout is a web application inspired by Meetup and Eventbrite. It will be built
 - [ ] Bookmarks
 - [ ] Tags (in tandem with categories)
 - [ ] Tickets
+- [ ] Image hosting on Cloudinary 
 - [ ] Infinite Scroll
 - [ ] Google Maps integration (time allowing)
 - [ ] Production README [sample](docs/production_readme.md) 
