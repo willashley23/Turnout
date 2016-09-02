@@ -8,12 +8,11 @@ class UserProfile extends React.Component {
     this.renderEvents = this.renderEvents.bind(this);
     this.filterUpcomingEvents = this.filterUpcomingEvents.bind(this);
     this.filterBookmarkedEvents = this.filterBookmarkedEvents.bind(this);
-    this.filterMyEvents = this.filterMyEvents.bind(this);
-    // let currentId = currentUser.id;
+    this.filterMyEvents = this.filterMyEvents.bind(this); 
   }
 
   // componentDidMount() {
-  //   this.props.requestEvents();
+  //   // filterMyEvents();
   // }
 
   filterUpcomingEvents() {

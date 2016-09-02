@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
 
   handleGuest(e){
     e.preventDefault();
-    const formData = { username: "guest", password: "password" };
+    const formData = { username: "guest", password: "password"};
     this.setState(formData, ()=> {
       const user = this.state;
       this.props.processForm({user});

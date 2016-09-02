@@ -6,7 +6,6 @@ const mapStateToProps = state => {
   return(
   {eventErrors: state.errors,
     currentUser: state.session.currentUser}
-
   )
 };
 

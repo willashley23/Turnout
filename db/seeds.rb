@@ -12,3 +12,6 @@
   Event.create!({title: "San Francisco Comic Con", price: 150, description: "Comics!", tag:"comics", image_url: "assets/comicon.jpg", date: DateTime.new(2016,9,2,17), location: "San Francisco, CA", author_id: 3 })
   Event.create!({title: "Small Buisness Expo 2016", price: 35, description: "business", tag:"career", image_url: "assets/business.jpg", date: DateTime.new(2016,10,15,17), location: "Oakland, CA", author_id: 1 })
   Event.create!({title: "Cartooning and Graphic Novel Workshop", price: 35, description: "draw stuff", tag: "drawing", image_url: "assets/novel.jpeg", date: DateTime.new(2016,12,1,17), location: "Oakland, CA", author_id: 2 })
+
+
+  #Remeber to see guest user.
