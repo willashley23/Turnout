@@ -3,7 +3,6 @@ import { createEvent } from '../actions/event_actions';
 import EventForm from './new_event_form';
 
 const mapStateToProps = state => {
-  debugger
   return(
   {eventErrors: state.errors,
     currentUser: state.session.currentUser}

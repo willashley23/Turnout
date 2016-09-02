@@ -47,8 +47,8 @@ class AppRouter extends React.Component{
       <Router history={ hashHistory }>
         <Route  path="/" component={ App } onEnter={this._redirectToHome}>
           <Route path= "home" component={ HomeContainer } >
-            <Route path="login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-            <Route path="signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
+            <Route path="login" component={ SessionFormContainer } />
+            <Route path="signup" component={ SessionFormContainer } />
           </Route>
             <Route path="events/new" component={ NewEventFormContainer } />
             <Route path="events/:id" component={ EventDetailViewContainer } />

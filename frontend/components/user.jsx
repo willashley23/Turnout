@@ -37,28 +37,21 @@ class UserProfile extends React.Component {
     let cid = this.props.currentUser.id
     if (e) {
       let myEventsFilter = (events, id) => {
-      // console.log(e)
-      // console.log(cid)
-      // if (cid === e[id].author_id) {
-      //   console.log(e[id])
-      // }
        return (cid === e[id].author_id)
       }
-      // myEventsFilter = myEventsFilter.bind(null, this.props.events)
       this.props.updateFilter(myEventsFilter);
     }
-    // console.log(this.props.events)
   }
 
-//move this down to here the click handler is.
   renderEvents() {
     console.log(this.props.events)
     return (
-    <div>
+    <div className ="user-profile-events">
       <ul>
        {Object.keys(this.props.events).map(id => <EventIndexItem 
         key={`event-index-item${id}`} 
         event={this.props.events[id]}
+        user={true}
         />)}
       </ul>
     </div>
@@ -91,10 +84,10 @@ class UserProfile extends React.Component {
                </li>
                </div>
             </ul>
-            <div>
-            {this.renderEvents()};
-            </div>
           </div>
+      </div>
+      <div>
+        {this.renderEvents()}
       </div>
     </div>
     );

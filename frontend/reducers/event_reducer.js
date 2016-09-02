@@ -10,7 +10,6 @@ const EventReducer = (state = {}, action) => {
       // return action.events;
     
     case RECEIVE_EVENT:
-      debugger
       return merge({}, state, {eventDetail: action.event })
       
     default: 

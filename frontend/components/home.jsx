@@ -12,9 +12,9 @@ class Home extends React.Component {
   // Re-write this to link to my profile after done.
   handleClick() {
     if (this.props.currentUser) {
-      this.props.router.push("/events/1");
+      this.props.router.push(`/users/${currentUser.id}`);
     } else {
-      this.props.router.push("/home/signup");
+      this.props.router.push("/home/login");
     }
   }
 

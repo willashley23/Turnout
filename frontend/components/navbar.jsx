@@ -11,7 +11,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
  <nav className="login-signup">
-    <Link to="/home/login" className="sign-out" activeClassName="current" onClick={logout}>SIGN OUT</Link>
+    <Link to="/home" className="sign-out" activeClassName="current" onClick={logout}>SIGN OUT</Link>
     <Link to="/events/new" className="create-event" activeClassName="current">CREATE EVENT</Link>
     <Link to={`/users/${currentUser.id}`} className="user-profile-link" activeClassName="current">MY PROFILE</Link>
 </nav>

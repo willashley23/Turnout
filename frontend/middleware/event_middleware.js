@@ -22,7 +22,6 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
   const EventSuccess = data => dispatch(receiveEvents(data));
   const SingleEventSuccess = data => dispatch(receiveEvent(data));
   const receiveNewEventSuccess = (data) => {
-    debugger
     dispatch(receiveEvent(data));
     hashHistory.push(`/events/${data.id}`);
 };

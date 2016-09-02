@@ -20,6 +20,10 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  handleClass() {
+    
+  }
+
   render() {
 
     return (
