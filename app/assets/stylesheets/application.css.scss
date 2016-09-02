@@ -716,6 +716,10 @@ textarea {
   display: inherit;
 }
 
+.tab-option:focus {
+  color: red;
+}
+
 em {
   padding-bottom: 10px;
   display: inline-block;

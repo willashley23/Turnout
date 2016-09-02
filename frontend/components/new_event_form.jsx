@@ -10,7 +10,8 @@ class EventForm extends React.Component {
       description: '',
       location: '',
       tag: '',
-      price: 0
+      price: 0,
+      author_id: currentUser.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
