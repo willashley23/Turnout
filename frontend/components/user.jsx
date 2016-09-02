@@ -34,10 +34,21 @@ class UserProfile extends React.Component {
   filterMyEvents() {
     let e = this.props.events
     let cid = this.props.currentUser.id
+    console.log("outside")
+    console.log(e)
     debugger
     if (Object.keys(e).length > 0) {
       let myEventsFilter = (events, id) => {
-       return (cid === e[id].author_id)
+        console.log("id:")
+        console.log(id)
+        console.log("events")
+        console.log(events)
+        console.log("e")
+        console.log(e)
+        console.log(`evaluate: ${e[id+1]}`)
+        if(e[id+1] != null){
+          return (cid === e[id+1].author_id)
+        }
       }
       this.props.updateFilter(myEventsFilter);
     }
