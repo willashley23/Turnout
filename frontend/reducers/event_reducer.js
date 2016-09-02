@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_EVENTS, REQUEST_EVENTS, RECEIVE_EVENT } from '../actions/event_actions';
 
 const EventReducer = (state = {}, action) => {
+  
   switch (action.type) {
     
     case RECEIVE_EVENTS:
@@ -10,7 +11,7 @@ const EventReducer = (state = {}, action) => {
       // return action.events;
     
     case RECEIVE_EVENT:
-      return merge({}, state, {eventDetail: action.event })
+      return merge({}, state, action.event)
       
     default: 
       return state

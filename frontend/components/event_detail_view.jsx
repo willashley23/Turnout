@@ -7,7 +7,10 @@ class EventDetailView extends React.Component {
   }
   
   componentDidMount() {
-    this.props.requestEvents();    
+    debugger
+    if (!this.props.event) {
+      this.props.requestEvent(this.props.params.id);    
+    }
   }
 
 

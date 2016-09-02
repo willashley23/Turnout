@@ -22,8 +22,9 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
   const EventSuccess = data => dispatch(receiveEvents(data));
   const SingleEventSuccess = data => dispatch(receiveEvent(data));
   const receiveNewEventSuccess = (data) => {
+    debugger
     dispatch(receiveEvent(data));
-    hashHistory.push(`/events/${data.id}`);
+    hashHistory.push(`/events/${Object.keys(data)[0]}`);
 };
   switch (action.type) {
     case REQUEST_EVENTS:
@@ -35,7 +36,7 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
       break;
 
     case REQUEST_EVENT:
-      fetchEvent(SingleEventSuccess);
+      fetchEvent(action.id, SingleEventSuccess);
       break;
 
     default:

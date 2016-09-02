@@ -11,9 +11,9 @@ class UserProfile extends React.Component {
     this.filterMyEvents = this.filterMyEvents.bind(this); 
   }
 
-  // componentDidMount() {
-  //   // filterMyEvents();
-  // }
+  componentDidMount() {
+    this.filterMyEvents();
+  }
 
   filterUpcomingEvents() {
     this.props.updateFilter( (id) => {
@@ -34,7 +34,8 @@ class UserProfile extends React.Component {
   filterMyEvents() {
     let e = this.props.events
     let cid = this.props.currentUser.id
-    if (e) {
+    debugger
+    if (Object.keys(e).length > 0) {
       let myEventsFilter = (events, id) => {
        return (cid === e[id].author_id)
       }
@@ -43,7 +44,7 @@ class UserProfile extends React.Component {
   }
 
   renderEvents() {
-    debugger
+    // debugger
     return (
     <div className ="user-profile-events">
       <ul>
