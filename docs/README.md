@@ -1,8 +1,9 @@
 # Turnout
 
-[heroku]: https://stark-meadow-71118.herokuapp.com
 
 ## Minimum Viable Product
+
+Link: https://stark-meadow-71118.herokuapp.com
 
 Turnout is a web application inspired by Meetup and Eventbrite. It will be built using Rails and React/Redux. By the end of week 9, this app will, at a minimum, prodvide the following features along with an intuitive, bug-free user experience, adequate seed data and CSS styling:
 
@@ -62,18 +63,26 @@ Turnout is a web application inspired by Meetup and Eventbrite. It will be built
 - Event components and respective Redux loops
   - [x] `EventsIndex`
   - [x] `EventIndexItem`
-  - [ ] `EventForm`
+  - [x] `EventForm`
 - [x] Style events components in 'card' form, including icons and effects
 - [x] Seed events
-
-### Phase 3: Tags (2 days)
+- [x] Display user events on landing page for user profile
+- [x] Style user profile
+- [x] create 'myEvents' filter
+- [ ] create 'myBookmarks' filter
+- [ ] create 'myTickets' filter
+ 
+### Phase 3: Tags, Bookmarks, & Categories (2 days)
 
 **Objective:** Events will be tagged by category, and tags are searchable.
 
-- [ ] `Tag` model and `Taggings` join table
-- [ ] Fetching tags for events
+- [x] `Tag` `Bookmark` models
+- [ ] Add bookmark to user profile by clicking on bookmark icon
+- [ ] Remove bookmarks by clicking icon
 - [ ] Searching events by clicking on a tag, or home page categories
 - [ ] Style search & tag components, and category cards
+- [ ] Add category cards to home page and style
+- [ ] Display tagged events when clicking on category card
 - [ ] Seed tags with seed data
 
 ### Phase 4: - Pagination / infinite scroll for Events Index (2 days, W2 Th 6pm)
