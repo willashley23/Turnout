@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-  #has_many :bookmarks
-  #belongs_to :user
+  has_one :bookmarks
+  belongs_to :user
 
 end

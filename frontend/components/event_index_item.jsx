@@ -6,6 +6,7 @@ class EventIndexItem extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.handleImage = this.handleImage.bind(this);
+    this.handleBookmark = this.handleBookmark.bind(this);
   }
 
   handleClick() {
@@ -20,8 +21,8 @@ class EventIndexItem extends React.Component {
     }
   }
 
-  handleClass() {
-    
+  handleBookmark() {
+
   }
 
   render() {
@@ -36,7 +37,7 @@ class EventIndexItem extends React.Component {
             <p className="event-location">{this.props.event.location}</p>
           <div className="event-card-footer">
             <span className="event-tag">#{this.props.event.tag}</span>
-            <img src= "assets/bookmark.png" className="bookmark-icon"/>
+            <img src= "assets/bookmark.png" className="bookmark-icon" onClick={this.handleBookmark}/>
           </div>
           </div>
       </div>
