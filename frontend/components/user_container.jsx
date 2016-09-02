@@ -8,7 +8,7 @@ import UserProfile from "./user";
 const mapStateToProps = (state) => {
   return {currentUser: state.session.currentUser,
     requestEvents: requestEvents,
-    events: allEventsByFilter(state.events, state.filter)}
+    events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id)}
 };
 
 const mapDispatchToProps = (dispatch) => ({

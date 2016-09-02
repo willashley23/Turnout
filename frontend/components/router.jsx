@@ -9,6 +9,7 @@ import EventIndexContainer from './event_index_container';
 import EventDetailViewContainer from './event_detail_view_container';
 import NewEventFormContainer from './new_event_form_container';
 import UserContainer from './user_container';
+import { updateFilter } from '../actions/filter_actions';
 
 
 class AppRouter extends React.Component{
@@ -17,6 +18,7 @@ class AppRouter extends React.Component{
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._redirectToHome = this._redirectToHome.bind(this);
+    this._setFilterToUser = this._setFilterToUser.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -36,6 +38,12 @@ class AppRouter extends React.Component{
     }
   }
 
+  _setFilterToUser(nextState, replace) {
+    if(this.context.store.getState().filter !== "myEvents"){
+      this.context.store.dispatch(updateFilter("myEvents"))
+    }
+  }
+
   _redirectToHome(nextState, replace) {
     if(location.hash[2] === '?') {
       replace('/home');
@@ -52,7 +60,7 @@ class AppRouter extends React.Component{
           </Route>
             <Route path="events/new" component={ NewEventFormContainer } />
             <Route path="events/:id" component={ EventDetailViewContainer } />
-            <Route path="users/:id" component={ UserContainer } />
+            <Route path="users/:id" component={ UserContainer } onEnter={this._setFilterToUser}/>
         </Route>
       </Router>
     );

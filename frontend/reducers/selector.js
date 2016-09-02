@@ -6,16 +6,27 @@ export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 //   return state ? Object.keys(state.events).map(key => state.events[key]) : [];
 // }
 
-export const allEventsByFilter = (events, filter) => {
-  debugger
-if (filter) {
-  let newEvents = {}
-  let objs = Object.keys(events).filter(filter);
-  console.log(events)
-  objs.forEach( (key) => newEvents[key] = events[key])
-  return newEvents;
-} else {
-  return events;
-}
+export const allEventsByFilter = (events, filter, currentUserId) => {
+  switch (filter) {
 
+    case "myEvents":
+      let keys = Object.keys(events).filter( (id) => {
+        return(currentUserId === events[id].author_id)
+      });
+  debugger
+      let newEvents = {}
+      keys.forEach( (key) => newEvents[key] = events[key])
+      console.log(newEvents)
+      return newEvents;
+
+    case "myBookmarks":
+      return events
+
+    case "myTickets":
+      return events 
+
+    default: 
+      return events
+
+  }
 }
