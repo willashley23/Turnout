@@ -2,7 +2,7 @@ import React from 'react';
 import {Router, Root} from 'react-router';
 import { withRouter } from 'react-router';
 import EventIndex from './event_index';
-
+import EventIndexContainer from './event_index_container';
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -39,7 +39,7 @@ class Home extends React.Component {
           <div className="banner-header"><h2></h2></div>
         </div>
          <div className="events">
-          <EventIndex events={this.props.events} requestEvents={this.props.requestEvents}/>
+          <EventIndexContainer />
           {this.props.children}  
         </div>  
       </div>

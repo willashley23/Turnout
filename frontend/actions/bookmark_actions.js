@@ -24,8 +24,8 @@ export const receiveBookmark = bookmark => ({
   bookmark
 });
 
-export const createBookmark = bookmark => ({
+export const createBookmark = eventId => ({
   type: CREATE_BOOKMARK,
-  bookmark
+  eventId
 });
 

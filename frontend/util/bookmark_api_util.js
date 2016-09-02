@@ -1,8 +1,8 @@
-export const createBookmark = function(bookmark, success, error){
+export const createBookmark = function(eventId, success, error){
   $.ajax({
     method: 'POST',
     url: 'api/bookmarks',
-    data: bookmark,
+    data: {event_id: eventId},
     success,
     error: ()=> console.log("error")
   });

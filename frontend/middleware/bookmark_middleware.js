@@ -22,21 +22,21 @@ const BookmarkMiddleware = ({getState, dispatch}) => next => action => {
   const BookmarkSuccess = data => dispatch(receiveBookmarks(data));
   const SingleBookmarkSuccess = data => dispatch(receiveBookmark(data));
   const receiveNewBookmarkSuccess = (data) => {
-    // debugger
     dispatch(receiveBookmark(data));
 };
+    // debugger
   switch (action.type) {
-    case REQUEST_BOOKMARKS:
-      fetchBookmarks(BookmarkSuccess);
-      break;
+    // case REQUEST_BOOKMARKS:
+    //   fetchBookmarks(BookmarkSuccess);
+    //   break;
 
     case CREATE_BOOKMARK:
-      createBookmark(action.bookmark, receiveNewBookmarkSuccess)
+      createBookmark(action.eventId, receiveNewBookmarkSuccess)
       break;
 
-    case REQUEST_BOOKMARK:
-      fetchBookmark(action.id, SingleEventSuccess);
-      break;
+    // case REQUEST_BOOKMARK:
+    //   fetchBookmark(action.id, SingleEventSuccess);
+    //   break;
 
     default:
       return next(action);

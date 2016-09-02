@@ -8,7 +8,7 @@ class EventIndex extends React.Component {
   }
 
   render() {
-    // debugger
+    
       return (
         <div>
         {this.props.children}
@@ -16,6 +16,7 @@ class EventIndex extends React.Component {
             {this.props.events.map(event => <EventIndexItem 
               key={`event-index-item${event.id}`} 
               event={event}
+              createBookmark={this.props.createBookmark}
               />)}
           </ul>
         </div>
