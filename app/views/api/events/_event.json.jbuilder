@@ -1,3 +1,3 @@
 json.set! "#{event.id}" do
-  json.extract! event, :title, :description, :price, :location, :tag, :id, :image_url, :date, :author_id 
+  json.extract! event, :title, :description, :price, :location, :tag, :id, :image_url, :date, :author_id, :bookmarks 
 end

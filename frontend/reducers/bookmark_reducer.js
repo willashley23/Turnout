@@ -11,7 +11,7 @@ const BookmarkReducer = (state = {}, action) => {
       // return action.events;
     
     case RECEIVE_BOOKMARK:
-      return merge({}, state, {[action.bookmark.id]: action.bookmark})
+      return merge({}, state, action.bookmark)
       
     default: 
       return state

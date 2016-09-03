@@ -7,6 +7,7 @@ class EventIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.handleBookmark = this.handleBookmark.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +26,15 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  toggle() {
+    if (this.props.event.bookmarks.length > 0) { 
+      return "clicked"
+    } else {
+      return "not-clicked"
+    }
+  }
+
   handleBookmark() {
-    //?? What to do here? 
     // debugger
      this.props.createBookmark(this.props.event.id)
   }
@@ -45,7 +53,7 @@ class EventIndexItem extends React.Component {
             </div>
           <div className="event-card-footer">
             <span className="event-tag">#{this.props.event.tag}</span>
-            <img src= "assets/bookmark.png" className="bookmark-icon" onClick={this.handleBookmark}/>
+            <img src= "assets/bookmark.png" className= {"bookmark-icon " + this.toggle()} onClick={this.handleBookmark}/>
           </div>
           </div>
       </div>

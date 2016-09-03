@@ -25,11 +25,7 @@ class UserProfile extends React.Component {
   }
 
   filterBookmarkedEvents() {
-    this.props.updateFilter( (id) => {
-        currentUser.bookmarks.forEach( (bookmark)  => {
-          (bookmark.event_id === id)
-        });
-    });
+    this.props.updateFilter("myBookmarks")
   }
 
   filterMyEvents() {
