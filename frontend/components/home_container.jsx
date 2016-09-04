@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import Home from './home';
 import { allEvents } from '../reducers/selector';
 import { requestEvents } from '../actions/event_actions';
+import { requestBookmarks } from '../actions/bookmark_actions';
 
 const mapStateToProps = (state) => ({
   events: allEvents(state.events),
@@ -9,10 +10,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestEvents: () => {
-  dispatch(requestEvents())
-  }
-});
+  requestEvents: () => {dispatch(requestEvents())},
+  requestBookmarks: ()=> {dispatch(requestBookmarks())}
+  });
 
 export default connect (
   mapStateToProps,

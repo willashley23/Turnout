@@ -9,6 +9,14 @@ class Home extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   
+  componentDidMount() {
+    this.props.requestBookmarks();
+  } 
+
+  // componentDidUpdate() {
+  //   this.props.requestBookmarks();
+  // }
+
   // Re-write this to link to my profile after done.
   handleClick() {
     if (this.props.currentUser) {

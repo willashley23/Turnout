@@ -27,16 +27,28 @@ class EventIndexItem extends React.Component {
   }
 
   toggle() {
+    // debugger
     if (this.props.event.bookmarks.length > 0) { 
-      return "clicked"
+      for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
+        if (this.props.event.bookmarks[i].user_id === currentUser.id) {
+          return "clicked"
+        }
+      }
     } else {
       return "not-clicked"
     }
   }
 
   handleBookmark() {
-    // debugger
+    if (this.toggle() === "clicked") {
+      // //remove bookmark
+      // console.log("clicked")
+      // // Somehow need to re-render after toggle, not just re-load
+      // this.props.removeBookmark(this.props.event.id)
+    } else {
+      console.log("not clicked")
      this.props.createBookmark(this.props.event.id)
+    } 
   }
 
   render() {

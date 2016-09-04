@@ -4,6 +4,8 @@ export const RECEIVE_BOOKMARK = "RECEIVE_BOOKMARK";
 export const REQUEST_BOOKMARKS = "REQUEST_BOOKMARKS";
 export const REQUEST_BOOKMARK = "REQUEST_BOOKMARK";
 export const CREATE_BOOKMARK = "CREATE_BOOKMARK";
+export const DESTROY_BOOKMARK = "DESTROY_BOOKMARK";
+export const REMOVE_BOOKMARK = "REMOVE_BOOKMARK";
 
 export const requestBookmarks = () => ({
   type: REQUEST_BOOKMARKS
@@ -14,7 +16,7 @@ export const requestBookmark = id => ({
   id
 });
 
-export const receiveBOOKMARKS = bookmarks => ({
+export const receiveBookmarks = bookmarks => ({
   type: RECEIVE_BOOKMARKS,
   bookmarks
 });
@@ -26,6 +28,16 @@ export const receiveBookmark = bookmark => ({
 
 export const createBookmark = eventId => ({
   type: CREATE_BOOKMARK,
+  eventId
+});
+
+export const destroyBookmark = eventId => ({
+  type: DESTROY_BOOKMARK,
+  eventId
+});
+
+export const removeBookmark = eventId => ({
+  type: REMOVE_BOOKMARK,
   eventId
 });
 
