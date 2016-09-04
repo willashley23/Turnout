@@ -13,10 +13,6 @@ class Home extends React.Component {
     this.props.requestBookmarks();
   } 
 
-  // componentDidUpdate() {
-  //   this.props.requestBookmarks();
-  // }
-
   // Re-write this to link to my profile after done.
   handleClick() {
     if (this.props.currentUser) {

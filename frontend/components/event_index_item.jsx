@@ -44,7 +44,7 @@ class EventIndexItem extends React.Component {
       // //remove bookmark
       // console.log("clicked")
       // // Somehow need to re-render after toggle, not just re-load
-      // this.props.removeBookmark(this.props.event.id)
+      this.props.removeBookmark(this.props.event.id)
     } else {
       console.log("not clicked")
      this.props.createBookmark(this.props.event.id)

@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_BOOKMARKS, REQUEST_BOOKMARKS, RECEIVE_BOOKMARK, REMOVE_BOOKMARK } from '../actions/bookmark_actions';
 
 const BookmarkReducer = (state = {}, action) => {
-  // debugger
+  debugger
   //When it gets here, there are no bookmakrs in the state to begin with. 
   switch (action.type) {
     
@@ -15,9 +15,11 @@ const BookmarkReducer = (state = {}, action) => {
       return merge({}, state, action.bookmark)
       
     case REMOVE_BOOKMARK:
-      let newState = Object.assign({}, state);
+      let newState = {}
+      newState = Object.assign({}, state);
       delete newState[action.eventId];
       return newState;
+      // Check this in debugger. Seems to successfully delete, but all bookmarks reappear after refresh.
 
     default: 
       return state
