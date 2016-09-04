@@ -65,7 +65,7 @@ class EventIndexItem extends React.Component {
             </div>
           <div className="event-card-footer">
             <span className="event-tag">#{this.props.event.tag}</span>
-            <img src= "assets/bookmark.png" className= {"bookmark-icon " + this.toggle()} onClick={this.handleBookmark}/>
+            <i className= {"large material-icons bookmark-icon " + this.toggle()} onClick={this.handleBookmark}>turned_in_not</i>
           </div>
           </div>
       </div>
