@@ -19,20 +19,21 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
       console.log(newEvents)
       return newEvents;
 
-    // case "myBookmarks":
-    //   let keys2 = Object.keys(bookmarks.undefined).filter( (id) => {
-    //     return(bookmarks.undefined[id].user_id === currentUserId)
-    //   });
-    //   let userBookmarks = {}
-    //   keys2.forEach( (key) => userBookmarks[key] = bookmarks.undefined[key])
-    //   let bookmarkeventkeys = Object.keys(userBookmarks).filter( (id) => {
-    //     return(bookmarks.undefined[id].event_id === 9)
-    //   }
-    //     return events
-    //   }
-    // }
+    case "myBookmarks":
+    // debugger
+      let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
+        return(bookmarks[id].user_id === currentUserId)
+      });
+      let userBookmarks = {}
+      bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
+      let newEvents2 = {}
+      
+      let eventKeys = Object.keys(events).filter( (id) => {
+        return (Object.keys(userBookmarks).includes(id))
+      });
+      eventKeys.forEach( (key) => newEvents2[key] = events[key])
 
-    // }
+      return newEvents
 
     // case "myTickets":
     //   return events 

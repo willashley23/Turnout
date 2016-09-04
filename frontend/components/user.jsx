@@ -31,6 +31,7 @@ class UserProfile extends React.Component {
   filterMyEvents() {
     // debugger
       this.props.updateFilter("myEvents");
+      this.forceUpdate();
     }
 
 
@@ -64,13 +65,13 @@ class UserProfile extends React.Component {
                </div>
                <div>
                <li className="tab-option">
-                 <em>0</em>
+                 <em>{currentUser.bookmarks.length}</em>
                  <div onClick={this.filterBookmarkedEvents}>Bookmarked Events</div>
                </li>
                </div>
                <div>
                <li className="tab-option">
-                 <em>0</em>
+                 <em>{currentUser.events.length}</em>
                  <div className="my-events" onClick={this.filterMyEvents}>My Events</div>
                </li>
                </div>
