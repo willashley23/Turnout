@@ -10,6 +10,9 @@ class UserProfile extends React.Component {
     this.filterUpcomingEvents = this.filterUpcomingEvents.bind(this);
     this.filterBookmarkedEvents = this.filterBookmarkedEvents.bind(this);
     this.filterMyEvents = this.filterMyEvents.bind(this); 
+    this.toggleMyEvents = this.toggleMyEvents.bind(this);
+    this.toggleMyBookmarks = this.toggleMyBookmarks.bind(this);
+    this.toggleMyUpcomingEvents = this.toggleMyUpcomingEvents.bind(this);
   }
 
   componentDidMount() {
@@ -23,11 +26,7 @@ class UserProfile extends React.Component {
 }
 
   filterUpcomingEvents() {
-    this.props.updateFilter( (id) => {
-        currentUser.tickets.forEach( (ticket)  => {
-          (ticket.event_id === id)
-        });
-    });
+    this.props.updateFilter("upcomingEvents")
   }
 
   filterBookmarkedEvents() {
@@ -39,9 +38,30 @@ class UserProfile extends React.Component {
       this.props.updateFilter("myEvents");
     }
 
+  toggleMyEvents() {
+    if (this.props.filter === "myEvents") {
+      return "hvr"
+    } else {
+      return "not-infocus"
+    }
+  } 
+  toggleMyBookmarks() {
+    if (this.props.filter === "myBookmarks") {
+      return "hvr"
+    } else {
+      return "not-infocus"
+    }
+  } 
+  toggleMyUpcomingEvents() {
+    if (this.props.filter === "upcomingEvents") {
+      return "hvr"
+    } else {
+      return "not-infocus"
+    }
+  }
 
   renderEvents() {
-    debugger
+    // debugger
     return (
     <div className ="user-profile-events">
       <ul>
@@ -64,20 +84,23 @@ class UserProfile extends React.Component {
               <div>
                <li className="tab-option">
                  <em>0</em>
-                 <div onClick={this.filterUpcomingEvents}>Upcoming Events</div>
+                 <div className="my-upcoming-events" onClick={this.filterUpcomingEvents}>Upcoming Events</div>
                </li>
+                 <div className={this.toggleMyUpcomingEvents()}/>
                </div>
                <div>
                <li className="tab-option">
                  <em>{currentUser.bookmarks.length}</em>
-                 <div onClick={() => this.filterBookmarkedEvents()}>Bookmarked Events</div>
+                 <div className="my-bookmarks" onClick={() => this.filterBookmarkedEvents()}>Bookmarked Events</div>
                </li>
+                 <div className={this.toggleMyBookmarks()}/>
                </div>
                <div>
                <li className="tab-option">
                  <em>{currentUser.events.length}</em>
                  <div className="my-events" onClick={this.filterMyEvents}>My Events</div>
                </li>
+                 <div className={this.toggleMyEvents()}/>
                </div>
             </ul>
           </div>

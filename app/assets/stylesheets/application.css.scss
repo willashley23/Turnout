@@ -714,7 +714,6 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #D2D6DF;
   padding-bottom: 10px;
 }
 
@@ -738,9 +737,29 @@ textarea {
   display: inherit;
 }
 
-.tab-option:focus {
-  color: red;
+.hvr {
+  animation: pulse 0.4s forwards;
+  padding-bottom: 6px;
+  position: relative;
+  left: 31px;
 }
+
+@keyframes pulse {
+  0% {
+    content: '';
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+    border-bottom: 4px solid #22b8ff;
+    transition: width 1s ease;
+  }
+  100% {
+    width: 230px;
+    border-bottom: 4px solid #22b8ff;
+  }
+}
+
+
 
 em {
   padding-bottom: 10px;

@@ -6,9 +6,12 @@ import { updateFilter } from '../actions/filter_actions';
 import UserProfile from "./user";
 
 const mapStateToProps = (state) => {
-  return {currentUser: state.session.currentUser,
+  return {
+    currentUser: state.session.currentUser,
     requestEvents: requestEvents,
-    events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id, state.bookmarks)}
+    events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id, state.bookmarks),
+    filter: state.filter
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
