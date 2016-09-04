@@ -31,7 +31,7 @@ class EventIndexItem extends React.Component {
     if (this.props.event.bookmarks.length > 0) { 
       for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
         if (this.props.event.bookmarks[i].user_id === currentUser.id) {
-          return "clicked"
+          return "clicked hvr-icon-pop"
         }
       }
     } else {
@@ -65,7 +65,7 @@ class EventIndexItem extends React.Component {
             </div>
           <div className="event-card-footer">
             <span className="event-tag">#{this.props.event.tag}</span>
-            <i className= {"large material-icons bookmark-icon " + this.toggle()} onClick={this.handleBookmark}>turned_in_not</i>
+            <i className= {"fa fa-bookmark-o bookmark-icon " + this.toggle()} onClick={this.handleBookmark}></i>
           </div>
           </div>
       </div>

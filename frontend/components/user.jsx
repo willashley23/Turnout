@@ -19,11 +19,11 @@ class UserProfile extends React.Component {
     this.filterMyEvents();
   }
 
-  componentWillReceiveProps(nextProps) {
-  this.setState({
-    events: nextProps.events > this.props.events
-  });
-}
+//   componentWillReceiveProps(nextProps) {
+//   this.setState({
+//     events: nextProps.events > this.props.events
+//   });
+// }
 
   filterUpcomingEvents() {
     this.props.updateFilter("upcomingEvents")
@@ -90,14 +90,14 @@ class UserProfile extends React.Component {
                </div>
                <div>
                <li className="tab-option">
-                 <em>{currentUser.bookmarks.length}</em>
+                 <em>{this.props.currentUser.bookmarks.length}</em>
                  <div className="my-bookmarks" onClick={() => this.filterBookmarkedEvents()}>Bookmarked Events</div>
                </li>
                  <div className={this.toggleMyBookmarks()}/>
                </div>
                <div>
                <li className="tab-option">
-                 <em>{currentUser.events.length}</em>
+                 <em>{this.props.currentUser.events.length}</em>
                  <div className="my-events" onClick={this.filterMyEvents}>My Events</div>
                </li>
                  <div className={this.toggleMyEvents()}/>

@@ -20,7 +20,6 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
       return newEvents;
 
     case "myBookmarks":
-    // debugger
       let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
         return(bookmarks[id].user_id === currentUserId)
       });
@@ -28,10 +27,15 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
       bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
       let newEvents2 = {}
       
-      let eventKeys = Object.keys(events).filter( (id) => {
-        return (Object.keys(userBookmarks).includes(id))
-      });
-      eventKeys.forEach( (key) => newEvents2[key] = events[key])
+      let converted = bookmarkKeys.map(key => bookmarks[key].event_id)
+    debugger
+      
+
+      // let eventKeys = Object.keys(events).filter( (id) => {
+      //   return (converted.includes(id))
+      // });
+      //Works but apparently breaks the entire app.
+      converted.forEach( (key) => newEvents2[key] = events[key])
 
       return newEvents2
 
