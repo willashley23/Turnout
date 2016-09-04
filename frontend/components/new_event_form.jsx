@@ -47,7 +47,7 @@ class EventForm extends React.Component {
         <ul>
           {this.errors()}
         </ul>
-        <h2 className="event-form-subtitle">Event Details</h2>
+        <h2 className="event-form-subtitle"><span className="form-numerals">1</span>Event Details</h2>
         <form className="event-form" onSubmit={this.handleSubmit}>
             <label className="form-label">Title</label>
             <input
@@ -56,13 +56,6 @@ class EventForm extends React.Component {
               placeholder="Title"
               className="form-input"
               onChange={this.update('title')}/>
-            <label className="form-label">Image</label>
-            <input
-              type="text"
-              value={this.state.image_url}
-              placeholder="Image Url (Optional)"
-              className="form-input"
-              onChange={this.update('image_url')}/>
             <label className="form-label">Location</label>
             <input
               type="text"
@@ -70,6 +63,20 @@ class EventForm extends React.Component {
               placeholder="Location"
               className="form-input"
               onChange={this.update('location')}/>
+            <label className="form-label">Date</label>
+            <input
+              type="date"
+              className="form-input"
+              accept="image/*"
+              onChange={this.update('date')}/>
+            <h2 className="event-form-subtitle"><span className="form-numerals">2</span>Add An Image</h2>
+            <label className="form-label form-image">Image</label>
+            <input
+              type="file"
+              value={this.state.image_url}
+              placeholder="Image Url (Optional)"
+              className="form-input"
+              onChange={this.update('image_url')}/>
             <label className="form-label">Add a tag</label>
             <select
               value={this.state.tag}
@@ -84,11 +91,6 @@ class EventForm extends React.Component {
               placeholder="Price"
               className="form-input"
               onChange={this.update('price')}/>
-            <label className="form-label">Date</label>
-            <input
-              type="date"
-              className="form-input"
-              onChange={this.update('date')}/>
             <label className="form-label">Description</label>
             <textarea
               value={this.state.description}

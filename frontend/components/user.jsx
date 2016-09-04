@@ -16,6 +16,12 @@ class UserProfile extends React.Component {
     this.filterMyEvents();
   }
 
+  componentWillReceiveProps(nextProps) {
+  this.setState({
+    events: nextProps.events > this.props.events
+  });
+}
+
   filterUpcomingEvents() {
     this.props.updateFilter( (id) => {
         currentUser.tickets.forEach( (ticket)  => {
@@ -31,19 +37,17 @@ class UserProfile extends React.Component {
   filterMyEvents() {
     // debugger
       this.props.updateFilter("myEvents");
-      this.forceUpdate();
     }
 
 
   renderEvents() {
-    // debugger
+    debugger
     return (
     <div className ="user-profile-events">
       <ul>
        {Object.keys(this.props.events).map(id => <EventIndexItem 
         key={`event-index-item${id}`} 
         event={this.props.events[id]}
-        user={true}
         />)}
       </ul>
     </div>
@@ -66,7 +70,7 @@ class UserProfile extends React.Component {
                <div>
                <li className="tab-option">
                  <em>{currentUser.bookmarks.length}</em>
-                 <div onClick={this.filterBookmarkedEvents}>Bookmarked Events</div>
+                 <div onClick={() => this.filterBookmarkedEvents()}>Bookmarked Events</div>
                </li>
                </div>
                <div>

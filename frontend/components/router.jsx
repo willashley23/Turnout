@@ -39,7 +39,7 @@ class AppRouter extends React.Component{
   }
 
   _setFilterToUser(nextState, replace) {
-    if(this.context.store.getState().filter !== "myEvents"){
+    if(this.context.store.getState().filter === null){
       this.context.store.dispatch(updateFilter("myEvents"))
     }
   }

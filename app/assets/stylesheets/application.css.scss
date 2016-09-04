@@ -578,8 +578,22 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   letter-spacing: 0.5px;
   padding: 40px;
   display: inline-block;
+  font-weight: 600;
+  color: #282C35;
 }
 
+.form-numerals {
+  display: inline-block;
+  height: auto;
+  width: 40px;
+  margin-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 100px;
+  text-align: center;
+  background-color: #22b8ff;
+  color: white;
+}
 .event-form-header {
   border-bottom: 1px solid #D2D6DF;
   // margin-bottom: 20px;
@@ -628,6 +642,11 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   margin: 35px;
   margin-left: 90px;
   margin-top: 5px;
+}
+
+input[type="file"] {
+  width: 250px;
+  height: auto;
 }
 
 .event-form-subtitle {

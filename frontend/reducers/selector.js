@@ -33,7 +33,7 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
       });
       eventKeys.forEach( (key) => newEvents2[key] = events[key])
 
-      return newEvents
+      return newEvents2
 
     // case "myTickets":
     //   return events 
