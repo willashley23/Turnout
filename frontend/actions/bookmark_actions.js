@@ -31,13 +31,13 @@ export const createBookmark = eventId => ({
   eventId
 });
 
-export const destroyBookmark = eventId => ({
+export const destroyBookmark = bookmark => ({
   type: DESTROY_BOOKMARK,
-  eventId
+  bookmark
 });
 
-export const removeBookmark = eventId => ({
+export const removeBookmark = bookmark => ({
   type: REMOVE_BOOKMARK,
-  eventId
+  bookmark
 });
 

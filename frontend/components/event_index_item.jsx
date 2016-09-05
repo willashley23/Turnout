@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { findBookmark } from '../reducers/selector';
 
 class EventIndexItem extends React.Component {
   constructor(props) {
@@ -23,28 +24,34 @@ class EventIndexItem extends React.Component {
   }
 
   toggle() {
+    let eventClass;
     if (this.props.currentUser !== null) {
-      if (this.props.event.bookmarks.length > 0) { 
-        for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
-          if (this.props.event.bookmarks[i].user_id === this.props.currentUser.id) {
-            return "clicked hvr-icon-pop"
+      if (Object.keys(this.props.bookmark).length > 0) { 
+        Object.keys(this.props.bookmark).forEach( (key) => {
+          if (this.props.bookmark[key].event_id === this.props.event.id) {
+            eventClass = "clicked hvr-icon-pop"
           }
-        }
+        });
       } else {
-        return "not-clicked"
+        eventClass = "not-clicked"
       }
     } else {
-      return "not-clicked"
+      eventClass = "not-clicked"
     }
+    return eventClass;
   }
 
+
+
   handleBookmark() {
+    // debugger
     if (this.props.currentUser === null) {
       this.props.router.push('/home/login')
     } else {
       if (this.toggle() === "clicked hvr-icon-pop") {
-        // // Somehow need to re-render after toggle, not just re-load
-        this.props.removeBookmark(this.props.event.id)
+        let b = findBookmark(this.props.bookmark, this.props.event.id)
+        // debugger
+        this.props.destroyBookmark(b)
       } else {
         console.log("not clicked")
        this.props.createBookmark(this.props.event.id)
@@ -53,7 +60,7 @@ class EventIndexItem extends React.Component {
   }
 
   render() {
-
+    debugger
     return (
     <div className="flex-wrapper">
       <div className="event-card">

@@ -64,6 +64,8 @@ class UserProfile extends React.Component {
        { Object.keys(this.props.events).map(id => <EventIndexItem 
         key={`event-index-item${id}`} 
         event={this.props.events[id]}
+        bookmark={this.props.bookmark}
+        destroyBookmark={this.props.destroyBookmark}
         currentUser={this.props.currentUser}
         />) }
       </ul>

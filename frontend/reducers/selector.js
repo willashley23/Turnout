@@ -2,6 +2,27 @@ import merge from 'lodash/merge';
 
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 
+export const userBookmarks = (bookmarks, currentUserId) => {
+  // debugger
+     let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
+        return(bookmarks[id].user_id === currentUserId)
+      });
+      let userBookmarks = {}
+       bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
+       return userBookmarks
+}
+
+export const findBookmark = (bookmarks, eventId) => {
+  let found;
+  let keys = Object.keys(bookmarks).forEach ( (key) => {
+    if (bookmarks[key].event_id === eventId) {
+      // debugger
+      found = bookmarks[key]
+    }
+  });
+  return found
+};
+
 export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tickets) => {
   switch (filter) {
 

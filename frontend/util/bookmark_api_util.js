@@ -8,7 +8,7 @@ export const createBookmark = function(eventId, success, error){
   });
 };
 
-export const destroyBookmark = function(eventId, success){
+export const destroyBookmark = function(bookmark, success){
   $.ajax({
     method: 'DELETE',
     url: `api/bookmarks/${bookmark.id}`,

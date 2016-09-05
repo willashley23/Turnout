@@ -17,9 +17,9 @@ const BookmarkReducer = (state = {}, action) => {
     case REMOVE_BOOKMARK:
       let newState = {}
       newState = Object.assign({}, state);
-      delete newState[action.eventId];
+      delete newState[Object.keys(action.bookmark)[0]];
+      debugger;
       return newState;
-      // Check this in debugger. Seems to successfully delete, but all bookmarks reappear after refresh.
 
     default: 
       return state

@@ -27,7 +27,7 @@ const BookmarkMiddleware = ({getState, dispatch}) => next => action => {
   const SingleBookmarkSuccess = data => dispatch(receiveBookmark(data));
   const receiveNewBookmarkSuccess = data => dispatch(receiveBookmark(data));
   const bookmarkRemoved = data => dispatch(removeBookmark(data))
-    // debugger
+    
   
 
   switch (action.type) {
@@ -43,8 +43,9 @@ const BookmarkMiddleware = ({getState, dispatch}) => next => action => {
     //   fetchBookmark(action.id, SingleEventSuccess);
     //   break;
 
-    case DESTROY_BOOKMARK: 
-      destroyBookmark(action.eventId, bookmarkRemoved)
+    case DESTROY_BOOKMARK:
+    // debugger 
+      destroyBookmark(action.bookmark, bookmarkRemoved)
       break;
 
     default:
