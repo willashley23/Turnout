@@ -4,6 +4,7 @@ import React from 'react';
 class EventDetailView extends React.Component {
   constructor(props) {
     super(props);
+    this.handleTickets = this.handleTickets.bind(this);
   }
   
   componentDidMount() {
@@ -13,6 +14,9 @@ class EventDetailView extends React.Component {
     }
   }
 
+  handleTickets() {
+    this.props.createTicket(this.props.event.id)
+  }
 
 
   render() {
@@ -51,7 +55,7 @@ class EventDetailView extends React.Component {
       <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">
         <img src="assets/bookmark.png" className="event-detail-bookmark-icon"/>
-        <button className="purchase-tickets-button">Tickets</button>
+        <button className="purchase-tickets-button" onClick={this.handleTickets}>Tickets</button>
         <span className="event-detail-price">${price}</span>
       </div>
       <div className="event-detail-body">
