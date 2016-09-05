@@ -6,7 +6,6 @@ class Api::TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(event_id: params[:event_id])
     @ticket.user_id = current_user.id;
-    # debugger
     if @ticket.save
         render :show
     else
@@ -17,5 +16,6 @@ class Api::TicketsController < ApplicationController
   def destroy 
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
+    render :show
   end
 end

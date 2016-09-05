@@ -18,7 +18,6 @@ const BookmarkReducer = (state = {}, action) => {
       let newState = {}
       newState = Object.assign({}, state);
       delete newState[Object.keys(action.bookmark)[0]];
-      debugger;
       return newState;
 
     default: 

@@ -39,7 +39,7 @@ const TicketMiddleware = ({getState, dispatch}) => next => action => {
       break;
 
     case DESTROY_TICKET: 
-      destroyTicket(action.eventId, ticketRemoved)
+      destroyTicket(action.ticket, ticketRemoved)
       break;
 
     default:

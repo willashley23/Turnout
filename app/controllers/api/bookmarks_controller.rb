@@ -1,6 +1,5 @@
 class Api::BookmarksController < ApplicationController
   
-
   def index
     @bookmarks = Bookmark.all
   end
@@ -8,7 +7,6 @@ class Api::BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(event_id: params[:event_id])
     @bookmark.user_id = current_user.id;
-    # debugger
     if @bookmark.save
         render :show
     else

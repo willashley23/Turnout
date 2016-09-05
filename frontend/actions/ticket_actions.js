@@ -31,13 +31,13 @@ export const createTicket = eventId => ({
   eventId
 });
 
-export const destroyTicket = eventId => ({
+export const destroyTicket = ticket => ({
   type: DESTROY_TICKET,
-  eventId
+  ticket
 });
 
-export const removeTicket = eventId => ({
+export const removeTicket = ticket => ({
   type: REMOVE_TICKET,
-  eventId
+  ticket
 });
 

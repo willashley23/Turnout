@@ -17,6 +17,7 @@ class EventIndex extends React.Component {
               key={`event-index-item${event.id}`} 
               event={event}
               bookmark={this.props.bookmarks}
+              ticket={this.props.ticket}
               createBookmark={this.props.createBookmark}
               destroyBookmark={this.props.destroyBookmark}
               currentUser={this.props.currentUser}

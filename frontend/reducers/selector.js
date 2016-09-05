@@ -3,14 +3,13 @@ import merge from 'lodash/merge';
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 
 export const userBookmarks = (bookmarks, currentUserId) => {
-  // debugger
-     let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
-        return(bookmarks[id].user_id === currentUserId)
-      });
-      let userBookmarks = {}
-       bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
-       return userBookmarks
-}
+  let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
+    return(bookmarks[id].user_id === currentUserId)
+  });
+  let userBookmarks = {}
+   bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
+   return userBookmarks
+};
 
 export const findBookmark = (bookmarks, eventId) => {
   let found;
@@ -20,8 +19,27 @@ export const findBookmark = (bookmarks, eventId) => {
       found = bookmarks[key]
     }
   });
-  return found
+  return found;
 };
+
+export const userTickets = (tickets, currentUserId) => {
+  let ticketKeys = Object.keys(tickets).filter( (id) => {
+    return(tickets[id].user_id === currentUserId) 
+  });
+  let userTickets = {}
+  ticketKeys.forEach( (key) => userTickets[key] = tickets[key])
+  return userTickets
+};
+
+export const findTicket = (tickets, eventId) => {
+  let foundTicket;
+  let Ticketkeys = Object.keys(tickets).forEach( (key) => {
+    if (tickets[key].event_id === eventId) {
+      foundTicket = tickets[key]
+    }
+  });
+  return foundTicket;
+}
 
 export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tickets) => {
   switch (filter) {
@@ -30,7 +48,6 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tick
       let keys = Object.keys(events).filter( (id) => {
         return(currentUserId === events[id].author_id)
       });
-  // debugger
       let newEvents = {}
       keys.forEach( (key) => newEvents[key] = events[key])
       return newEvents;
@@ -48,7 +65,6 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tick
       return newEvents2
 
     case "upcomingEvents":
-    // debugger
       console.log(tickets)
       let ticketKeys = Object.keys(tickets).filter( (id) => {
         return(tickets[id].user_id === currentUserId)

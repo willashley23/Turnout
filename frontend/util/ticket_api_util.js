@@ -8,7 +8,7 @@ export const createTicket = function(eventId, success, error){
   });
 };
 
-export const destroyTicket = function(eventId, success){
+export const destroyTicket = function(ticket, success){
   $.ajax({
     method: 'DELETE',
     url: `api/tickets/${ticket.id}`,
