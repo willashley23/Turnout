@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) =>
 {
    let id = parseInt(ownProps.params.id);
    return {
-     event: state.events[id]
+     event: state.events[id],
+     currentUser: state.session.currentUser
    }
 
 }

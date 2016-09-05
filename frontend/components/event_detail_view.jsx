@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -17,9 +18,13 @@ class EventDetailView extends React.Component {
   }
 
   handleTickets() {
-    this.props.createTicket(this.props.event.id)
+    if (this.props.currentUser === null) {
+      this.props.router.push('/home/login');
+    } else {
+      this.props.createTicket(this.props.event.id)
+      this.props.router.push(`/users/${currentUser.id}`);
+    }
   }
-
 
   render() {
     let title;
@@ -86,4 +91,4 @@ class EventDetailView extends React.Component {
   }
 };
 
-export default EventDetailView;
+export default withRouter(EventDetailView);

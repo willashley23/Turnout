@@ -23,7 +23,6 @@ class EventIndexItem extends React.Component {
   }
 
   toggle() {
-    // debugger
     if (this.props.currentUser !== null) {
       if (this.props.event.bookmarks.length > 0) { 
         for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
@@ -40,15 +39,17 @@ class EventIndexItem extends React.Component {
   }
 
   handleBookmark() {
-    if (this.toggle() === "clicked") {
-      // //remove bookmark
-      // console.log("clicked")
-      // // Somehow need to re-render after toggle, not just re-load
-      this.props.removeBookmark(this.props.event.id)
+    if (this.props.currentUser === null) {
+      this.props.router.push('/home/login')
     } else {
-      console.log("not clicked")
-     this.props.createBookmark(this.props.event.id)
-    } 
+      if (this.toggle() === "clicked hvr-icon-pop") {
+        // // Somehow need to re-render after toggle, not just re-load
+        this.props.removeBookmark(this.props.event.id)
+      } else {
+        console.log("not clicked")
+       this.props.createBookmark(this.props.event.id)
+      } 
+    }
   }
 
   render() {
