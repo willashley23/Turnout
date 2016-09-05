@@ -14,12 +14,17 @@ class EventForm extends React.Component {
       author_id: this.props.currentUser.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     // this.props.currentUser.event_count += 1;
     this.props.createEvent({event: this.state});
+  }
+
+  handleImageClick() {
+     document.getElementById("upload").click()
   }
 
   update(property) {
@@ -47,21 +52,22 @@ class EventForm extends React.Component {
         <ul>
           {this.errors()}
         </ul>
-        <h2 className="event-form-subtitle"><span className="form-numerals">1</span>Event Details</h2>
+        <div className="form-wrapper">
         <form className="event-form" onSubmit={this.handleSubmit}>
+            <h2 className="event-form-subtitle"><span className="form-numerals">1</span>Event Details</h2>
             <label className="form-label">Title</label>
             <input
               type="text"
               value={this.state.title}
               placeholder="Title"
-              className="form-input"
+              className="form-input title2"
               onChange={this.update('title')}/>
             <label className="form-label">Location</label>
             <input
               type="text"
               value={this.state.location}
               placeholder="Location"
-              className="form-input"
+              className="form-input location2"
               onChange={this.update('location')}/>
             <label className="form-label">Date</label>
             <input
@@ -70,13 +76,16 @@ class EventForm extends React.Component {
               accept="image/*"
               onChange={this.update('date')}/>
             <h2 className="event-form-subtitle"><span className="form-numerals">2</span>Add An Image</h2>
-            <label className="form-label form-image">Image</label>
             <input
+              id="upload"
               type="file"
               value={this.state.image_url}
               placeholder="Image Url (Optional)"
-              className="form-input"
+              className="form-input2"
               onChange={this.update('image_url')}/>
+              <div className="image-drop"><a className="image-upload-card" onClick={this.handleImageClick}>Upload your photo</a></div>
+              <br/>
+            <h2 className="event-form-subtitle"><span className="form-numerals">3</span>Final Information</h2>
             <label className="form-label">Add a tag</label>
             <select
               value={this.state.tag}
@@ -99,6 +108,7 @@ class EventForm extends React.Component {
               onChange={this.update('description')}/>
           <button className="form-footer-button">Create Event</button>
         </form>
+        </div>
       </section>
     );
   }

@@ -176,7 +176,7 @@ body {
   float: right;
 }
 
-a:last-child {
+.login-signup a:last-child {
   border-right: 1px solid #EFF2F5;
 }
 
@@ -280,7 +280,7 @@ a:last-child {
   color: red;
 }
 
-input[type=text], input[type=password] {
+.login-input {
   border-radius: 3px;
   border: 1px solid #D2D6DF;
   padding: 12px;
@@ -640,15 +640,21 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   margin-bottom: 20px;
 }
 
+.form-footer-button:hover, 
+.event-form-button:hover {
+  background-color: red;
+}
+
 .form-input {
   display: block;
   margin: 35px;
   margin-left: 90px;
   margin-top: 5px;
+  width: 80%;
 }
 
 input[type="file"] {
-  width: 250px;
+  // width: 250px;
   height: auto;
 }
 
@@ -666,16 +672,26 @@ input[type="file"] {
   font-size: 15px;
   margin-left: 90px;
   color: #45494E;
+  text-transform: uppercase;
 }
 
 input[type="date"], 
 input[type="number"],
 select {
-  width: 273px;
+  // width: 273px;
   height: 40px;
   border-radius: 3px;
   border: 1px solid #D2D6DF;
   font-family: "Benton Sans";
+}
+
+.title2, .location2 {
+  border-radius: 3px;
+  border: 1px solid #D2D6DF;
+  font-family: "Benton Sans";
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  height: 40px;
 }
 
 textarea {
@@ -683,6 +699,54 @@ textarea {
   height: 120px;
   border-radius: 3px;
   border: 1px solid #D2D6DF;
+}
+
+#upload {
+  display: none;
+}
+
+.image-drop {
+  width: 34%;
+  border: 1px solid #D2D6DF;
+  border-radius: 4px;
+  margin-left: 90px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.image-upload-card {
+  display: inline-block;
+  height: 75px;
+  border: 3px dashed #D2D6DF;
+  border-radius: 6px;
+  padding: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Benton Sans";
+  font-size: 22px;
+  color: #22b8ff;
+  font-weight: 400;
+}
+
+.image-upload-card:hover {
+  border-color: #22b8ff;
+}
+
+.form-wrapper {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-input2 {
+  display: block;
+  margin: 35px;
+  margin-left: 90px;
+  margin-top: 5px;
+}
+
+.form-input {
+  width: 80%;
 }
 
 /* User Profile */
