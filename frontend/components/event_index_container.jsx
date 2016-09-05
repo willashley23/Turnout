@@ -14,7 +14,8 @@ let bookmarks;
   return {
     events: allEvents(state.events),
     currentUser: state.session.currentUser,
-    bookmarks: bookmarks
+    bookmarks: bookmarks,
+    filter: state.filter
   }
 };
 

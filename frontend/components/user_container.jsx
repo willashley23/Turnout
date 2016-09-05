@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { requestEvents } from '../actions/event_actions';
-import { requestBookmarks, destroyBookmark } from '../actions/bookmark_actions';
+import { requestBookmarks, destroyBookmark, createBookmark } from '../actions/bookmark_actions';
 import { requestTickets } from '../actions/ticket_actions'
 import { allEvents, userBookmarks } from '../reducers/selector';
 import { allEventsByFilter } from '../reducers/selector';
@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
   requestBookmarks: () => {dispatch(requestBookmarks())},
   requestEvents: () => {dispatch(requestEvents())},
   destroyBookmark: (bookmark) =>{dispatch(destroyBookmark(bookmark))},
+  createBookmark: (eventId) => {dispatch(createBookmark(eventId))},
   updateFilter: (filter) => dispatch(updateFilter(filter))
 })
 

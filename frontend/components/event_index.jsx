@@ -20,6 +20,7 @@ class EventIndex extends React.Component {
               createBookmark={this.props.createBookmark}
               destroyBookmark={this.props.destroyBookmark}
               currentUser={this.props.currentUser}
+              filter={this.props.filter}
               />)}
           </ul>
         </div>

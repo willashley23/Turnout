@@ -66,6 +66,7 @@ class UserProfile extends React.Component {
         event={this.props.events[id]}
         bookmark={this.props.bookmark}
         destroyBookmark={this.props.destroyBookmark}
+        createBookmark={this.props.createBookmark}
         currentUser={this.props.currentUser}
         />) }
       </ul>
@@ -89,7 +90,7 @@ class UserProfile extends React.Component {
                </div>
                <div>
                <li className="tab-option">
-                 <em>{this.props.currentUser.bookmarks.length}</em>
+                 <em>{Object.keys(this.props.bookmark).length}</em>
                  <div className="my-bookmarks" onClick={() => this.filterBookmarkedEvents()}>Bookmarked Events</div>
                </li>
                  <div className={this.toggleMyBookmarks()}/>

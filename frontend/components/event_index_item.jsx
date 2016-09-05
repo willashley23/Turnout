@@ -9,6 +9,7 @@ class EventIndexItem extends React.Component {
     this.handleImage = this.handleImage.bind(this);
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
+    this.determineIcon = this.determineIcon.bind(this);
   }
   
   handleClick() {
@@ -41,7 +42,21 @@ class EventIndexItem extends React.Component {
     return eventClass;
   }
 
+  determineIcon() {
+    if (this.props.filter === "upcomingEvents") {
+      return (
+        <i className= {"fa fa-trash-o trash-icon "} onClick={this.handleDelete}></i>
+      )
+    } else {
+      return (
+        <i className= {"fa fa-bookmark-o bookmark-icon " + this.toggle()} onClick={this.handleBookmark}></i>
+      )
+    }
+  }
 
+  handleDelete() {
+
+  }
 
   handleBookmark() {
     // debugger
@@ -73,7 +88,7 @@ class EventIndexItem extends React.Component {
             </div>
           <div className="event-card-footer">
             <span className="event-tag">#{this.props.event.tag}</span>
-            <i className= {"fa fa-bookmark-o bookmark-icon " + this.toggle()} onClick={this.handleBookmark}></i>
+            {this.determineIcon()}
           </div>
           </div>
       </div>
