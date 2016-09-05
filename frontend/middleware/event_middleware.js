@@ -1,4 +1,3 @@
-
 import {
  REQUEST_EVENTS,
  RECEIVE_EVENTS,

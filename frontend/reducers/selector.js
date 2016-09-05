@@ -1,12 +1,8 @@
 import merge from 'lodash/merge';
 
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
-// export const allEvents = (state) => {
-//   debugger
-//   return state ? Object.keys(state.events).map(key => state.events[key]) : [];
-// }
 
-export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
+export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tickets) => {
   switch (filter) {
 
     case "myEvents":
@@ -16,7 +12,6 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
   // debugger
       let newEvents = {}
       keys.forEach( (key) => newEvents[key] = events[key])
-      console.log(newEvents)
       return newEvents;
 
     case "myBookmarks":
@@ -26,21 +21,23 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks) => {
       let userBookmarks = {}
       bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
       let newEvents2 = {}
-      
       let converted = bookmarkKeys.map(key => bookmarks[key].event_id)
-    debugger
-      
-
-      // let eventKeys = Object.keys(events).filter( (id) => {
-      //   return (converted.includes(id))
-      // });
-      //Works but apparently breaks the entire app.
       converted.forEach( (key) => newEvents2[key] = events[key])
 
       return newEvents2
 
-    // case "myTickets":
-    //   return events 
+    case "upcomingEvents":
+    // debugger
+      console.log(tickets)
+      let ticketKeys = Object.keys(tickets).filter( (id) => {
+        return(tickets[id].user_id === currentUserId)
+      });
+      let userTickets = {}
+      ticketKeys.forEach( (key) => userTickets[key] = tickets[key])
+      let filteredEvents = {}
+      let ticketArray = ticketKeys.map(key => tickets[key].event_id)
+      ticketArray.forEach( (key) => filteredEvents[key] = events[key])
+      return filteredEvents
 
     default: 
       return events

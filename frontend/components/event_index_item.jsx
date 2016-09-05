@@ -9,11 +9,7 @@ class EventIndexItem extends React.Component {
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
   }
-
-  componentDidMount() {
-
-  }
-
+  
   handleClick() {
     this.props.router.push(`/events/${this.props.event.id}`)
   }
@@ -27,7 +23,7 @@ class EventIndexItem extends React.Component {
   }
 
   toggle() {
-    debugger
+    // debugger
     if (this.props.currentUser !== null) {
       if (this.props.event.bookmarks.length > 0) { 
         for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {

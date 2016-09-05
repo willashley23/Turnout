@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { requestEvents } from '../actions/event_actions';
+import { requestBookmarks } from '../actions/bookmark_actions';
+import { requestTickets } from '../actions/ticket_actions'
 import { allEvents } from '../reducers/selector';
 import { allEventsByFilter } from '../reducers/selector';
 import { updateFilter } from '../actions/filter_actions';
@@ -9,13 +11,15 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     requestEvents: requestEvents,
-    events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id, state.bookmarks),
+    events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id, state.bookmarks, state.tickets),
     filter: state.filter
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  requestEvents: () => { dispatch(requestEvents()) },
+  requestTickets: () => {dispatch(requestTickets())},
+  requestBookmarks: () => {dispatch(requestBookmarks())},
+  requestEvents: () => {dispatch(requestEvents())},
   updateFilter: (filter) => dispatch(updateFilter(filter))
 })
 

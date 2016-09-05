@@ -1,5 +1,4 @@
 import React from 'react';
-// Components
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -8,7 +7,6 @@ class EventDetailView extends React.Component {
   }
   
   componentDidMount() {
-    // debugger
     if (!this.props.event) {
       this.props.requestEvent(this.props.params.id);    
     }

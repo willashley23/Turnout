@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
 
   has_many :bookmarks
+  has_many :tickets
   has_many :events,
   primary_key: :id,
   foreign_key: :author_id,

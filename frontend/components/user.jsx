@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import EventIndexItem from './event_index_item';
-import myEventsFilter from '../util/filter_api_util';
+// import myEventsFilter from '../util/filter_api_util';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -16,14 +16,12 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    //my soltuion to user profile page refresh bug
+    this.props.requestEvents();
+    this.props.requestBookmarks();
+    this.props.requestTickets();
     this.filterMyEvents();
   }
-
-//   componentWillReceiveProps(nextProps) {
-//   this.setState({
-//     events: nextProps.events > this.props.events
-//   });
-// }
 
   filterUpcomingEvents() {
     this.props.updateFilter("upcomingEvents")
@@ -34,9 +32,8 @@ class UserProfile extends React.Component {
   }
 
   filterMyEvents() {
-    // debugger
-      this.props.updateFilter("myEvents");
-    }
+    this.props.updateFilter("myEvents");
+  }
 
   toggleMyEvents() {
     if (this.props.filter === "myEvents") {
@@ -61,15 +58,14 @@ class UserProfile extends React.Component {
   }
 
   renderEvents() {
-    // debugger
     return (
     <div className ="user-profile-events">
       <ul>
-       {Object.keys(this.props.events).map(id => <EventIndexItem 
+       { Object.keys(this.props.events).map(id => <EventIndexItem 
         key={`event-index-item${id}`} 
         event={this.props.events[id]}
         currentUser={this.props.currentUser}
-        />)}
+        />) }
       </ul>
     </div>
     );
@@ -84,7 +80,7 @@ class UserProfile extends React.Component {
             <ul className="menu-tabs">
               <div>
                <li className="tab-option">
-                 <em>0</em>
+                 <em>{this.props.currentUser.tickets.length}</em>
                  <div className="my-upcoming-events" onClick={this.filterUpcomingEvents}>Upcoming Events</div>
                </li>
                  <div className={this.toggleMyUpcomingEvents()}/>

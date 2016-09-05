@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
   has_many :bookmarks
+  has_many :tickets
   belongs_to :user,
   primary_key: :id,
   foreign_key: :author_id,

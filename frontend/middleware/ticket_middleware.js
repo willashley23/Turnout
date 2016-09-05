@@ -38,10 +38,6 @@ const TicketMiddleware = ({getState, dispatch}) => next => action => {
       createTicket(action.eventId, receiveNewTicketSuccess)
       break;
 
-    // case REQUEST_BOOKMARK:
-    //   fetchBookmark(action.id, SingleEventSuccess);
-    //   break;
-
     case DESTROY_TICKET: 
       destroyTicket(action.eventId, ticketRemoved)
       break;
