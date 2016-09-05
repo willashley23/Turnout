@@ -4,11 +4,19 @@ import { allEvents, userBookmarks } from '../reducers/selector';
 import EventIndex from "./event_index";
 import { createBookmark, destroyBookmark, requestBookmarks } from '../actions/bookmark_actions';
 
-const mapStateToProps = (state) => ({
-  events: allEvents(state.events),
-  currentUser: state.session.currentUser,
-  bookmarks: userBookmarks(state.bookmarks, state.session.currentUser.id)
-});
+const mapStateToProps = (state) => {
+let bookmarks;
+ if (state.session.currentUser) {
+  bookmarks = userBookmarks(state.bookmarks, state.session.currentUser.id)
+ } else {
+  bookmarks = state.bookmarks;
+ }
+  return {
+    events: allEvents(state.events),
+    currentUser: state.session.currentUser,
+    bookmarks: bookmarks
+  }
+};
 
 const mapDispatchToProps = (dispatch) => ({
   createBookmark: (eventId) => {dispatch(createBookmark(eventId))},
