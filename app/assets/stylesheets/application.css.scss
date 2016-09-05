@@ -347,6 +347,10 @@ input[type=submit]:hover, .guest-button:hover {
   font-size: 20px;
 }
 
+.bookmark-icon:hover {
+  color: yellow;
+}
+
 .event-title {
   font-size: 15px;
   font-weight: 600;
@@ -410,9 +414,6 @@ input[type=submit]:hover, .guest-button:hover {
   background-color: white;
   margin: 25px;
 }
-
-
-
 
 /* Event Detail View */
 

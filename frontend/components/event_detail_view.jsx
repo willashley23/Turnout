@@ -29,6 +29,9 @@ class EventDetailView extends React.Component {
   render() {
     let title;
     let date;
+    let options;
+    let dateStr;
+    let d;
     let image_url;
     let style;
     let price;
@@ -52,12 +55,24 @@ class EventDetailView extends React.Component {
           backgroundImage: 'url(' + image_url + ')'
         };
       }
+    d = new Date(date)
+    options = {
+      month: "long", weekday: "long", year: "numeric",
+      day: "numeric"
+    };
+    dateStr = d.toLocaleDateString("en-us",options)
+    console.log(d.getUTCDate());
+
+
+
+
     }
+    
     return(
       <div className="event-detail-container">
       <div style={style} className="event-detail-header">
          <h1 className="event-detail-title animated fadeInDown">{title}</h1>
-         <h2 className="event-detail-date animated fadeInDown">{date}</h2>
+         <h2 className="event-detail-date animated fadeInDown">{dateStr}</h2>
       </div>
       <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">
