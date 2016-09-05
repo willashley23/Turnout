@@ -242,7 +242,6 @@ body {
   position: relative;
   margin-bottom: 20px;
   margin-top: 5px;
-
 }
 
 .username {
@@ -258,7 +257,6 @@ body {
   font-family: "Benton Sans";
   font-size: 14px;
   letter-spacing: .5px;
-
 }
 
 .submitButton {
@@ -291,7 +289,7 @@ body {
 }
 
 input[type=submit], .guest-button {
-  /*transition: background-color: 0.7s ease;*/
+  transition: background-color 0.7s ease;
   background-color: #00cc52;
   color: #fff;
   border-radius: 3px;
