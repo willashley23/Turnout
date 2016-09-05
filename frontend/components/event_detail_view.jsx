@@ -8,8 +8,12 @@ class EventDetailView extends React.Component {
   
   componentDidMount() {
     if (!this.props.event) {
-      this.props.requestEvent(this.props.params.id);    
+      this.props.requestEvent(this.props.params.id);
     }
+  }
+
+  componentWillMount() {
+    window.scrollTo(0, 0);
   }
 
   handleTickets() {
