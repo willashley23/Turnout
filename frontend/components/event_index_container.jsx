@@ -6,6 +6,7 @@ import { createBookmark, removeBookmark, requestBookmarks } from '../actions/boo
 
 const mapStateToProps = (state) => ({
   events: allEvents(state.events),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

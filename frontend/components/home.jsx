@@ -13,7 +13,7 @@ class Home extends React.Component {
     this.props.requestBookmarks();
   } 
 
-  // Re-write this to link to my profile after done.
+  // This might be causing issues since there is no current user at first
   handleClick() {
     if (this.props.currentUser) {
       this.props.router.push(`/users/${currentUser.id}`);

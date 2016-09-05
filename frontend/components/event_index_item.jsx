@@ -27,12 +27,16 @@ class EventIndexItem extends React.Component {
   }
 
   toggle() {
-    // debugger
-    if (this.props.event.bookmarks.length > 0) { 
-      for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
-        if (this.props.event.bookmarks[i].user_id === currentUser.id) {
-          return "clicked hvr-icon-pop"
+    debugger
+    if (this.props.currentUser !== null) {
+      if (this.props.event.bookmarks.length > 0) { 
+        for (var i = this.props.event.bookmarks.length - 1; i >= 0; i--) {
+          if (this.props.event.bookmarks[i].user_id === this.props.currentUser.id) {
+            return "clicked hvr-icon-pop"
+          }
         }
+      } else {
+        return "not-clicked"
       }
     } else {
       return "not-clicked"
