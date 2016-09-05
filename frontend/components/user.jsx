@@ -67,7 +67,10 @@ class UserProfile extends React.Component {
         bookmark={this.props.bookmark}
         destroyBookmark={this.props.destroyBookmark}
         createBookmark={this.props.createBookmark}
+        destroyTicket={this.props.destroyTicket}
         currentUser={this.props.currentUser}
+        filter={this.props.filter}
+        ticket={this.props.ticket}
         />) }
       </ul>
     </div>
@@ -83,7 +86,7 @@ class UserProfile extends React.Component {
             <ul className="menu-tabs">
               <div>
                <li className="tab-option">
-                 <em>{this.props.currentUser.tickets.length}</em>
+                 <em>{Object.keys(this.props.ticket).length}</em>
                  <div className="my-upcoming-events" onClick={this.filterUpcomingEvents}>Upcoming Events</div>
                </li>
                  <div className={this.toggleMyUpcomingEvents()}/>

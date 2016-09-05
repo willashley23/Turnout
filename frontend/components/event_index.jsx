@@ -9,6 +9,7 @@ class EventIndex extends React.Component {
 
   render() {
     // debugger
+    console.log(this.props)
       return (
         <div>
         {this.props.children}

@@ -33,7 +33,7 @@ export const userTickets = (tickets, currentUserId) => {
 
 export const findTicket = (tickets, eventId) => {
   let foundTicket;
-  let Ticketkeys = Object.keys(tickets).forEach( (key) => {
+  let ticketKeys = Object.keys(tickets).forEach( (key) => {
     if (tickets[key].event_id === eventId) {
       foundTicket = tickets[key]
     }

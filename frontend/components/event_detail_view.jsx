@@ -61,7 +61,8 @@ class EventDetailView extends React.Component {
       day: "numeric"
     };
     dateStr = d.toLocaleDateString("en-us",options)
-    console.log(d.getUTCDate());
+    
+    console.log(d.toISOString());
 
 
 

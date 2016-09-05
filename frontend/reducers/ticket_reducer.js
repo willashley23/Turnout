@@ -16,7 +16,7 @@ const TicketReducer = (state = {}, action) => {
     case REMOVE_TICKET:
       let newState = {}
       newState = Object.assign({}, state);
-      delete newState[action.eventId];
+      delete newState[Object.keys(action.ticket)[0]];
       return newState;
 
     default: 

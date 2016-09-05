@@ -1,4 +1,3 @@
-
 import {
  REQUEST_BOOKMARKS,
  RECEIVE_BOOKMARKS,
@@ -21,15 +20,12 @@ import {
 import {hashHistory} from 'react-router';
 
 
-
 const BookmarkMiddleware = ({getState, dispatch}) => next => action => {
   const BookmarkSuccess = data => dispatch(receiveBookmarks(data));
   const SingleBookmarkSuccess = data => dispatch(receiveBookmark(data));
   const receiveNewBookmarkSuccess = data => dispatch(receiveBookmark(data));
   const bookmarkRemoved = data => dispatch(removeBookmark(data))
     
-  
-
   switch (action.type) {
     case REQUEST_BOOKMARKS:
       fetchBookmarks(BookmarkSuccess);

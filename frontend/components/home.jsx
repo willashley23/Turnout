@@ -45,7 +45,30 @@ class Home extends React.Component {
          <div className="events">
           <EventIndexContainer />
           {this.props.children}  
-        </div>  
+        </div> 
+          <div className="categories-header">
+            <h2 className="categories-h2">Browse Popular Categories</h2>
+          </div>
+        <div className="categories-container">
+          <br/>
+          <div className="flex-wrapper">
+            <div className="category-card wide">
+              <img src= "assets/default.png" className="category-image" />
+            </div>
+            <div className="category-card">
+              <img src= "assets/default.png" className="category-image" />
+            </div>
+            <div className="category-card">
+              <img src= "assets/default.png" className="category-image" />
+            </div>
+            <div className="category-card">
+              <img src= "assets/default.png" className="category-image" />
+            </div>
+            <div className="category-card">
+              <img src= "assets/default.png" className="category-image" />
+            </div>
+          </div>
+        </div> 
       </div>
     )
   }

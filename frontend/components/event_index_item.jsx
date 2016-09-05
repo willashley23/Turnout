@@ -2,10 +2,12 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { findBookmark, findTicket } from '../reducers/selector';
 
+
 class EventIndexItem extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -44,6 +46,7 @@ class EventIndexItem extends React.Component {
 
   determineIcon() {
     //May throw an error on the home page. Will need to pass filter as props.
+    // console.log(this.props.filter)
     if (this.props.filter === "upcomingEvents") {
       return (
         <i className= {"fa fa-trash-o trash-icon "} onClick={this.handleDelete}></i>
@@ -56,8 +59,9 @@ class EventIndexItem extends React.Component {
   }
 
   handleDelete() {
+    debugger
     let t = findTicket(this.props.ticket, this.props.event.id)
-    this.props.destroyTicket(t)
+    this.props.destroyTicket(t);
   }
 
   handleBookmark() {
@@ -75,7 +79,6 @@ class EventIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
     <div className="flex-wrapper">
       <div className="event-card">
