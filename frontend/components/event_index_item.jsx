@@ -14,6 +14,7 @@ class EventIndexItem extends React.Component {
     this.determineIcon = this.determineIcon.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
     this.handleClass = this.handleClass.bind(this);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
   }
   
   handleClick() {
@@ -98,6 +99,12 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  handleCategoryClick(tag) {
+    return ( () => {
+      this.props.router.push(`/categories/${tag}`) 
+    })
+  }
+
   render() {
     return (
     <div className={"flex-wrapper " + this.handleClass()}>
@@ -111,7 +118,7 @@ class EventIndexItem extends React.Component {
               <p className={"event-location " + this.handleClass()}>{this.props.event.location}</p>
             </div>
           <div className={"event-card-footer " + this.handleClass()}>
-            <span className={"event-tag " + this.handleClass()}>#{this.props.event.tag}</span>
+            <span className={"event-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.props.event.tag)}>#{this.props.event.tag}</span>
             {this.determineIcon()}
           </div>
           </div>
