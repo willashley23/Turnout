@@ -378,6 +378,10 @@ body {
   float: left;
 }
 
+.search-tag {
+  color: #22b8ff;
+}
+
 /* Navbar */
 
 .navbar {
@@ -723,8 +727,15 @@ input[type=submit]:hover, .guest-button:hover {
   padding-left: 10px;
 }
 
+.bookmark-icon.event-detail-view {
+  float: left;
+  border: none;
+}
+
 .purchase-tickets-button, .event-detail-price {
   float: right;
+  position: relative;
+  bottom: 3px;
 }
 
 .event-detail-price {
@@ -734,6 +745,8 @@ input[type=submit]:hover, .guest-button:hover {
   padding: 10px;
   margin-right: 19px;
   font-weight: 400;
+  position: relative;
+  top: 1px;
 }
 
  .purchase-tickets-button {

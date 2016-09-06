@@ -6,6 +6,8 @@ class EventDetailView extends React.Component {
   constructor(props) {
     super(props);
     this.handleTickets = this.handleTickets.bind(this);
+    this.handleBookmark = this.handleBookmark.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
   
   componentDidMount() {
@@ -25,6 +27,41 @@ class EventDetailView extends React.Component {
       this.props.createTicket(this.props.event.id)
       this.props.router.push(`/users/${currentUser.id}`);
     }
+  }
+
+  handleBookmark() {
+    if (this.props.currentUser === null) {
+      this.props.router.push('/home/login')
+    } else {
+      if (this.toggle() === "clicked hvr-icon-pop") {
+        this.props.event.bookmarks.forEach( (bookmark) => {
+          if (bookmark.user_id === this.props.currentUser.id){
+            let found = bookmark
+            this.props.destroyBookmark(found)
+          }
+        });
+      } else {
+       this.props.createBookmark(this.props.event.id)
+      } 
+    }
+  }
+
+  toggle() {
+    let eventClass;
+    if (this.props.currentUser !== null && this.props.event != null) {
+      if (this.props.event.bookmarks.length > 0) { 
+        this.props.event.bookmarks.forEach( (bookmark) => {
+          if (bookmark.event_id === this.props.event.id) {
+            eventClass = "clicked hvr-icon-pop"
+          }
+        });
+      } else {
+        eventClass = "not-clicked"
+      }
+    } else {
+      eventClass = "not-clicked"
+    }
+    return eventClass;
   }
 
   render() {
@@ -56,19 +93,6 @@ class EventDetailView extends React.Component {
           backgroundImage: 'url(' + image_url + ')'
         };
       }
-    // d = new Date(date)
-    // dateStr = d.toLocaleDateString("en-us",options)
-    // let parts = date.split('-');
-    // parts[1] -= 1;
-    // d = new Date(Date.UTC.apply(null, parts));
-    // options = {
-    //   month: "long",
-    //   weekday: "long",
-    //   year: "numeric",
-    //   day: "numeric",
-    //   timeZone: 'UTC'
-    // };
-    // dateStr = d.toLocaleDateString("en-us", options)
   }
     
     return(
@@ -79,7 +103,7 @@ class EventDetailView extends React.Component {
       </div>
       <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">
-        <img src="assets/bookmark.png" className="event-detail-bookmark-icon"/>
+         <i className= {"fa fa-bookmark-o bookmark-icon event-detail-view " + this.toggle()} onClick={this.handleBookmark}></i>
         <button className="purchase-tickets-button" onClick={this.handleTickets}>Tickets</button>
         <span className="event-detail-price">${price}</span>
       </div>

@@ -30,7 +30,7 @@ export default class Category extends React.Component {
     } else {
         return (
           <div>
-           <h2 className="category-search-header">Categories: {this.props.tag}</h2>
+           <h2 className="category-search-header">Categories: <span className="search-tag">{this.props.tag}</span></h2>
            <img src="assets/no-event-calendar.png" className="no-event-image" />
            <h2 className="empty-category-header">Looks like there are no events in this category</h2>
           </div>
