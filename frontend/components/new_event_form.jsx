@@ -15,6 +15,7 @@ class EventForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
   }
 
   handleSubmit(e) {
@@ -30,6 +31,24 @@ class EventForm extends React.Component {
   update(property) {
     return e => this.setState({[property]: e.target.value});
   }
+
+  uploadImage(e) {
+    let url = ""
+    e.preventDefault();
+    cloudinary.openUploadWidget(window.cloudinary_options, function(error, images) {
+      // debugger
+      if (error === null) {
+        url = images[0].url
+        console.log(this.state)
+        console.log(this.props.state)
+        this.state.image_url = url
+        this.setState({[property]: image_url.target.value})
+      } else {
+        console.log(error)
+      }
+    });
+    debugger
+  };
 
   errors() {
     if (this.props.eventErrors) {
@@ -76,13 +95,14 @@ class EventForm extends React.Component {
               accept="image/*"
               onChange={this.update('date')}/>
             <h2 className="event-form-subtitle"><span className="form-numerals">2</span>Add An Image</h2>
-            <input
+            <button
               id="upload"
-              type="file"
-              value={this.state.image_url}
+              // type="file"
+              // value={this.state.image_url}
               placeholder="Image Url (Optional)"
               className="form-input2"
-              onChange={this.update('image_url')}/>
+              // onChange={this.update('image_url')}
+              onClick={this.uploadImage}/>
               <div className="image-drop"><a className="image-upload-card" onClick={this.handleImageClick}>Upload your photo</a></div>
               <br/>
             <h2 className="event-form-subtitle"><span className="form-numerals">3</span>Final Information</h2>

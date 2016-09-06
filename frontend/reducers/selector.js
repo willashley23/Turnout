@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 
 export const dateStringify = (date) => {
+  if (date) {
     let d = new Date(date)
     let dateStr = d.toLocaleDateString("en-us",options)
     let parts = date.split('-');
@@ -17,6 +18,7 @@ export const dateStringify = (date) => {
     };
     dateStr = d.toLocaleDateString("en-us", options)
     return dateStr
+  }
 }
 
 export const userBookmarks = (bookmarks, currentUserId) => {
