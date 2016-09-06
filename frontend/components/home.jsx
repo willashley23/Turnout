@@ -3,6 +3,8 @@ import {Router, Root} from 'react-router';
 import { withRouter } from 'react-router';
 import EventIndex from './event_index';
 import EventIndexContainer from './event_index_container';
+import { allEventsByTag } from '../reducers/selector';
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -23,12 +25,10 @@ class Home extends React.Component {
     }
   }
 
-  handleCategoryClick() {
-    if (this.props.currentUser) {
-      alert("Sorry, this part of the site is still under development :)")
-    } else {
-      alert("Sorry, this part of the site is still under development :)")
-    }
+  handleCategoryClick(tag) {
+    return ( () => {
+      this.props.router.push(`/categories/${tag}`) 
+    })
   }
 
   render() {
@@ -61,9 +61,8 @@ class Home extends React.Component {
 
         <div className="categories-container">
           <br/>
-         
             <div className="categories-row top-row">
-              <div className="category-card wide" onClick={this.handleCategoryClick}>
+              <div className="category-card wide" onClick={this.handleCategoryClick("Music")}>
                 <div className="category-text">
                   <h2>Music</h2>
                   <p className="category-card-p">Find everything from classical concerts to music festivals</p>
@@ -71,7 +70,7 @@ class Home extends React.Component {
                 <img src= "assets/music.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card festivals" onClick={this.handleCategoryClick}>
+              <div className="category-card festivals" onClick={this.handleCategoryClick("Festivals")}>
                 <div className="category-text">
                   <h2>Festivals</h2>
                   <p className="category-card-p">Music, tradition, family, and more</p>
@@ -81,7 +80,7 @@ class Home extends React.Component {
             </div>
          
             <div className="categories-row center-row">
-              <div className="category-card" onClick={this.handleCategoryClick}>
+              <div className="category-card parties" onClick={this.handleCategoryClick("Parties")}>
                 <div className="category-text">
                   <h2>Parties</h2>
                   <p className="category-card-p">Happy hour and all night celebrations</p>
@@ -89,7 +88,7 @@ class Home extends React.Component {
                 <img src= "assets/party.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card" id="lessons-card" onClick={this.handleCategoryClick}>
+              <div className="category-card" id="lessons-card" onClick={this.handleCategoryClick("Lesson")}>
                 <div className="category-text" id="lessons">
                   <h2>Lessons</h2>
                   <p className="category-card-p lessons-p">Piano, fencing, ping-pong, and everything in between</p>
@@ -97,7 +96,7 @@ class Home extends React.Component {
                 <img src= "assets/lessons.jpeg" className="category-image" />
               </div>
               
-              <div className="category-card" onClick={this.handleCategoryClick}>
+              <div className="category-card" onClick={this.handleCategoryClick("Sports")}>
                 <div className="category-text">
                   <h2>Sports</h2>
                   <p className="category-card-p">Triathlons, races, anything is fair game</p>
@@ -107,7 +106,7 @@ class Home extends React.Component {
             </div>
 
             <div className="categories-row bottom-row">
-              <div className="category-card" onClick={this.handleCategoryClick}>
+              <div className="category-card" onClick={this.handleCategoryClick("Arts")}>
                 <div className="category-text">
                   <h2 className="arts-header">Arts</h2>
                   <p className="category-card-p" id="arts">Art shows, touring exhibits, and performances</p>
@@ -115,7 +114,7 @@ class Home extends React.Component {
                 <img src= "assets/arts.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card wide celebrations" onClick={this.handleCategoryClick}>
+              <div className="category-card wide celebrations" onClick={this.handleCategoryClick("Celebrations")}>
                 <div className="category-text">
                   <h2>Celebrations</h2>
                   <p className="category-card-p">Join in celebrations from cultures all around the globe</p>
@@ -130,4 +129,3 @@ class Home extends React.Component {
 }
 
 export default withRouter(Home);
-// export default Search;

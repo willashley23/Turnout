@@ -170,7 +170,7 @@ body {
   height: 220px;
   width: 100%;
   margin: 7px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .category-image {
@@ -244,6 +244,8 @@ body {
 
 #lessons p {
   width: 90%;
+  position: relative;
+  left: 3px;
 }
 
 #arts {
@@ -259,6 +261,12 @@ body {
 .celebrations {
   position: relative;
   bottom: 7px;
+}
+
+.parties h2 {
+  position: relative;
+  top: 6px;
+  left: 4px;
 }
 
 .bottom-row {

@@ -60,7 +60,7 @@ export const findTicket = (tickets, eventId) => {
   return foundTicket;
 }
 
-export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tickets) => {
+export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks = {}, tickets = {}) => {
   switch (filter) {
 
     case "myEvents":
@@ -99,3 +99,13 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tick
       return events
   }
 }
+
+export const allEventsByTag = (events, tag) => {
+  let eventKeys = Object.keys(events).filter( (key) => {
+    return (events[key].tag === tag)
+  })
+  let newEvents3 = []
+  eventKeys.forEach( (key) => newEvents3[key] = events[key])
+  console.log(newEvents3)
+  return newEvents3
+};

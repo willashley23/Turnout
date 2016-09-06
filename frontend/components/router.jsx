@@ -9,6 +9,7 @@ import EventIndexContainer from './event_index_container';
 import EventDetailViewContainer from './event_detail_view_container';
 import NewEventFormContainer from './new_event_form_container';
 import UserContainer from './user_container';
+import CategoriesContainer from './categories_container';
 import { updateFilter } from '../actions/filter_actions';
 
 
@@ -61,6 +62,7 @@ class AppRouter extends React.Component{
             <Route path="events/new" component={ NewEventFormContainer } />
             <Route path="events/:id" component={ EventDetailViewContainer } />
             <Route path="users/:id" component={ UserContainer } onEnter={this._setFilterToUser}/>
+            <Route path="categories/:tag" component= { CategoriesContainer } />
         </Route>
       </Router>
     );

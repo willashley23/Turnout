@@ -6,12 +6,13 @@ import { requestBookmarks } from '../actions/bookmark_actions';
 
 const mapStateToProps = (state) => ({
   events: allEvents(state.events),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestEvents: () => {dispatch(requestEvents())},
-  requestBookmarks: ()=> {dispatch(requestBookmarks())}
+  requestBookmarks: ()=> {dispatch(requestBookmarks())},
   });
 
 export default connect (
