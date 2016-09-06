@@ -163,14 +163,46 @@ body {
   font-weight: 400;
   font-family: "Benton Sans";
   color: #45494E;
-  margin-left: 12%;
+  margin-left: 12.5%;
 }
 
-.wide {
-  width: 66.66666%;
+.category-card img {
+  display: inline-block;
+  height: 220px;
+  width: 100%;
+  margin: 7px;
+  border-radius: 4px;
 }
 
+.category-image {
+  margin: 7px;
+}
 
+.categories-row {
+  width: 100%;
+  display: flex;
+}
+
+.category-card.wide {
+  flex: 2;
+  margin: 7px;
+}
+
+.category-card {
+  flex: 1;
+  margin: 7px;
+}
+
+.category-card h2 {
+  font-family: "Benton Sans";
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  position: relative;
+  top: 20%;
+}
 
 /* Navbar */
 

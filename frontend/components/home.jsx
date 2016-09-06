@@ -49,27 +49,57 @@ class Home extends React.Component {
           <div className="categories-header">
             <h2 className="categories-h2">Browse Popular Categories</h2>
           </div>
+
         <div className="categories-container">
           <br/>
-          <div className="flex-wrapper">
-            <div className="category-card wide">
-              <img src= "assets/default.png" className="category-image" />
+         
+            <div className="categories-row">
+
+              <div className="category-card wide">
+                <h2>Music</h2>
+                <img src= "assets/music.jpeg" className="category-image" />
+              </div>
+
+              <div className="category-card">
+                <h2>Festivals</h2>
+                <img src= "assets/social.jpeg" className="category-image" />
+              </div>
+
             </div>
-            <div className="category-card">
-              <img src= "assets/default.png" className="category-image" />
+         
+
+            <div className="categories-row">
+              <div className="category-card">
+                <h2>Parties</h2>
+                <img src= "assets/party.jpeg" className="category-image" />
+              </div>
+
+              <div className="category-card">
+                <h2>Lessons</h2>
+                <img src= "assets/lessons.jpeg" className="category-image" />
+              </div>
+              
+              <div className="category-card">
+                <h2>Sports</h2>
+                <img src= "assets/sports.jpeg" className="category-image" />
+              </div>
             </div>
-            <div className="category-card">
-              <img src= "assets/default.png" className="category-image" />
+           
+
+            <div className="categories-row">
+              <div className="category-card">
+                <h2>Arts</h2>
+                <img src= "assets/arts.jpeg" className="category-image" />
+              </div>
+
+              <div className="category-card wide">
+                <h2>Celebrations</h2>
+                <img src= "assets/colorrun.jpeg" className="category-image" />
+              </div>
             </div>
-            <div className="category-card">
-              <img src= "assets/default.png" className="category-image" />
-            </div>
-            <div className="category-card">
-              <img src= "assets/default.png" className="category-image" />
-            </div>
+
           </div>
         </div> 
-      </div>
     )
   }
 }
