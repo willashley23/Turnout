@@ -332,6 +332,52 @@ body {
   display: block;
 }
 
+.flex-wrapper.category-event-card {
+  width: 70%;
+  border-right: 1px solid #EFF2F5;
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.event-image.category-event-card {
+  width: 35%;
+  height: 152px;
+  float: left;
+  border-right: 1px solid #EFF2F5;
+}
+
+.event-date.category-event-card {
+  width: 50%;
+  margin-left: 35%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  right: 32px;
+}
+.event-location.category-event-card {
+  width: 50%;
+  margin-left: 35%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.event-tag.category-event-card {
+  width: 50%;
+  margin-left: 2%;
+}
+
+.event-card-footer.category-event-card {
+  
+}
+
+.event-card-label.category-event-card {
+  top: 10px;
+  right: 55px;
+  float: left;
+}
+
 /* Navbar */
 
 .navbar {
