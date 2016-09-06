@@ -12,6 +12,7 @@ class EventIndexItem extends React.Component {
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
     this.determineIcon = this.determineIcon.bind(this);
+    this.handlePrice = this.handlePrice.bind(this);
   }
   
   handleClick() {
@@ -58,6 +59,16 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  handlePrice() {
+    if (this.props.event.price === 0) {
+      return "FREE"
+    } else {
+      return (
+        "$" + `${this.props.event.price}`
+        )
+    }
+  }
+
   handleDelete() {
     debugger
     let t = findTicket(this.props.ticket, this.props.event.id)
@@ -85,6 +96,7 @@ class EventIndexItem extends React.Component {
           <div className="event-card-main">
             <div className="event-card-clickarea" onClick={this.handleClick}>
               <img src={this.handleImage()} className="event-image" />
+              <span className="event-card-label">{this.handlePrice()}</span>
               <p className="event-date">{dateStringify(this.props.event.date)}</p>
               <h3 className="event-title">{this.props.event.title}</h3>
               <p className="event-location">{this.props.event.location}</p>

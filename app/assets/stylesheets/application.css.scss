@@ -547,6 +547,20 @@ input[type=submit]:hover, .guest-button:hover {
   margin: 25px;
 }
 
+.event-card-label {
+  display: inline-block;
+  background-color: rgba(255,255,255,.85);
+  float: right;
+  position: relative;
+  bottom: 160px;
+  right: 12px;
+  font-size: 13px;
+  font-family: "Benton Sans";
+  padding: 4px 10px;
+  color: #282C35;
+  letter-spacing: 0.5px;
+}
+
 /* Event Detail View */
 
 .event-detail-header {
