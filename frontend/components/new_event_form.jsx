@@ -34,20 +34,24 @@ class EventForm extends React.Component {
 
   uploadImage(e) {
     let url = ""
+    let that = this
     e.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, images) {
-      // debugger
       if (error === null) {
         url = images[0].url
-        console.log(this.state)
-        console.log(this.props.state)
-        this.state.image_url = url
-        this.setState({[property]: image_url.target.value})
+        that.state.image_url = url
+        console.log(that.state.image_url)
       } else {
         console.log(error)
       }
     });
-    debugger
+    if (this.state.image_url != "") {
+      return (
+        <div className="image-submit-message">
+          <p className="image-submit-message-p">Image successfully uploaded!</p>
+        </div>
+      )
+    }
   };
 
   errors() {
@@ -97,14 +101,13 @@ class EventForm extends React.Component {
             <h2 className="event-form-subtitle"><span className="form-numerals">2</span>Add An Image</h2>
             <button
               id="upload"
-              // type="file"
-              // value={this.state.image_url}
               placeholder="Image Url (Optional)"
               className="form-input2"
               // onChange={this.update('image_url')}
               onClick={this.uploadImage}/>
               <div className="image-drop"><a className="image-upload-card" onClick={this.handleImageClick}>Upload your photo</a></div>
               <br/>
+              <small>Note: You will not see confirmation of image upload, just trust that it worked.</small>
             <h2 className="event-form-subtitle"><span className="form-numerals">3</span>Final Information</h2>
             <label className="form-label">Add a tag</label>
             <select
@@ -112,6 +115,16 @@ class EventForm extends React.Component {
               onChange={this.update('tag')}
               className="form-input"
               defaultValue="Select tag">
+              <option value="Music">Volvo</option>
+              <option value="Sports">Saab</option>
+              <option value="Celebration">Mercedes</option>
+              <option value="Lesson">Audi</option>
+              <option value="Food">Audi</option>
+              <option value="Party">Audi</option>
+              <option value="Career">Audi</option>
+              <option value="Networking">Audi</option>
+              <option value="Tech">Audi</option>
+              <option value="STEM">Audi</option>
             </select>
             <label className="form-label">Price</label>
             <input

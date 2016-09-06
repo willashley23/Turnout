@@ -91,10 +91,10 @@ body {
 }
 
 .cb-slideshow li:nth-child(1) span { 
-    background-image: url(people2.jpeg) 
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473139080/spark_uhr4at.jpg) 
 }
 .cb-slideshow li:nth-child(2) span { 
-    background-image: url(run.jpeg);
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473138822/run_ly1q9s.jpg);
     animation-delay: 6s;
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
@@ -102,7 +102,7 @@ body {
     -ms-animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span { 
-    background-image: url(cafe.jpeg);
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473138829/cafe_xle2io.jpg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -110,7 +110,7 @@ body {
     animation-delay: 12s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-    background-image: url(food.jpeg);
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473138814/food_i5fyfg.jpg);
     animation-delay: 18s;
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
@@ -119,7 +119,7 @@ body {
 
 }
 .cb-slideshow li:nth-child(5) span { 
-    background-image: url(people2.jpeg);
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473138825/people2_lilzrc.jpg);
     animation-delay: 24s;
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
@@ -128,7 +128,7 @@ body {
 
 }
 .cb-slideshow li:nth-child(6) span { 
-    background-image: url(food2.jpeg);
+    background-image: url(http://res.cloudinary.com/drbaijrqx/image/upload/v1473138824/food2_rt6t8j.jpg);
     animation-delay: 30s;
     -webkit-animation-delay: 30s;
     -moz-animation-delay: 30s;
@@ -705,6 +705,13 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
 }
 
 /* Event Form */
+
+small {
+  font-size: 12px;
+  font-family: "Benton Sans";
+  position: relative;
+  left: 70px;
+}
 
 .event-form-h1 {
   font-family: "Benton Sans";
