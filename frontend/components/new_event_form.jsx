@@ -115,6 +115,7 @@ class EventForm extends React.Component {
               onChange={this.update('tag')}
               className="form-input"
               defaultValue="Select tag">
+              <option value="Select Tag">Select Tag</option>
               <option value="Music">Music</option>
               <option value="Sports">Sports</option>
               <option value="Celebration">Celebration</option>

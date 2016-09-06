@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
    }
  return {
   events: allEventsByTag(state.events, ownProps.routeParams.tag),
-  tag: ownProps.location.query.tag,
+  tag: ownProps.routeParams.tag,
   currentUser: state.session.currentUser,
   bookmarks: bookmarks,
   tickets: tickets,
