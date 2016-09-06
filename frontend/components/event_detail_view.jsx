@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import {dateStringify} from '../reducers/selector';
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -55,25 +56,26 @@ class EventDetailView extends React.Component {
           backgroundImage: 'url(' + image_url + ')'
         };
       }
-    d = new Date(date)
-    options = {
-      month: "long", weekday: "long", year: "numeric",
-      day: "numeric"
-    };
-    dateStr = d.toLocaleDateString("en-us",options)
-    
-    console.log(d.toISOString());
-
-
-
-
-    }
+    // d = new Date(date)
+    // dateStr = d.toLocaleDateString("en-us",options)
+    // let parts = date.split('-');
+    // parts[1] -= 1;
+    // d = new Date(Date.UTC.apply(null, parts));
+    // options = {
+    //   month: "long",
+    //   weekday: "long",
+    //   year: "numeric",
+    //   day: "numeric",
+    //   timeZone: 'UTC'
+    // };
+    // dateStr = d.toLocaleDateString("en-us", options)
+  }
     
     return(
       <div className="event-detail-container">
       <div style={style} className="event-detail-header">
          <h1 className="event-detail-title animated fadeInDown">{title}</h1>
-         <h2 className="event-detail-date animated fadeInDown">{dateStr}</h2>
+         <h2 className="event-detail-date animated fadeInDown">{dateStringify(date)}</h2>
       </div>
       <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">
@@ -85,7 +87,7 @@ class EventDetailView extends React.Component {
           <div className="event-detail-info">
             <div className="event-pair">
               <h2 className="detail-headings">When: </h2>
-              <p className="event-detail-p">{date}</p>
+              <p className="event-detail-p">{dateStringify(date)}</p>
             </div>
              <div className="event-pair">
               <h2 className="detail-headings">Where: </h2>

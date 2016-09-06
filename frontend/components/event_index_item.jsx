@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { findBookmark, findTicket } from '../reducers/selector';
+import { findBookmark, findTicket, dateStringify } from '../reducers/selector';
 
 
 class EventIndexItem extends React.Component {
@@ -85,7 +85,7 @@ class EventIndexItem extends React.Component {
           <div className="event-card-main">
             <div className="event-card-clickarea" onClick={this.handleClick}>
               <img src={this.handleImage()} className="event-image" />
-              <p className="event-date">{this.props.event.date}</p>
+              <p className="event-date">{dateStringify(this.props.event.date)}</p>
               <h3 className="event-title">{this.props.event.title}</h3>
               <p className="event-location">{this.props.event.location}</p>
             </div>

@@ -2,6 +2,23 @@ import merge from 'lodash/merge';
 
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 
+export const dateStringify = (date) => {
+    let d = new Date(date)
+    let dateStr = d.toLocaleDateString("en-us",options)
+    let parts = date.split('-');
+    parts[1] -= 1;
+    d = new Date(Date.UTC.apply(null, parts));
+    let options = {
+      month: "long",
+      weekday: "long",
+      year: "numeric",
+      day: "numeric",
+      timeZone: 'UTC'
+    };
+    dateStr = d.toLocaleDateString("en-us", options)
+    return dateStr
+}
+
 export const userBookmarks = (bookmarks, currentUserId) => {
   let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
     return(bookmarks[id].user_id === currentUserId)
@@ -78,6 +95,5 @@ export const allEventsByFilter = (events, filter, currentUserId, bookmarks, tick
 
     default: 
       return events
-
   }
 }
