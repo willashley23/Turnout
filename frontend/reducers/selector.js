@@ -84,7 +84,6 @@ export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks 
       return newEvents2
 
     case "upcomingEvents":
-      console.log(tickets)
       let ticketKeys = Object.keys(tickets).filter( (id) => {
         return(tickets[id].user_id === currentUserId)
       });

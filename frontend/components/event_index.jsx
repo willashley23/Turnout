@@ -9,7 +9,6 @@ class EventIndex extends React.Component {
 
   render() {
     // debugger
-    console.log(this.props)
       return (
         <div>
         {this.props.children}
@@ -23,6 +22,7 @@ class EventIndex extends React.Component {
               destroyBookmark={this.props.destroyBookmark}
               currentUser={this.props.currentUser}
               filter={this.props.filter}
+              klass="default"
               />)}
           </ul>
         </div>

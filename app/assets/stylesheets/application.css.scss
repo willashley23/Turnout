@@ -148,6 +148,18 @@ body {
   color: #22b8ff;
 }
 
+.event-card-preheading {
+  font-family: "Benton Sans";
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  margin-left: 12%;
+  color: #282C35;
+}
+
+.location-span {
+  color: #22b8ff;
+}
+
 /* Categories */
 
 .categories-container {
@@ -1035,6 +1047,24 @@ em {
 
 .user-profile-events .flex-wrapper {
   display: inline-flex
+}
+
+.no-events-header {
+  font-family: "Benton Sans";
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 600;
+  color: #282C35;
+  text-align: center;
+  margin-top: 45px;
+}
+
+.no-events-image {
+  margin-top: 45px;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 

@@ -51,6 +51,7 @@ class Home extends React.Component {
           </ul>
           <div className="banner-header"><h2></h2></div>
         </div>
+          <h2 className="event-card-preheading">Popular Events Near <span className="location-span">San Francisco, CA</span></h2>
          <div className="events">
           <EventIndexContainer />
           {this.props.children}  

@@ -58,23 +58,33 @@ class UserProfile extends React.Component {
   }
 
   renderEvents() {
-    return (
-    <div className ="user-profile-events">
-      <ul>
-       { Object.keys(this.props.events).map(id => <EventIndexItem 
-        key={`event-index-item${id}`} 
-        event={this.props.events[id]}
-        bookmark={this.props.bookmark}
-        destroyBookmark={this.props.destroyBookmark}
-        createBookmark={this.props.createBookmark}
-        destroyTicket={this.props.destroyTicket}
-        currentUser={this.props.currentUser}
-        filter={this.props.filter}
-        ticket={this.props.ticket}
-        />) }
-      </ul>
-    </div>
-    );
+    if (Object.keys(this.props.events).length === 0) {
+      return (
+        <div>
+          <h2 className="no-events-header">Got Plans?</h2>
+            <img src="assets/no-event-calendar.png" className="no-events-image" />
+        </div>
+      )
+    } else {
+        return (
+        <div className ="user-profile-events">
+          <ul>
+           { Object.keys(this.props.events).map(id => <EventIndexItem 
+            key={`event-index-item${id}`} 
+            event={this.props.events[id]}
+            bookmark={this.props.bookmark}
+            destroyBookmark={this.props.destroyBookmark}
+            createBookmark={this.props.createBookmark}
+            destroyTicket={this.props.destroyTicket}
+            currentUser={this.props.currentUser}
+            filter={this.props.filter}
+            ticket={this.props.ticket}
+            klass="default"
+            />) }
+          </ul>
+        </div>
+        );
+    }
   }
 
   render() {

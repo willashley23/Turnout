@@ -22,6 +22,7 @@ export default class Category extends React.Component {
                 destroyBookmark={this.props.destroyBookmark}
                 currentUser={this.props.currentUser}
                 filter={this.props.filter}
+                klass="category-event-card"
                 />)}
             </ul>
         </div>

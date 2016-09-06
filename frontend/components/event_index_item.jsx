@@ -13,6 +13,7 @@ class EventIndexItem extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.determineIcon = this.determineIcon.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
+    this.handleClass = this.handleClass.bind(this);
   }
   
   handleClick() {
@@ -89,20 +90,28 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  handleClass() {
+    if (this.props.klass === "default") {
+      return ""
+    } else {
+      return ("category-event-card")
+    }
+  }
+
   render() {
     return (
-    <div className="flex-wrapper">
-      <div className="event-card">
-          <div className="event-card-main">
-            <div className="event-card-clickarea" onClick={this.handleClick}>
-              <img src={this.handleImage()} className="event-image" />
-              <span className="event-card-label">{this.handlePrice()}</span>
-              <p className="event-date">{dateStringify(this.props.event.date)}</p>
-              <h3 className="event-title">{this.props.event.title}</h3>
-              <p className="event-location">{this.props.event.location}</p>
+    <div className={"flex-wrapper " + this.handleClass()}>
+      <div className={"event-card" + this.handleClass()}>
+          <div className={"event-card-main " + this.handleClass()}>
+            <div className={"event-card-clickarea " + this.handleClass()} onClick={this.handleClick}>
+              <img src={this.handleImage()} className={"event-image " + this.handleClass()} />
+              <span className={"event-card-label " + this.handleClass()} >{this.handlePrice()}</span>
+              <p className={"event-date " + this.handleClass()}>{dateStringify(this.props.event.date)}</p>
+              <h3 className={"event-title " + this.handleClass()}>{this.props.event.title}</h3>
+              <p className={"event-location " + this.handleClass()}>{this.props.event.location}</p>
             </div>
-          <div className="event-card-footer">
-            <span className="event-tag">#{this.props.event.tag}</span>
+          <div className={"event-card-footer " + this.handleClass()}>
+            <span className={"event-tag " + this.handleClass()}>#{this.props.event.tag}</span>
             {this.determineIcon()}
           </div>
           </div>
