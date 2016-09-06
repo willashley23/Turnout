@@ -570,6 +570,7 @@ input[type=submit]:hover, .guest-button:hover {
   font-size: 12px;
   letter-spacing: 0.5px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .event-tag {
@@ -779,6 +780,11 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   font-weight: 400;
   font-family: "Benton Sans";
   color: #45494E;
+}
+
+.event-detail-info {
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* Event Form */
