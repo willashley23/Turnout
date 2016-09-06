@@ -176,6 +176,7 @@ body {
 
 .category-image {
   margin: 7px;
+  margin-bottom: 0px;
 }
 
 .categories-row {
@@ -186,11 +187,14 @@ body {
 .category-card.wide {
   flex: 2;
   margin: 7px;
+  margin-bottom: 0px;
 }
 
 .category-card {
   flex: 1;
   margin: 7px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .category-card h2 {
@@ -199,9 +203,73 @@ body {
   color: white;
   font-weight: 600;
   letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.category-card-p {
+  font-family: "Benton Sans";
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  display: inline-block;
+  transition: all 2s;
+  transition: opacity .7s,-webkit-transform .35s;
+}
+
+.category-card-p:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.category-text {
   text-align: center;
   position: relative;
   top: 20%;
+}
+
+#lessons-card {
+  position: relative;
+  bottom: 9px;
+}
+
+#lessons-card .category-text {
+  top: 22%;
+}
+
+#lessons p {
+  width: 90%;
+}
+
+#arts {
+  position: relative;
+  left: 5px;
+}
+
+.festivals {
+  position: relative;
+  top: 7px;
+}
+
+.celebrations {
+  position: relative;
+  bottom: 7px;
+}
+
+.bottom-row {
+  position: relative;
+  bottom: 120px;
+}
+
+.top-row {
+  position: relative;
+  bottom: 30px;
+}
+
+.center-row {
+  position: relative;
+  bottom: 70px;
 }
 
 /* Navbar */

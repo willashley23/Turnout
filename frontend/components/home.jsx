@@ -53,51 +53,70 @@ class Home extends React.Component {
         <div className="categories-container">
           <br/>
          
-            <div className="categories-row">
+            <div className="categories-row top-row">
 
               <div className="category-card wide">
-                <h2>Music</h2>
+                <div className="category-text">
+                  <h2>Music</h2>
+                  <p className="category-card-p">Find everything from classical concerts to music festivals</p>
+                </div>
                 <img src= "assets/music.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card">
-                <h2>Festivals</h2>
+              <div className="category-card festivals">
+                <div className="category-text">
+                  <h2>Festivals</h2>
+                  <p className="category-card-p">Music, tradition, family, and more</p>
+                </div>
                 <img src= "assets/social.jpeg" className="category-image" />
               </div>
 
             </div>
          
 
-            <div className="categories-row">
+            <div className="categories-row center-row">
               <div className="category-card">
-                <h2>Parties</h2>
+                <div className="category-text">
+                  <h2>Parties</h2>
+                  <p className="category-card-p">Happy hour and all night celebrations</p>
+                </div>
                 <img src= "assets/party.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card">
-                <h2>Lessons</h2>
+              <div className="category-card" id="lessons-card">
+                <div className="category-text" id="lessons">
+                  <h2>Lessons</h2>
+                  <p className="category-card-p lessons-p">Piano, fencing, ping-pong, and everything in between</p>
+                </div>
                 <img src= "assets/lessons.jpeg" className="category-image" />
               </div>
               
               <div className="category-card">
-                <h2>Sports</h2>
+                <div className="category-text">
+                  <h2>Sports</h2>
+                  <p className="category-card-p">Triathlons, races, anything is fair game</p>
+                </div>
                 <img src= "assets/sports.jpeg" className="category-image" />
               </div>
             </div>
-           
 
-            <div className="categories-row">
+            <div className="categories-row bottom-row">
               <div className="category-card">
-                <h2>Arts</h2>
+                <div className="category-text">
+                  <h2 className="arts-header">Arts</h2>
+                  <p className="category-card-p" id="arts">Art shows, touring exhibits, and performances</p>
+                </div>
                 <img src= "assets/arts.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card wide">
-                <h2>Celebrations</h2>
+              <div className="category-card wide celebrations">
+                <div className="category-text">
+                  <h2>Celebrations</h2>
+                  <p className="category-card-p">Join in celebrations from cultures all around the globe</p>
+                </div>
                 <img src= "assets/colorrun.jpeg" className="category-image" />
               </div>
             </div>
-
           </div>
         </div> 
     )
