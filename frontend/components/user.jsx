@@ -23,6 +23,10 @@ class UserProfile extends React.Component {
     this.filterMyEvents();
   }
 
+  // componentDidUnmount() {
+  //   this.filterMyEvents
+  // }
+
   filterUpcomingEvents() {
     this.props.updateFilter("upcomingEvents")
   }
