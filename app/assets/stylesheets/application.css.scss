@@ -284,6 +284,42 @@ body {
   bottom: 70px;
 }
 
+/* Category Search */
+
+.category-search-header {
+  font-family: "Benton Sans";
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 600;
+  color: #282C35;
+  padding: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-bottom: 1px solid #D2D6DF;
+  background-color: #fff;
+}
+
+.empty-category-header {
+  font-family: "Benton Sans";
+  font-size: 25px;
+  line-height: 50px;
+  font-weight: 600;
+  color: #282C35;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.no-event-image {
+  margin-top: 45px;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 /* Navbar */
 
 .navbar {
