@@ -542,7 +542,14 @@ input[type=submit]:hover, .guest-button:hover {
 .event-title {
   font-size: 15px;
   font-weight: 600;
-  color: #282C35
+  color: #282C35;
+      white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5px;
+    height: 0.68em;
 }
 
 .event-location {
