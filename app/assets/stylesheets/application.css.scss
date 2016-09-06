@@ -932,6 +932,10 @@ textarea {
   text-transform: uppercase;
 }
 
+.tab-option:hover {
+  color: #22b8ff;
+}
+
 .tab-option {
   display: inherit;
 }
@@ -957,8 +961,6 @@ textarea {
     border-bottom: 4px solid #22b8ff;
   }
 }
-
-
 
 em {
   padding-bottom: 10px;

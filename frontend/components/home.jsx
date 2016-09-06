@@ -7,6 +7,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
   }
   
   componentDidMount() {
@@ -19,6 +20,14 @@ class Home extends React.Component {
       this.props.router.push(`/users/${currentUser.id}`);
     } else {
       this.props.router.push("/home/login");
+    }
+  }
+
+  handleCategoryClick() {
+    if (this.props.currentUser) {
+      alert("Sorry, this part of the site is still under development :)")
+    } else {
+      alert("Sorry, this part of the site is still under development :)")
     }
   }
 
@@ -54,8 +63,7 @@ class Home extends React.Component {
           <br/>
          
             <div className="categories-row top-row">
-
-              <div className="category-card wide">
+              <div className="category-card wide" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2>Music</h2>
                   <p className="category-card-p">Find everything from classical concerts to music festivals</p>
@@ -63,19 +71,17 @@ class Home extends React.Component {
                 <img src= "assets/music.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card festivals">
+              <div className="category-card festivals" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2>Festivals</h2>
                   <p className="category-card-p">Music, tradition, family, and more</p>
                 </div>
                 <img src= "assets/social.jpeg" className="category-image" />
               </div>
-
             </div>
          
-
             <div className="categories-row center-row">
-              <div className="category-card">
+              <div className="category-card" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2>Parties</h2>
                   <p className="category-card-p">Happy hour and all night celebrations</p>
@@ -83,7 +89,7 @@ class Home extends React.Component {
                 <img src= "assets/party.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card" id="lessons-card">
+              <div className="category-card" id="lessons-card" onClick={this.handleCategoryClick}>
                 <div className="category-text" id="lessons">
                   <h2>Lessons</h2>
                   <p className="category-card-p lessons-p">Piano, fencing, ping-pong, and everything in between</p>
@@ -91,7 +97,7 @@ class Home extends React.Component {
                 <img src= "assets/lessons.jpeg" className="category-image" />
               </div>
               
-              <div className="category-card">
+              <div className="category-card" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2>Sports</h2>
                   <p className="category-card-p">Triathlons, races, anything is fair game</p>
@@ -101,7 +107,7 @@ class Home extends React.Component {
             </div>
 
             <div className="categories-row bottom-row">
-              <div className="category-card">
+              <div className="category-card" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2 className="arts-header">Arts</h2>
                   <p className="category-card-p" id="arts">Art shows, touring exhibits, and performances</p>
@@ -109,7 +115,7 @@ class Home extends React.Component {
                 <img src= "assets/arts.jpeg" className="category-image" />
               </div>
 
-              <div className="category-card wide celebrations">
+              <div className="category-card wide celebrations" onClick={this.handleCategoryClick}>
                 <div className="category-text">
                   <h2>Celebrations</h2>
                   <p className="category-card-p">Join in celebrations from cultures all around the globe</p>
