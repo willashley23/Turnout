@@ -197,6 +197,8 @@ body {
 .category-image {
   margin: 7px;
   margin-bottom: 0px;
+  -webkit-filter: brightness(100%);
+  -webkit-transition : -webkit-filter 250ms linear
 }
 
 .categories-row {
@@ -238,20 +240,21 @@ body {
   transition: opacity .7s,-webkit-transform .35s;
 }
 
-// .category-card-p:hover {
-//   transform: scale(1.2);
-//   opacity: 1;
-// }
-
 .category-card:hover .category-card-p {
   transform: scale(1.2);
   opacity: 1;
+}
+
+.category-card:hover .category-image  {
+  -webkit-transition : -webkit-filter 250ms linear;
+  -webkit-filter: brightness(55%);
 }
 
 .category-text {
   text-align: center;
   position: relative;
   top: 20%;
+  z-index: 2;
 }
 
 #lessons-card {
@@ -334,7 +337,7 @@ body {
 }
 
 .no-event-image {
-  margin-top: 45px;
+  margin-top: 35px;
   width: 200px;
   height: auto;
   margin: 0 auto;
@@ -394,7 +397,7 @@ body {
 /* Navbar */
 
 .navbar {
-  height: 100%;
+  height: 61px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #D2D6DF;
 }
@@ -405,12 +408,13 @@ body {
 
 .logo {
   font-family: 'karbonsemibold';
-  font-size: 28px;
+  font-size: 33px;
   color: #f6682F;
   vertical-align: middle;
-  padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 16px;
+  padding-top: 12px;
   border-right: 1px solid #EFF2F5;
   text-decoration: none;
 }
@@ -425,8 +429,8 @@ body {
 
 .login-signup a {
   color: #45494E;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 25px;
+  padding-bottom: 24px;
   padding-right: 20px;
   padding-left: 20px;
   text-decoration: none;

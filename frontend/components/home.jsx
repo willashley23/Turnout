@@ -79,6 +79,7 @@ class Home extends React.Component {
                   <p className="category-card-p">Find everything from classical concerts to music festivals</p>
                 </div>
                 <img src= "assets/music.jpeg" className="category-image" />
+                 <div class="overlay"></div>
               </div>
 
               <div className="category-card festivals" onClick={this.handleCategoryClick("Festivals")}>
