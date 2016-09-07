@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import EventIndexItem from './event_index_item';
-// import myEventsFilter from '../util/filter_api_util';
+
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -22,10 +22,6 @@ class UserProfile extends React.Component {
     this.props.requestTickets();
     this.filterMyEvents();
   }
-
-  // componentDidUnmount() {
-  //   this.filterMyEvents
-  // }
 
   filterUpcomingEvents() {
     this.props.updateFilter("upcomingEvents")
@@ -101,7 +97,7 @@ class UserProfile extends React.Component {
               <div>
                <li className="tab-option">
                  <em>{Object.keys(this.props.ticket).length}</em>
-                 <div className="my-upcoming-events" onClick={this.filterUpcomingEvents}>Upcoming Events</div>
+                 <div className="my-upcoming-events" onClick={this.filterUpcomingEvents}>My Tickets</div>
                </li>
                  <div className={this.toggleMyUpcomingEvents()}/>
                </div>

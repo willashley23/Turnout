@@ -11,6 +11,7 @@ class Home extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.getMoreEvents = this.getMoreEvents.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
   
   componentDidMount() {
@@ -38,6 +39,10 @@ class Home extends React.Component {
     this.props.increaseLimit(this.props.limit)
   }
 
+  handleSearch() {
+
+  }
+
   render() {
     return (
       <div className="home">
@@ -57,6 +62,12 @@ class Home extends React.Component {
             <li><span>Image 06</span></li>
           </ul>
           <div className="banner-header"><h2></h2></div>
+        </div>
+        <div className="search-container">
+           <form className="seach-form" onSubmit={this.handleSearch}>
+            <input type="text" className="search-bar" />
+            <button className="search-submit-button">Search</button>
+           </form>
         </div>
           <h2 className="event-card-preheading">Popular Events Near <span className="location-span">San Francisco, CA</span></h2>
          <div className="events">

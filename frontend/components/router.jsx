@@ -10,6 +10,7 @@ import EventDetailViewContainer from './event_detail_view_container';
 import NewEventFormContainer from './new_event_form_container';
 import UserContainer from './user_container';
 import CategoriesContainer from './categories_container';
+import TicketModalContainer from './ticket_modal_container';
 import { updateFilter } from '../actions/filter_actions';
 
 
@@ -59,16 +60,16 @@ class AppRouter extends React.Component{
   render(){
     return(
       <Router history={ hashHistory }>
-        <Route  path="/" component={ App } onEnter={this._redirectToHome}>
+        <Route  path="/" component={ App } onEnter={ this._redirectToHome }>
           <Route path= "home" component={ HomeContainer } >
             <Route path="login" component={ SessionFormContainer } />
             <Route path="signup" component={ SessionFormContainer } />
           </Route>
-            <Route path="events/new" component={ NewEventFormContainer } onEnter={this._ensureLoggedIn} />
+            <Route path="events/new" component={ NewEventFormContainer } onEnter={this._ensureLoggedIn } />
             <Route path="events/:id" component={ EventDetailViewContainer } >
-              <Route path="tickets/new" component{ TicketsModalContainer } />
+              <Route path="tickets/new" component={ TicketModalContainer } />
             </Route>
-            <Route path="users/:id" component={ UserContainer } onEnter={this._userOnEnter}/>
+            <Route path="users/:id" component={ UserContainer } onEnter={this._userOnEnter }/>
             <Route path="categories/:tag" component= { CategoriesContainer } />
         </Route>
       </Router>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import {dateStringify} from '../reducers/selector';
+import { Link } from 'react-router';
+import TicketModalContainer from './ticket_modal_container'
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -24,8 +26,8 @@ class EventDetailView extends React.Component {
     if (this.props.currentUser === null) {
       this.props.router.push('/home/login');
     } else {
-      this.props.createTicket(this.props.event.id)
-      this.props.router.push(`/users/${currentUser.id}`);
+      this.props.router.push(`/events/${this.props.event.id}/tickets/new`)
+      // this.props.router.push(`/users/${currentUser.id}`);
     }
   }
 
@@ -97,6 +99,7 @@ class EventDetailView extends React.Component {
     
     return(
       <div className="event-detail-container">
+      {this.props.children}
       <div style={style} className="event-detail-header">
          <h1 className="event-detail-title animated fadeInDown">{title}</h1>
          <h2 className="event-detail-date animated fadeInDown">{dateStringify(date)}</h2>
