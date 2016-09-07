@@ -42,6 +42,7 @@ class UserProfile extends React.Component {
       return "not-infocus"
     }
   } 
+
   toggleMyBookmarks() {
     if (this.props.filter === "myBookmarks") {
       return "hvr"
@@ -49,6 +50,7 @@ class UserProfile extends React.Component {
       return "not-infocus"
     }
   } 
+
   toggleMyUpcomingEvents() {
     if (this.props.filter === "upcomingEvents") {
       return "hvr"
@@ -79,6 +81,7 @@ class UserProfile extends React.Component {
             currentUser={this.props.currentUser}
             filter={this.props.filter}
             ticket={this.props.ticket}
+            ticketCount={Object.keys(this.props.ticket).length}
             klass="default"
             />) }
           </ul>

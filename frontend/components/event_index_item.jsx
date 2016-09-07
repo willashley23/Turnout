@@ -15,6 +15,7 @@ class EventIndexItem extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
     this.handleClass = this.handleClass.bind(this);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    this.determineFooter = this.determineFooter.bind(this);
   }
   
   handleClick() {
@@ -48,8 +49,6 @@ class EventIndexItem extends React.Component {
   }
 
   determineIcon() {
-    //May throw an error on the home page. Will need to pass filter as props.
-    // console.log(this.props.filter)
     if (this.props.filter === "upcomingEvents") {
       return (
         <i className= {"fa fa-trash-o trash-icon "} onClick={this.handleDelete}></i>
@@ -57,6 +56,18 @@ class EventIndexItem extends React.Component {
     } else {
       return (
         <i className= {"fa fa-bookmark-o bookmark-icon " + this.toggle()} onClick={this.handleBookmark}></i>
+      )
+    }
+  }
+
+  determineFooter() {
+    if (this.props.filter === "upcomingEvents") {
+      return (
+        <span className={"event-tag " + this.handleClass()}>NUMBER OF TICKETS: {this.props.ticketCount}</span>
+      )
+    } else {
+      return (
+        <span className={"event-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.props.event.tag)}>#{this.props.event.tag}</span>
       )
     }
   }
@@ -118,7 +129,7 @@ class EventIndexItem extends React.Component {
               <p className={"event-location " + this.handleClass()}>{this.props.event.location}</p>
             </div>
           <div className={"event-card-footer " + this.handleClass()}>
-            <span className={"event-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.props.event.tag)}>#{this.props.event.tag}</span>
+            {this.determineFooter()}
             {this.determineIcon()}
           </div>
           </div>
