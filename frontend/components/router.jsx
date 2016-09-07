@@ -20,14 +20,14 @@ class AppRouter extends React.Component{
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._redirectToHome = this._redirectToHome.bind(this);
     this._setFilterToUser = this._setFilterToUser.bind(this);
+    this._userOnEnter = this._userOnEnter.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
-      console.log("stuff")
     if (!currentUser) {
-      replace('/login');
+      replace('/home/login');
     }
   }
 
@@ -51,6 +51,11 @@ class AppRouter extends React.Component{
     }
   }
 
+  _userOnEnter(nextState, replace) {
+    this._ensureLoggedIn(nextState, replace)
+    this._setFilterToUser()
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
@@ -59,9 +64,11 @@ class AppRouter extends React.Component{
             <Route path="login" component={ SessionFormContainer } />
             <Route path="signup" component={ SessionFormContainer } />
           </Route>
-            <Route path="events/new" component={ NewEventFormContainer } />
-            <Route path="events/:id" component={ EventDetailViewContainer } />
-            <Route path="users/:id" component={ UserContainer } onEnter={this._setFilterToUser}/>
+            <Route path="events/new" component={ NewEventFormContainer } onEnter={this._ensureLoggedIn} />
+            <Route path="events/:id" component={ EventDetailViewContainer } >
+              <Route path="tickets/new" component{ TicketsModalContainer } />
+            </Route>
+            <Route path="users/:id" component={ UserContainer } onEnter={this._userOnEnter}/>
             <Route path="categories/:tag" component= { CategoriesContainer } />
         </Route>
       </Router>

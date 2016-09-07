@@ -253,7 +253,7 @@ body {
 .category-text {
   text-align: center;
   position: relative;
-  top: 20%;
+  top: 150px;
   z-index: 2;
 }
 
@@ -263,7 +263,7 @@ body {
 }
 
 #lessons-card .category-text {
-  top: 22%;
+  top: 150px;
 }
 
 #lessons p {
@@ -457,6 +457,7 @@ body {
   align-items: center;
   justify-content: center;
   top: 0;
+  z-index: 100;
 }
 
 .login-form-box {
