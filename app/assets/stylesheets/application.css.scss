@@ -1053,6 +1053,7 @@ textarea {
 
 .form-input {
   width: 80%;
+  padding-left: 10px;
 }
 
 /* User Profile */
@@ -1172,11 +1173,21 @@ em {
   margin: 0 auto;
 }
 
+.search-form {
+  margin-top: -40px;
+  margin-bottom: 5px;
+}
+
 .search-bar {
   width: 50%;
-  height: 35px;
+  height: 37px;
   border-radius: 4px;
+  border: 1px solid #D2D6DF;
+  margin-left: 18%;
+  margin-right: 2%;
+  padding-left: 13px;
 }
+
 .search-submit-button {
   background-color: #22b8ff;
   color: #fff;
@@ -1190,7 +1201,7 @@ em {
   letter-spacing: 0.5px;
   transition: all .2s;
   text-transform: uppercase;
-  float: right;
+
 }
 
 /* Tickets Modal */
@@ -1239,7 +1250,8 @@ em {
   margin-top: 5px;
 }
 
-.submitButton.tickets:hover { 
+.submitButton.tickets:hover,
+.search-submit-button:hover { 
   background-color: #4dc6ff;
 }
 
@@ -1252,9 +1264,4 @@ em {
 .tickets-logo {
   width: 100%;
 }
-
-// .modal-wrapper {
-//   height: 100%;
-//   width: 100%; 
-// }
 

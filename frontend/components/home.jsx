@@ -64,8 +64,8 @@ class Home extends React.Component {
           <div className="banner-header"><h2></h2></div>
         </div>
         <div className="search-container">
-           <form className="seach-form" onSubmit={this.handleSearch}>
-            <input type="text" className="search-bar" />
+           <form className="search-form" onSubmit={this.handleSearch}>
+            <input type="text" className="search-bar" placeholder="SEARCH FOR EVENTS" />
             <button className="search-submit-button">Search</button>
            </form>
         </div>
@@ -103,7 +103,7 @@ class Home extends React.Component {
             </div>
          
             <div className="categories-row center-row">
-              <div className="category-card parties" onClick={this.handleCategoryClick("Parties")}>
+              <div className="category-card parties" onClick={this.handleCategoryClick("Party")}>
                 <div className="category-text">
                   <h2>Parties</h2>
                   <p className="category-card-p">Happy hour and all night celebrations</p>
