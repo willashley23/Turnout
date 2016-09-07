@@ -10,10 +10,12 @@ class Home extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    this.getMoreEvents = this.getMoreEvents.bind(this);
   }
   
   componentDidMount() {
     this.props.updateFilter("myEvents")
+    this.props.clearLimit();
     this.props.requestBookmarks();
   } 
 
@@ -30,6 +32,10 @@ class Home extends React.Component {
     return ( () => {
       this.props.router.push(`/categories/${tag}`) 
     })
+  }
+
+  getMoreEvents() {
+    this.props.increaseLimit(this.props.limit)
   }
 
   render() {
@@ -57,6 +63,9 @@ class Home extends React.Component {
           <EventIndexContainer />
           {this.props.children}  
         </div> 
+        <div className="see-more-container">
+          <button className='get-started-button see-more' onClick={this.getMoreEvents}>See More</button>
+        </div>
           <div className="categories-header">
             <h2 className="categories-h2">Browse Popular Categories</h2>
           </div>

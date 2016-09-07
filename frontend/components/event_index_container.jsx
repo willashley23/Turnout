@@ -19,7 +19,8 @@ let tickets;
     currentUser: state.session.currentUser,
     bookmarks: bookmarks,
     tickets: tickets,
-    filter: state.filter
+    filter: state.filter,
+    limit: state.limit
   }
 };
 
