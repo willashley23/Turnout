@@ -16,6 +16,10 @@ class EventIndexItem extends React.Component {
     this.handleClass = this.handleClass.bind(this);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.determineFooter = this.determineFooter.bind(this);
+    this.parseFirstTags = this.parseFirstTags.bind(this);
+    this.parseSecondTag = this.parseSecondTag.bind(this);
+    let tag1 ="# ";
+    let tag2 ="# " ;
   }
   
   handleClick() {
@@ -60,14 +64,29 @@ class EventIndexItem extends React.Component {
     }
   }
 
+  parseFirstTags() {
+    this.tag1 = this.props.event.tag.split(", ")[0]
+    return this.tag1
+  }
+
+  parseSecondTag() {
+    this.tag2 = this.props.event.tag.split(", ")[1]
+    if (this.tag2 === undefined) {
+      return ""
+    }
+    return this.tag2
+  }
+
   determineFooter() {
+    debugger
     if (this.props.filter === "upcomingEvents") {
       return (
         <span className={"event-tag " + this.handleClass()}>NUMBER OF TICKETS: {this.props.ticketCount}</span>
       )
     } else {
       return (
-        <span className={"event-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.props.event.tag)}>#{this.props.event.tag}</span>
+        <div><span className={"event-tag first-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.parseFirstTags())}>{this.parseFirstTags()}</span>
+        <span className={"event-tag second-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.parseSecondTag())}>{this.parseSecondTag()}</span></div>
       )
     }
   }

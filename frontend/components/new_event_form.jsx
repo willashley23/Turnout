@@ -107,26 +107,15 @@ class EventForm extends React.Component {
               onClick={this.uploadImage}/>
               <div className="image-drop"><a className="image-upload-card" onClick={this.handleImageClick}>Upload your photo</a></div>
               <br/>
-              <small>Note: You will not see confirmation of image upload, just trust that it worked.</small>
+              <small>Note: You will not see confirmation of image upload.</small>
             <h2 className="event-form-subtitle"><span className="form-numerals">3</span>Final Information</h2>
-            <label className="form-label">Add a tag</label>
-            <select
+            <label className="form-label">Add Tags</label>
+            <input
+              type="text"
               value={this.state.tag}
+              placeholder="Enter tags, seperated by a comma and a space."
               onChange={this.update('tag')}
-              className="form-input"
-              defaultValue="Select tag">
-              <option value="Select Tag">Select Tag</option>
-              <option value="Music">Music</option>
-              <option value="Sports">Sports</option>
-              <option value="Celebration">Celebration</option>
-              <option value="Lesson">Lesson</option>
-              <option value="Food">Food</option>
-              <option value="Party">Party</option>
-              <option value="Career">Career</option>
-              <option value="Networking">Networking</option>
-              <option value="Tech">Tech</option>
-              <option value="STEM">STEM</option>
-            </select>
+              className="form-input title2"/>
             <label className="form-label">Price</label>
             <input
               type="number"
