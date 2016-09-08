@@ -130,8 +130,9 @@ class EventDetailView extends React.Component {
       <div className="event-detail-container">
       {this.props.children}
       <div style={style} className="event-detail-header">
-         <h1 className="event-detail-title animated fadeInDown">{title}</h1>
          <h2 className="event-detail-date animated fadeInDown">{dateStringify(date)}</h2>
+         <h1 className="event-detail-title animated fadeInDown">{title}</h1>
+         <h2 className="event-detail-date price2 animated fadeInDown">Tickets from ${price}</h2>
       </div>
       <div className="event-detail-body-wrapper">
       <div className="event-detail-menubar">

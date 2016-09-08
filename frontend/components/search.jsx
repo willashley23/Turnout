@@ -12,7 +12,7 @@ import EventIndexItem from './event_index_item';
     if (this.props.events.length > 0) {
       return (
         <div>
-          <h2 className="category-search-header">Search: {this.props.query}</h2>
+          <h2 className="category-search-header">Search Results For: {this.props.query}</h2>
             <ul className="events-container">
               {this.props.events.map(event => <EventIndexItem 
                 key={`event-index-item${event.id}`} 
@@ -33,7 +33,7 @@ import EventIndexItem from './event_index_item';
           <div>
            <h2 className="category-search-header">Search: <span className="search-tag">{this.props.query}</span></h2>
            <img src="assets/no-event-calendar.png" className="no-event-image" />
-           <h2 className="empty-category-header">Looks like there are no events that match this search</h2>
+           <h2 className="empty-category-header">Looks like there are no events that match this search.</h2>
           </div>
         )
     }
