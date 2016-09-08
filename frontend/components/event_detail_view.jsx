@@ -11,6 +11,7 @@ class EventDetailView extends React.Component {
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
     this.listTags = this.listTags.bind(this);
+    this.handleTagClick = this.handleTagClick.bind(this);
   }
   
   componentDidMount() {
@@ -48,13 +49,19 @@ class EventDetailView extends React.Component {
     }
   }
 
+  handleTagClick(tag) {
+    return ( () => {
+      this.props.router.push(`/categories/${tag}`) 
+    })
+  }
+
   listTags() {
     let allTags = []
     if(this.props.event != undefined) {
       if (this.props.event.tag.split(", ").length > 0) {
         for (let i = 0; i <= 5; i++) {
           if (this.props.event.tag.split(", ")[i] != undefined){
-            allTags.push(<p className="event-detail-p event-detail-tag">#{this.props.event.tag.split(", ")[i]}</p>)
+            allTags.push(<p className="event-detail-p event-detail-tag" onClick={this.handleTagClick(this.props.event.tag.split(", ")[i])}>#{this.props.event.tag.split(", ")[i]}</p>)
           }
         }
         return (
