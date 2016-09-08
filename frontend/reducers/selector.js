@@ -1,4 +1,5 @@
 import merge from 'lodash/merge';
+import intersection from 'lodash/intersection';
 
 export const allEvents = (events) => Object.keys(events).map(id => events[id]);
 
@@ -103,13 +104,28 @@ export const allEventsByTag = (events, tag) => {
   let eventKeys = Object.keys(events).filter( (key) => {
     if (events[key].tag.split(", ").length > 1) {
       let lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
+      debugger
       return (lowerCaseTags.includes(tag))
     } else {
-      return (events[key].tag === tag)
+      return (events[key].tag.toLowerCase() === tag.toLowerCase())
     }
   })
   let newEvents3 = []
   eventKeys.forEach( (key) => newEvents3[key] = events[key])
   console.log(newEvents3)
   return newEvents3
+};
+
+export const allEventsBySearch = (events, query) => {
+  let lowerCaseQuery = query.split(" ").map(q => q.toLowerCase());
+  let lowerCaseTags;
+  let eventKeys2 = Object.keys(events).filter( (key) => {
+    lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
+    return (intersection(lowerCaseTags, lowerCaseQuery).length > 0)
+  })
+  let newEvents4 = []
+  eventKeys2.forEach( (key) => newEvents4[key] = events[key])
+  newEvents4 = newEvents4.filter(function(n){ return n != undefined });
+  console.log(newEvents4)
+  return newEvents4
 };

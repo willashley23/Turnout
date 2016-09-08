@@ -12,6 +12,9 @@ class Home extends React.Component {
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.getMoreEvents = this.getMoreEvents.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.state = {
+      search: ''
+    }
   }
   
   componentDidMount() {
@@ -40,7 +43,14 @@ class Home extends React.Component {
   }
 
   handleSearch() {
+    console.log(this.state.search)
+    return( 
+      this.props.router.push(`/search/${this.state.search}`)
+    )
+  }
 
+update(property) {
+    return e => this.setState({[property]: e.target.value});
   }
 
   render() {
@@ -65,7 +75,7 @@ class Home extends React.Component {
         </div>
         <div className="search-container">
            <form className="search-form" onSubmit={this.handleSearch}>
-            <input type="text" className="search-bar" placeholder="SEARCH FOR EVENTS" />
+            <input type="text" className="search-bar" onChange={this.update('search')} placeholder="SEARCH FOR EVENTS" />
             <button className="search-submit-button">Search</button>
            </form>
         </div>

@@ -11,8 +11,8 @@ import NewEventFormContainer from './new_event_form_container';
 import UserContainer from './user_container';
 import CategoriesContainer from './categories_container';
 import TicketModalContainer from './ticket_modal_container';
+import SearchContainer from './search_container';
 import { updateFilter } from '../actions/filter_actions';
-
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -71,6 +71,7 @@ class AppRouter extends React.Component{
             </Route>
             <Route path="users/:id" component={ UserContainer } onEnter={this._userOnEnter }/>
             <Route path="categories/:tag" component= { CategoriesContainer } />
+            <Route path="search/:query" component= { SearchContainer } />
         </Route>
       </Router>
     );

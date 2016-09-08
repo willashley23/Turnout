@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import Categories from './categories';
-import { allEventsByTag, userBookmarks, userTickets } from '../reducers/selector';
+import {connect} from 'react-redux';
+import Search from './search'; 
+import { allEventsBySearch, userBookmarks, userTickets } from '../reducers/selector';
 import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,8 +14,8 @@ const mapStateToProps = (state, ownProps) => {
     tickets = state.tickets;
    }
  return {
-  events: allEventsByTag(state.events, ownProps.routeParams.tag),
-  tag: ownProps.routeParams.tag,
+  events: allEventsBySearch(state.events, ownProps.routeParams.query),
+  query: ownProps.routeParams.query,
   currentUser: state.session.currentUser,
   bookmarks: bookmarks,
   tickets: tickets,
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(Categories);
+)(Search);
