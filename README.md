@@ -23,7 +23,7 @@ Users can bookmark events from nearly any place on the site, and view these even
 
 ## The Future of Turnout
 
-### Google Maps integration
+### Google Maps API Integration
 
 ### Enhanced Search 
 
