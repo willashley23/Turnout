@@ -1,5 +1,6 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
+import { AllEventsByTag } from '../reducers/selector';
 
 export default class Category extends React.Component {
   constructor(props) {
@@ -9,6 +10,10 @@ export default class Category extends React.Component {
   componentWillReceiveProps() {
     
   }
+
+  // componentDidMount() {
+    
+  // }
 
 //Heads up, this component stores its events in an array, check container.
   render() {

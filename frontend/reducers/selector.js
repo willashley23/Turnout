@@ -100,10 +100,10 @@ export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks 
 }
 
 export const allEventsByTag = (events, tag) => {
-  let otherTag;
   let eventKeys = Object.keys(events).filter( (key) => {
     if (events[key].tag.split(", ").length > 1) {
-      return (events[key].tag.split(", ").includes(tag))
+      let lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
+      return (lowerCaseTags.includes(tag))
     } else {
       return (events[key].tag === tag)
     }

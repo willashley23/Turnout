@@ -103,7 +103,6 @@ class EventForm extends React.Component {
               id="upload"
               placeholder="Image Url (Optional)"
               className="form-input2"
-              // onChange={this.update('image_url')}
               onClick={this.uploadImage}/>
               <div className="image-drop"><a className="image-upload-card" onClick={this.handleImageClick}>Upload your photo</a></div>
               <br/>
