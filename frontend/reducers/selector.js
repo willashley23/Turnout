@@ -100,8 +100,13 @@ export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks 
 }
 
 export const allEventsByTag = (events, tag) => {
+  let otherTag;
   let eventKeys = Object.keys(events).filter( (key) => {
-    return (events[key].tag === tag)
+    if (events[key].tag.split(", ").length > 1) {
+      return (events[key].tag.split(", ").includes(tag))
+    } else {
+      return (events[key].tag === tag)
+    }
   })
   let newEvents3 = []
   eventKeys.forEach( (key) => newEvents3[key] = events[key])
