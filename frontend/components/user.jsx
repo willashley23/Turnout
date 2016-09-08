@@ -82,7 +82,7 @@ class UserProfile extends React.Component {
             filter={this.props.filter}
             ticket={this.props.ticket}
             ticketCount={Object.keys(this.props.ticket).length}
-            klass="default"
+            klass="userProfileMain"
             />) }
           </ul>
         </div>

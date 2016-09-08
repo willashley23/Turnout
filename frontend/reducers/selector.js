@@ -104,7 +104,6 @@ export const allEventsByTag = (events, tag) => {
   let eventKeys = Object.keys(events).filter( (key) => {
     if (events[key].tag.split(", ").length > 1) {
       let lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
-      debugger
       return (lowerCaseTags.includes(tag))
     } else {
       return (events[key].tag.toLowerCase() === tag.toLowerCase())

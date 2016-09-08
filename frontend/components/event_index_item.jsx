@@ -135,9 +135,11 @@ class EventIndexItem extends React.Component {
 
   handleClass() {
     if (this.props.klass === "default") {
-      return ""
+      return "default"
+    } else if (this.props.klass === "userProfileMain") {
+      return ("user-profile-main")
     } else {
-      return ("category-event-card")
+      return ("category-event-card");
     }
   }
 
@@ -150,19 +152,23 @@ class EventIndexItem extends React.Component {
   render() {
     return (
     <div className={"flex-wrapper " + this.handleClass()}>
-      <div className={"event-card" + this.handleClass()}>
+      <div className={"event-card " + this.handleClass()}>
           <div className={"event-card-main " + this.handleClass()}>
-            <div className={"event-card-clickarea " + this.handleClass()} onClick={this.handleClick}>
-              <img src={this.handleImage()} className={"event-image " + this.handleClass()} />
-              <span className={"event-card-label " + this.handleClass()} >{this.handlePrice()}</span>
-              <p className={"event-date " + this.handleClass()}>{dateStringify(this.props.event.date)}</p>
-              <h3 className={"event-title " + this.handleClass()}>{this.props.event.title}</h3>
-              <p className={"event-location " + this.handleClass()}>{this.props.event.location}</p>
+            <div className={"event-card-clickarea " + this.handleClass()}>
+              <div className={"event-image-container " + this.handleClass()}>
+                <img src={this.handleImage()} className={"event-image " + this.handleClass()} onClick={this.handleClick}/>
+              </div>
+              <div className={"event-card-rhs " + this.handleClass()}>
+                  <span className={"event-card-label " + this.handleClass()} >{this.handlePrice()}</span>
+                  <p className={"event-date " + this.handleClass()}>{dateStringify(this.props.event.date)}</p>
+                  <h3 className={"event-title " + this.handleClass()}>{this.props.event.title}</h3>
+                  <p className={"event-location " + this.handleClass()}>{this.props.event.location}</p>
+                <div className={"event-card-footer " + this.handleClass()}>
+                  {this.determineFooter()}
+                  {this.determineIcon()}
+                </div>
+              </div>
             </div>
-          <div className={"event-card-footer " + this.handleClass()}>
-            {this.determineFooter()}
-            {this.determineIcon()}
-          </div>
           </div>
       </div>
     </div>
