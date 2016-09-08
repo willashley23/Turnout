@@ -381,13 +381,18 @@ body {
 }
 
 .event-card-footer.category-event-card {
-  
+  height: 30px;
 }
 
 .event-card-label.category-event-card {
   top: 10px;
   right: 55px;
   float: left;
+}
+
+.tag-container.category-event-card {
+  height: 0px;
+  margin-left: 15px;
 }
 
 .search-tag {

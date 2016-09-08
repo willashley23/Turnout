@@ -85,7 +85,7 @@ class EventIndexItem extends React.Component {
       )
     } else {
       return (
-        <div className="tag-container"><span className={"event-tag first-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.parseFirstTags())}>{this.parseFirstTags()}</span>
+        <div className={"tag-container " +this.handleClass()}><span className={"event-tag first-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.parseFirstTags())}>{this.parseFirstTags()}</span>
         <span className={"event-tag second-tag " + this.handleClass()} onClick={this.handleCategoryClick(this.parseSecondTag())}>{this.parseSecondTag()}</span></div>
       )
     }
