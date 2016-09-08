@@ -79,9 +79,8 @@ class EventIndexItem extends React.Component {
   }
 
   countTickets() {
-    debugger
     let counter = 0;
-    if (Object.keys(this.props.ticket).length > 0) {
+    if (this.props.ticket != undefined) {
       Object.keys(this.props.ticket).forEach( (key) => {
         if (this.props.ticket[key].event_id === this.props.event.id) {
           counter += 1;

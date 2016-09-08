@@ -10,6 +10,7 @@ class EventDetailView extends React.Component {
     this.handleTickets = this.handleTickets.bind(this);
     this.handleBookmark = this.handleBookmark.bind(this);
     this.toggle = this.toggle.bind(this);
+    this.listTags = this.listTags.bind(this);
   }
   
   componentDidMount() {
@@ -27,7 +28,6 @@ class EventDetailView extends React.Component {
       this.props.router.push('/home/login');
     } else {
       this.props.router.push(`/events/${this.props.event.id}/tickets/new`)
-      // this.props.router.push(`/users/${currentUser.id}`);
     }
   }
 
@@ -45,6 +45,28 @@ class EventDetailView extends React.Component {
       } else {
        this.props.createBookmark(this.props.event.id)
       } 
+    }
+  }
+
+  listTags() {
+    let allTags = []
+    if(this.props.event != undefined) {
+      if (this.props.event.tag.split(", ").length > 0) {
+        for (let i = 0; i <= 5; i++) {
+          if (this.props.event.tag.split(", ")[i] != undefined){
+            allTags.push(<p className="event-detail-p event-detail-tag">#{this.props.event.tag.split(", ")[i]}</p>)
+          }
+        }
+        return (
+          <div className="tag-collection">
+            { allTags }
+          </div>
+        )
+      } else {
+        return (
+          <p className="event-detail-p event-detail-tag">#{this.props.event.tag}</p>
+        )
+      }
     }
   }
 
@@ -122,7 +144,7 @@ class EventDetailView extends React.Component {
             </div>
              <div className="event-pair">
               <h2 className="detail-headings">Tags: </h2>
-              <p className="event-detail-p event-detail-tag">#{tag}</p>
+              {this.listTags()}
             </div>
             <div className="event-description">
               <h2 className="event-description-header">Event Description</h2>

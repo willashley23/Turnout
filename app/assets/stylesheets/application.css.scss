@@ -837,6 +837,7 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   font-size: 15px;
   font-weight: 400;
   color: #45494E;
+  margin-right: 10px;
 }
 
 .event-detail-tag {
@@ -878,6 +879,14 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
 .event-detail-info {
   width: 50%;
   margin: 0 auto;
+}
+
+.tag-collection {
+  display: inline-flex;
+}
+
+.event-detail-p { 
+  display: block;
 }
 
 /* Event Form */
