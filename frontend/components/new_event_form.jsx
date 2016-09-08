@@ -18,10 +18,16 @@ class EventForm extends React.Component {
     this.uploadImage = this.uploadImage.bind(this);
   }
 
+  componentDidMount() {
+    console.log("errors cleared")
+    this.props.resetErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     // this.props.currentUser.event_count += 1;
     this.props.createEvent({event: this.state});
+    this.props.resetErrors();
   }
 
   handleImageClick() {
@@ -54,15 +60,26 @@ class EventForm extends React.Component {
     }
   };
 
-  errors() {
-    if (this.props.eventErrors) {
+  findErrors(errorType) {
+    let errorString;
+    if (this.props.eventErrors && this.props.eventErrors.length > 0) {
+      this.props.eventErrors.forEach( (error) => {
+        if (error.split(" ")[0] === errorType) {
+          errorString = error
+        }
+      });
       return (
-        this.props.eventErrors.responseJSON.map((error) => {
-          return (<li className="error" key={error}>{error}</li>);
-        })
-      );
+        <h2 className="error">{errorString}</h2>
+      )
     }
-    return <ul/>;
+  }
+
+  handleBoxShadow() {
+    if (this.props.eventErrors && this.props.eventErrors.length > 0) {
+      return "bad-input"
+    } else {
+      return ""
+    }
   }
 
   render() {
@@ -72,9 +89,6 @@ class EventForm extends React.Component {
         <h1 className="event-form-h1">Create Event</h1>
         <button className="event-form-button" onClick={this.handleSubmit}>CREATE</button>
       </div>
-        <ul>
-          {this.errors()}
-        </ul>
         <div className="form-wrapper">
         <form className="event-form" onSubmit={this.handleSubmit}>
             <h2 className="event-form-subtitle"><span className="form-numerals">1</span>Event Details</h2>
@@ -83,21 +97,24 @@ class EventForm extends React.Component {
               type="text"
               value={this.state.title}
               placeholder="Title"
-              className="form-input title2"
+              className={"form-input title2 " + this.handleBoxShadow()}
               onChange={this.update('title')}/>
+            {this.findErrors("Title")}
             <label className="form-label">Location</label>
             <input
               type="text"
               value={this.state.location}
               placeholder="Location"
-              className="form-input location2"
+              className={"form-input location2 " + this.handleBoxShadow()}
               onChange={this.update('location')}/>
+            {this.findErrors("Location")}
             <label className="form-label">Date</label>
             <input
               type="date"
-              className="form-input"
+              className={"form-input date2 " + this.handleBoxShadow()}
               accept="image/*"
               onChange={this.update('date')}/>
+            {this.findErrors("Date")}
             <h2 className="event-form-subtitle"><span className="form-numerals">2</span>Add An Image</h2>
             <button
               id="upload"

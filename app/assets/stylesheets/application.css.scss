@@ -1111,6 +1111,10 @@ textarea {
   padding-left: 10px;
 }
 
+.title2, .date2, .location2 {
+  margin-bottom: 25px;
+}
+
 /* User Profile */
 
 .user-profile-container {
@@ -1329,3 +1333,69 @@ em {
 .spinner {
   margin-left: 47.5%;
 }
+
+/* Errors */
+
+.error {
+  color: red;
+  font-family: "Benton Sans";
+  font-size: 12px;
+  margin-left: 8%;
+  letter-spacing: 0.5px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.bad-input {
+  box-shadow: 0 0 4px red;
+}
+
+/* Media Queries */
+
+
+// Width: 1920
+@media only screen and (max-width : 1920px) {
+  .categories-h2 {
+    margin-left: 21.8%;
+  }
+
+  .event-detail-menubar {
+    width: 68.4%;
+  }
+
+  .event-card-preheading {
+    margin-left: 18%;
+  }
+
+  .ticket-form-box {
+    width: 14%;
+  }
+
+  .image-drop {
+    width: 25%
+  }
+}
+
+// 15-inch MBP
+@media only screen and (max-width: 1440px) {
+  .categories-h2 {
+    margin-left: 12.5%;
+  }
+
+  .event-detail-menubar {
+    width: 67.9%;
+  }
+
+  .event-card-preheading {
+    margin-left: 12%;
+  }
+
+  .ticket-form-box {
+    width: 18%;
+  }
+
+  .image-drop {
+    width: 34%;
+  }
+}
+

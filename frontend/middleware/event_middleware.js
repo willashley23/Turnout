@@ -6,7 +6,8 @@ import {
  CREATE_EVENT,
  requestEvents,
  receiveEvents,
- receiveEvent
+ receiveEvent,
+ receiveEventErrors
 } from '../actions/event_actions';
 import {
   fetchEvents,
@@ -24,13 +25,19 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
     dispatch(receiveEvent(data));
     hashHistory.push(`/events/${Object.keys(data)[0]}`);
 };
+  const failCallback = xhr => {
+    const errors = xhr.responseJSON;
+    dispatch(receiveEventErrors(errors));
+  };
+  
   switch (action.type) {
     case REQUEST_EVENTS:
       fetchEvents(EventSuccess);
       break;
 
     case CREATE_EVENT:
-      createEvent(action.event, receiveNewEventSuccess)
+    debugger
+      createEvent(action.event, receiveNewEventSuccess, failCallback)
       break;
 
     case REQUEST_EVENT:

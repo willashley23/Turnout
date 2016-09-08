@@ -4,6 +4,8 @@ export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const REQUEST_EVENTS = "REQUEST_EVENTS";
 export const REQUEST_EVENT = "REQUEST_EVENT";
 export const CREATE_EVENT = "CREATE_EVENT";
+export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
+export const CLEAR_EVENT_ERRORS = "CLEAR_EVENT_ERRORS";
 
 export const requestEvents = () => ({
   type: REQUEST_EVENTS
@@ -29,3 +31,11 @@ export const createEvent = event => ({
   event
 });
 
+export const receiveEventErrors = (errors) => ({
+  type: RECEIVE_EVENT_ERRORS,
+  errors
+});
+
+export const clearEventErrors = () => ({
+  type: CLEAR_EVENT_ERRORS
+});

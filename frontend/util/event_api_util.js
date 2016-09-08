@@ -21,6 +21,6 @@ export const createEvent = function(event, success, error){
     url: 'api/events',
     data: event,
     success,
-    error: ()=> console.log("error")
+    error
   });
 };

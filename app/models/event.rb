@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  validates :title, :location, :date, :price, presence: true
 
   has_many :bookmarks
   has_many :tickets
