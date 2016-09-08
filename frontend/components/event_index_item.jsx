@@ -18,6 +18,7 @@ class EventIndexItem extends React.Component {
     this.determineFooter = this.determineFooter.bind(this);
     this.parseFirstTags = this.parseFirstTags.bind(this);
     this.parseSecondTag = this.parseSecondTag.bind(this);
+    this.countTickets = this.countTickets.bind(this);
     let tag1 ="# ";
     let tag2 ="# " ;
   }
@@ -77,11 +78,23 @@ class EventIndexItem extends React.Component {
     return this.tag2
   }
 
-  determineFooter() {
+  countTickets() {
     debugger
+    let counter = 0;
+    if (Object.keys(this.props.ticket).length > 0) {
+      Object.keys(this.props.ticket).forEach( (key) => {
+        if (this.props.ticket[key].event_id === this.props.event.id) {
+          counter += 1;
+        }
+      })
+    }
+      return counter;
+  }
+
+  determineFooter() {
     if (this.props.filter === "upcomingEvents") {
       return (
-        <span className={"event-tag " + this.handleClass()}>NUMBER OF TICKETS: {this.props.ticketCount}</span>
+        <span className={"event-tag " + this.handleClass()}>NUMBER OF TICKETS: {this.countTickets()}</span>
       )
     } else {
       return (
