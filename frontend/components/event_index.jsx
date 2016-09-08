@@ -9,8 +9,7 @@ class EventIndex extends React.Component {
   }
 
   render() {
-    // debugger
-    //limit could cause problems if you slice larger than max size of array
+    if (this.props.events.length) {
       return (
         <div>
         {this.props.children}
@@ -28,8 +27,16 @@ class EventIndex extends React.Component {
               />)}
           </ul>
         </div>
-        )
-    };
+      )
+    } else {
+      let Loading = require('react-loading')
+      return (
+        <div className="spinner">
+          <Loading type='balls' color='#f6682F' />
+        </div>
+      )
+    }
+  };
 };
 
 export default withRouter(EventIndex);
