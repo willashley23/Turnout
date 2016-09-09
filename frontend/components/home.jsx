@@ -14,7 +14,7 @@ class Home extends React.Component {
     this.getMoreEvents = this.getMoreEvents.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.state = {
-      search: ''
+      search: ' '
     }
   }
   
