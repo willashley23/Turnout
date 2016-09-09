@@ -1,6 +1,6 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 
 class EventIndex extends React.Component {
   
@@ -29,10 +29,9 @@ class EventIndex extends React.Component {
         </div>
       )
     } else {
-      let Loading = require('react-loading')
       return (
         <div className="spinner">
-          <Loading type='balls' color='#f6682F' />
+         <div className="loader">Loading...</div>
         </div>
       )
     }
