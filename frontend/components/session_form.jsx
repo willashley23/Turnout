@@ -54,6 +54,9 @@ class SessionForm extends React.Component {
 
   handleGuest(e){
     e.preventDefault();
+    if (this.props.route.path === "signup") {
+      this.props.router.push('/home/login')
+    } 
     const formData = { username: "guest", password: "password"};
     this.setState(formData, ()=> {
       const user = this.state;
