@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import EventIndex from './event_index';
 import EventIndexContainer from './event_index_container';
 import { allEventsByTag } from '../reducers/selector';
+import Footer from './footer';
 
 class Home extends React.Component {
   constructor(props) {
@@ -156,6 +157,9 @@ update(property) {
               </div>
             </div>
           </div>
+          <footer>
+           <Footer />
+          </footer>
         </div> 
     )
   }

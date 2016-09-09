@@ -175,6 +175,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   max-width: 1100px;
+  max-height: 800px;
   margin: auto;
 }
 
@@ -862,12 +863,13 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
 .event-detail-body {
   display: flex;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 160px;
   justify-content: center;
   width: 70%;
   background-color: white;
   margin-left: 15%;
   margin-right: 15%;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
 
 }
 
@@ -910,8 +912,8 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   color: #00a8f2;
 }
 .event-detail-body-wrapper{
-  background-color: #EFF2F5;
   width: 100%;
+  margin-bottom: 70px;
 }
 
 .event-description-header {
@@ -958,7 +960,7 @@ small {
   background-color: #fff;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
   padding-bottom: 35px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   margin-top: 50px;
 }
 
@@ -1440,8 +1442,52 @@ em {
   box-shadow: 0 0 4px red;
 }
 
-/* Media Queries */
+/* Footer */
 
+.footer-container {
+  height: 284px;
+  background: #282C35;
+  border-top: #666A73 solid 6px;
+}
+
+.footer-content {
+  margin-left: 35%;
+  margin-right: 30%;
+  margin-top: 7%;
+  color: #D2D6DF;
+}
+
+.footer-icon {
+  margin-right: 12px;
+  font-size: 22px;
+  transition: font-size 0.3s ease;
+}
+
+.footer-li {
+  font-family: "Benton Sans";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 15px;
+}
+
+.footer-a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-li:first-child {
+  margin-right: 33px;
+}
+
+.footer-li:hover .footer-icon, 
+.footer-icon:hover {
+  font-size: 30px;
+}
+
+
+/* Media Queries */
 
 // Width: 1920
 @media only screen and (max-width : 1920px) {

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import {dateStringify} from '../reducers/selector';
 import { Link } from 'react-router';
 import TicketModalContainer from './ticket_modal_container'
+import Footer from './footer';
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -161,6 +162,9 @@ class EventDetailView extends React.Component {
           </div>
       </div>
       </div>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import Footer from './footer';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -148,6 +149,9 @@ class EventForm extends React.Component {
           <button className="form-footer-button">Create Event</button>
         </form>
         </div>
+        <footer>
+          <Footer />
+        </footer>
       </section>
     );
   }
