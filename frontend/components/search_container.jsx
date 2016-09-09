@@ -2,6 +2,8 @@ import {connect} from 'react-redux';
 import Search from './search'; 
 import { allEventsBySearch, userBookmarks, userTickets } from '../reducers/selector';
 import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
+import {receiveQuery} from '../actions/search_actions';
+import {requestEvents} from '../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let bookmarks;
@@ -13,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     bookmarks = state.bookmarks;
     tickets = state.tickets;
    }
+   debugger
  return {
   events: allEventsBySearch(state.events, ownProps.routeParams.query),
   query: ownProps.routeParams.query,
@@ -25,7 +28,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   createBookmark: (eventId) => {dispatch(createBookmark(eventId))},
-  destroyBookmark: (bookmark) => {dispatch(destroyBookmark(bookmark))}
+  destroyBookmark: (bookmark) => {dispatch(destroyBookmark(bookmark))},
+  receiveQuery: (query) => {dispatch(receiveQuery(query))},
+  requestEvents: () => {dispatch(requestEvents())}
 });
 
 export default connect (

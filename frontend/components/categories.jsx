@@ -7,9 +7,9 @@ export default class Category extends React.Component {
     super(props)
   }
 
-  // componentDidMount() {
-    //Use this to fix refresh bug
-  // }
+  componentDidMount() {
+    this.props.requestEvents();
+  }
 
 //Heads up, this component stores its events in an array, check container.
   render() {

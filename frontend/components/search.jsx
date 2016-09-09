@@ -1,14 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import EventIndexItem from './event_index_item';
+import {allEventsBySearch} from '../reducers/selector';
 
  class Search extends React.Component {
   constructor(props) {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.requestEvents()
+    this.props.receiveQuery(this.props.query)
+  }
+
    render() {
-    console.log(this.props.query)
     if (this.props.events.length > 0) {
       return (
         <div>

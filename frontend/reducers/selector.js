@@ -125,6 +125,5 @@ export const allEventsBySearch = (events, query) => {
   let newEvents4 = []
   eventKeys2.forEach( (key) => newEvents4[key] = events[key])
   newEvents4 = newEvents4.filter(function(n){ return n != undefined });
-  console.log(newEvents4)
   return newEvents4
 };

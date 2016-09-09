@@ -5,6 +5,7 @@ import FiltersReducer from './filters_reducer';
 import BookmarkReducer from './bookmark_reducer';
 import TicketReducer from './ticket_reducer';
 import LimitReducer from './limit_reducer';
+import SearchReducer from './search_reducer';
 
 export default combineReducers({
   events: EventsReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   tickets: TicketReducer,
   session: SessionReducer,
   limit: LimitReducer,
-  filter: FiltersReducer
+  filter: FiltersReducer,
+  search: SearchReducer
 });

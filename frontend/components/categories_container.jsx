@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Categories from './categories';
 import { allEventsByTag, userBookmarks, userTickets } from '../reducers/selector';
 import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
+import { requestEvents } from "../actions/event_actions"
 
 const mapStateToProps = (state, ownProps) => {
   let bookmarks;
@@ -25,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   createBookmark: (eventId) => {dispatch(createBookmark(eventId))},
-  destroyBookmark: (bookmark) => {dispatch(destroyBookmark(bookmark))}
+  destroyBookmark: (bookmark) => {dispatch(destroyBookmark(bookmark))},
+  requestEvents: () => {dispatch(requestEvents())}
 });
 
 export default connect (
