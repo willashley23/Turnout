@@ -18,7 +18,6 @@ const EventReducer = (state = {}, action) => {
       return merge({}, state, {errors: action.errors})
 
     case CLEAR_EVENT_ERRORS:
-      debugger;
       return omit(state, ['errors']);
 
     default: 

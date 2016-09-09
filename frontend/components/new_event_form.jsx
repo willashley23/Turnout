@@ -46,8 +46,10 @@ class EventForm extends React.Component {
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, images) {
       if (error === null) {
         url = images[0].url
-        that.state.image_url = url
-        console.log(that.state.image_url)
+        let parsed = url.split("upload/")
+        parsed[0] += "upload/c_scale,h_230,w_460/"
+        parsed = parsed.join('')
+        that.state.image_url = parsed
       } else {
         console.log(error)
       }
