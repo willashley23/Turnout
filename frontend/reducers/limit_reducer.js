@@ -1,4 +1,3 @@
-//import actions
 import merge from 'lodash/merge';
 import { INCREASE_LIMIT, CLEAR_LIMIT } from '../actions/limit_actions';
 

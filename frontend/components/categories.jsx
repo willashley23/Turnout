@@ -11,7 +11,6 @@ export default class Category extends React.Component {
     this.props.requestEvents();
   }
 
-//Heads up, this component stores its events in an array, check container.
   render() {
     if (this.props.events.length > 0) {
       return (

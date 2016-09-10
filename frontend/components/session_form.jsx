@@ -9,16 +9,13 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-
       password: "",
       enter: "auto-enter"
-
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.chooseHeader = this.chooseHeader.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
     this.cancelForm = this.cancelForm.bind(this);
-
   }
 
   componentDidUpdate(){

@@ -1,4 +1,3 @@
-//import actions
 import { merge } from 'lodash';
 import {RECEIVE_QUERY} from '../actions/search_actions';
 

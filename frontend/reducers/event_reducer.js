@@ -1,4 +1,3 @@
-//import actions
 import merge from 'lodash/merge';
 import omit from 'lodash/omit';
 import { RECEIVE_EVENTS, REQUEST_EVENTS, RECEIVE_EVENT, RECEIVE_EVENT_ERRORS, CLEAR_EVENT_ERRORS } from '../actions/event_actions';
@@ -9,7 +8,6 @@ const EventReducer = (state = {}, action) => {
     
     case RECEIVE_EVENTS:
     return merge({}, state, action.events )
-      // return action.events;
     
     case RECEIVE_EVENT:
       return merge({}, state, action.event)

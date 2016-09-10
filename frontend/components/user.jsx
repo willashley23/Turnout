@@ -16,7 +16,6 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    //my soltuion to user profile page refresh bug
     this.props.requestEvents();
     this.props.requestBookmarks();
     this.props.requestTickets();

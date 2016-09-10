@@ -16,8 +16,6 @@ import {
 } from '../util/event_api_util';
 import {hashHistory} from 'react-router';
 
-
-
 const EventMiddleware = ({getState, dispatch}) => next => action => {
   const EventSuccess = data => dispatch(receiveEvents(data));
   const SingleEventSuccess = data => dispatch(receiveEvent(data));

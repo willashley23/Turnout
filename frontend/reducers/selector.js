@@ -35,7 +35,6 @@ export const findBookmark = (bookmarks, eventId) => {
   let found;
   let keys = Object.keys(bookmarks).forEach ( (key) => {
     if (bookmarks[key].event_id === eventId) {
-      // debugger
       found = bookmarks[key]
     }
   });

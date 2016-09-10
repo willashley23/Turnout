@@ -35,12 +35,7 @@ const BookmarkMiddleware = ({getState, dispatch}) => next => action => {
       createBookmark(action.eventId, receiveNewBookmarkSuccess)
       break;
 
-    // case REQUEST_BOOKMARK:
-    //   fetchBookmark(action.id, SingleEventSuccess);
-    //   break;
-
-    case DESTROY_BOOKMARK:
-    // debugger 
+    case DESTROY_BOOKMARK: 
       destroyBookmark(action.bookmark, bookmarkRemoved)
       break;
 

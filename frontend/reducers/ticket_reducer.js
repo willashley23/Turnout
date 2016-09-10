@@ -1,10 +1,8 @@
-//import actions
 import merge from 'lodash/merge';
 import { RECEIVE_TICKETS, REQUEST_TICKETS, RECEIVE_TICKET, REMOVE_TICKET } from '../actions/ticket_actions';
 
 const TicketReducer = (state = {}, action) => {
-  // debugger
-  //When it gets here, there are no tickets in the state to begin with. 
+
   switch (action.type) {
     
     case RECEIVE_TICKETS:

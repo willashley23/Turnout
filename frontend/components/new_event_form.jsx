@@ -26,7 +26,6 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.currentUser.event_count += 1;
     this.props.createEvent({event: this.state});
     this.props.resetErrors();
   }

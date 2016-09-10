@@ -20,7 +20,6 @@ const mapStateToProps = (state, ownProps) =>
      event: state.events[id],
      currentUser: state.session.currentUser
    }
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventDetailView);

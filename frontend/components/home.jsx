@@ -24,7 +24,6 @@ class Home extends React.Component {
     this.props.requestBookmarks();
   } 
 
-  // This might be causing issues since there is no current user at first
   handleClick() {
     if (this.props.currentUser) {
       this.props.router.push(`/users/${currentUser.id}`);

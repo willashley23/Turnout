@@ -27,8 +27,7 @@ const TicketMiddleware = ({getState, dispatch}) => next => action => {
   const SingleTicketSuccess = data => dispatch(receiveTicket(data));
   const receiveNewTicketSuccess = data => dispatch(receiveTicket(data));
   const ticketRemoved = data => dispatch(removeTicket(data))
-    // debugger
-  
+    
   switch (action.type) {
     case REQUEST_TICKETS:
       fetchTickets(TicketSuccess);
