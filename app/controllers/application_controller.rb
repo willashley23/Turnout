@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  # before_filter :default_headers
   helper_method :current_user, :logged_in?
 
   private
+
+  # def default_headers
+  #    headers['X-Frame-Options'] = 'ALLOWALL'
+  # end
 
   def current_user
     return nil unless session[:session_token]
