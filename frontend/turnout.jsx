@@ -4,6 +4,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+let http = require("http");
+setInterval(function() {
+    http.get("http://www.turnout.tech");
+}, 100000); 
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
     if (window.currentUser) {
