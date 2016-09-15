@@ -12,8 +12,13 @@ Turnout is packed with a plethora of ways to discover new events. Users can brow
 
 Here are some images from the site:
 
+**Landing Page**
 ![landingpage](https://github.com/willashley23/Turnout/blob/master/public/landingpage.png)
+
+**Event Detail View**
 ![eventshow](https://github.com/willashley23/Turnout/blob/master/public/eventshow.png)
+
+**Event Index**
 ![eventcards](https://github.com/willashley23/Turnout/blob/master/public/events.png)
 
 ### Bookmarks
