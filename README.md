@@ -8,13 +8,31 @@ Turnout is a full-stack web application inspired by Eventbrite and Meetup, allow
 
 Turnout is packed with a plethora of ways to discover new events. Users can browse events on the landing page with infinite scroll, click on event tags, click on event categories on the home page, or even use the built-in search feature to find events that suit their tastes. 
 
+
 ### Bookmarks
 
 Users can bookmark events from nearly any place on the site, and view these events on their personal profile. Turnout is fully dynamic. The `EventIndexItem` component utilizes `toggle` to change the class of each bookmark depending on whether or not it has been clicked, thus allowing bookmark icons to change color to indicate they've been saved, so users can continuously browse events while simultaneously saving events that are of interest to them. The component also uses `handleBookmark` to search its collection of bookmarks for the ids that match `currentUser.id`, allowing the event card to correctly render the icon change relative to the current user, while still being able to hold many bookmarks of different users. 
 
 ### Tags
 
-Users can add tags to their events. The do so by adding tags seperated with a comma. `selector` will use these tags in the `Categories` and `Search` containers to filter the `events` in the store by tags. `EventIndexItem` uses `parseFirstTags` and `parseSecondTags` to display up to two tags on the event cards. This is due to space limitations of the cards. 
+Users can add tags to their events. The do so by adding tags seperated with a comma. `selector` will use these tags in the `Categories` and `Search` containers to filter the `events` in the store by tags. `EventIndexItem` uses `parseFirstTags` and `parseSecondTags` to display up to two tags on the event cards. This is due to space limitations of the cards. Here is an example of the filtering algorithm used in this feature:
+
+```
+export const allEventsByTag = (events, tag) => {
+  let eventKeys = Object.keys(events).filter( (key) => {
+    if (events[key].tag.split(", ").length > 1) {
+      let lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
+      return (lowerCaseTags.includes(tag))
+    } else {
+      return (events[key].tag.toLowerCase() === tag.toLowerCase())
+    }
+  })
+  let eventsByTag = []
+  eventKeys.forEach( (key) => eventsByTag[key] = events[key])
+  return eventsByTag
+};
+
+```
 
 Users can also click on tags from anywhere on the site to see a filtered list of events by tag. The same logic that handles these click events is used on the `category-cards` displayed on the home page. 
 

@@ -108,10 +108,9 @@ export const allEventsByTag = (events, tag) => {
       return (events[key].tag.toLowerCase() === tag.toLowerCase())
     }
   })
-  let newEvents3 = []
-  eventKeys.forEach( (key) => newEvents3[key] = events[key])
-  console.log(newEvents3)
-  return newEvents3
+  let eventsByTag = []
+  eventKeys.forEach( (key) => eventsByTag[key] = events[key])
+  return eventsByTag
 };
 
 export const allEventsBySearch = (events, query) => {
