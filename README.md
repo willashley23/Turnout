@@ -1,5 +1,7 @@
 # Turnout
 
+*Live link – www.turnout.tech*
+
 Turnout is a full-stack web application inspired by Eventbrite and Meetup, allowing you to find and host exciting events. Turnout has a Rails backend, a PostgreSQL database, and React/Redux frontend. 
 
 ## Key Features
@@ -8,6 +10,11 @@ Turnout is a full-stack web application inspired by Eventbrite and Meetup, allow
 
 Turnout is packed with a plethora of ways to discover new events. Users can browse events on the landing page with infinite scroll, click on event tags, click on event categories on the home page, or even use the built-in search feature to find events that suit their tastes. 
 
+Here are some images from the site:
+
+![landingpage](https://github.com/willashley23/Turnout/blob/master/public/landingpage.png)
+![eventshow](https://github.com/willashley23/Turnout/blob/master/public/eventshow.png)
+![eventcards](https://github.com/willashley23/Turnout/blob/master/public/events.png)
 
 ### Bookmarks
 
