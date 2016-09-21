@@ -14,8 +14,14 @@
  *= require_self
  */
 
+ $blue: #22b8ff;
+ $light-grey: #F8F8FA;
+ $dark-charcoal: #282C35;
+ $orange: #f6682F;
+ $light-green: #00cc52;
+
 body {
-  background-color: #F8F8FA;
+  background-color: $light-grey;
 }
 
 /* Home */
@@ -73,7 +79,7 @@ body {
 }
 
 .get-started-button {
-  background-color: #22b8ff;
+  background-color: $blue;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -145,7 +151,7 @@ body {
 }
 
 .clicked {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .event-card-preheading {
@@ -153,11 +159,11 @@ body {
   font-size: 25px;
   letter-spacing: 0.5px;
   margin-left: 12%;
-  color: #282C35;
+  color: $dark-charcoal;
 }
 
 .location-span {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .see-more-container {
@@ -316,7 +322,7 @@ body {
   font-size: 35px;
   line-height: 50px;
   font-weight: 600;
-  color: #282C35;
+  color: $dark-charcoal;
   padding: 50px;
   padding-bottom: 30px;
   padding-top: 30px;
@@ -332,7 +338,7 @@ body {
   font-size: 25px;
   line-height: 50px;
   font-weight: 600;
-  color: #282C35;
+  color: $dark-charcoal;
   text-align: center;
   margin-top: 15px;
 }
@@ -393,7 +399,7 @@ body {
 }
 
 .search-tag {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .event-card.category-event-card {
@@ -441,7 +447,7 @@ body {
 .logo {
   font-family: 'karbonsemibold';
   font-size: 33px;
-  color: #f6682F;
+  color: $orange;
   vertical-align: middle;
   padding-left: 20px;
   padding-right: 20px;
@@ -500,7 +506,7 @@ body {
 }
 
 .login-signup .create-event {
-  color: #22b8ff;
+  color: $blue;
 }
 
 /* Session forms */
@@ -570,7 +576,7 @@ body {
 
 input[type=submit], .guest-button {
   transition: background-color 0.7s ease;
-  background-color: #00cc52;
+  background-color: $light-green;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -658,7 +664,7 @@ input[type=submit]:hover, .guest-button:hover {
 .event-title {
   font-size: 15px;
   font-weight: 600;
-  color: #282C35;
+  color: $dark-charcoal;
       white-space: normal;
     overflow: hidden;
     display: -webkit-box;
@@ -703,11 +709,11 @@ input[type=submit]:hover, .guest-button:hover {
 }
 
 .first-tag:hover {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .second-tag:hover {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .tag-container {
@@ -752,7 +758,7 @@ input[type=submit]:hover, .guest-button:hover {
   font-size: 13px;
   font-family: "Benton Sans";
   padding: 4px 10px;
-  color: #282C35;
+  color: $dark-charcoal;
   letter-spacing: 0.5px;
 }
 
@@ -842,7 +848,7 @@ input[type=submit]:hover, .guest-button:hover {
 
  .purchase-tickets-button {
   transition: background-color 0.7s ease;
-  background-color: #00cc52;
+  background-color: $light-green;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -971,7 +977,7 @@ small {
   padding: 40px;
   display: inline-block;
   font-weight: 600;
-  color: #282C35;
+  color: $dark-charcoal;
 }
 
 .form-numerals {
@@ -983,7 +989,7 @@ small {
   padding-bottom: 5px;
   border-radius: 100px;
   text-align: center;
-  background-color: #22b8ff;
+  background-color: $blue;
   color: white;
 }
 .event-form-header {
@@ -994,7 +1000,7 @@ small {
 .event-form-button {
   float: right;
   transition: background-color 0.7s ease;
-  background-color: #22b8ff;
+  background-color: $blue;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -1013,7 +1019,7 @@ small {
 
 .form-footer-button {
   transition: background-color 0.7s ease;
-  background-color: #22b8ff;
+  background-color: $blue;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -1114,12 +1120,12 @@ textarea {
   text-transform: uppercase;
   font-family: "Benton Sans";
   font-size: 22px;
-  color: #22b8ff;
+  color: $blue;
   font-weight: 400;
 }
 
 .image-upload-card:hover {
-  border-color: #22b8ff;
+  border-color: $blue;
 }
 
 .form-wrapper {
@@ -1167,7 +1173,7 @@ textarea {
 }
 
 .profile-span {
-  color: #f6682F;
+  color: $orange;
   font-family: karbonsemibold;
 }
 
@@ -1196,7 +1202,7 @@ textarea {
 }
 
 .tab-option:hover {
-  color: #22b8ff;
+  color: $blue;
 }
 
 .tab-option {
@@ -1216,12 +1222,12 @@ textarea {
     height: 0px;
     width: 0px;
     visibility: hidden;
-    border-bottom: 4px solid #22b8ff;
+    border-bottom: 4px solid $blue;
     transition: width 1s ease;
   }
   100% {
     width: 230px;
-    border-bottom: 4px solid #22b8ff;
+    border-bottom: 4px solid $blue;
   }
 }
 
@@ -1240,7 +1246,7 @@ em {
   font-size: 35px;
   line-height: 50px;
   font-weight: 600;
-  color: #282C35;
+  color: $dark-charcoal;
   text-align: center;
   margin-top: 45px;
 }
@@ -1276,7 +1282,7 @@ em {
 }
 
 .search-submit-button {
-  background-color: #22b8ff;
+  background-color: $blue;
   color: #fff;
   border-radius: 3px;
   border: 0;
@@ -1333,7 +1339,7 @@ em {
 
 .submitButton.tickets {
   width: 200px;
-  background-color: #22b8ff;
+  background-color: $blue;
   margin-top: 5px;
 }
 
@@ -1359,7 +1365,7 @@ em {
 /* Spinner */
 
 .loader {
-  color: #22b8ff;
+  color: $blue;
   font-size: 90px;
   text-indent: -9999em;
   overflow: hidden;
@@ -1446,7 +1452,7 @@ em {
 
 .footer-container {
   height: 284px;
-  background: #282C35;
+  background: $dark-charcoal;
   border-top: #666A73 solid 6px;
 }
 
