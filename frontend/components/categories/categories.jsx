@@ -1,6 +1,6 @@
 import React from 'react';
-import EventIndexItem from './event_index_item';
-import { AllEventsByTag } from '../reducers/selector';
+import EventIndexItem from '../event/event_index_item';
+import { AllEventsByTag } from '../../reducers/selector';
 
 export default class Category extends React.Component {
   constructor(props) {

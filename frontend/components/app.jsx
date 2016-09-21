@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeContainer from './home_container';
-import EventIndexContainer from './event_index_container';
-import NavbarContainer from './navbar_container';
+import HomeContainer from './home/home_container';
+import EventIndexContainer from './event/event_index_container';
+import NavbarContainer from './home/navbar_container';
 
 const App = ({children}) => (
   <div>

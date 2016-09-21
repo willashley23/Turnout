@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import EventIndexItem from './event_index_item';
-import {allEventsBySearch} from '../reducers/selector';
+import EventIndexItem from '../event/event_index_item';
+import {allEventsBySearch} from '../../reducers/selector';
 
  class Search extends React.Component {
   constructor(props) {

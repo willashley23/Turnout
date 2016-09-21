@@ -3,15 +3,15 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 //Components
 import App from './app';
-import HomeContainer from './home_container';
+import HomeContainer from './home/home_container';
 import SessionFormContainer from './session_form_container';
-import EventIndexContainer from './event_index_container';
-import EventDetailViewContainer from './event_detail_view_container';
-import NewEventFormContainer from './new_event_form_container';
+import EventIndexContainer from './event/event_index_container';
+import EventDetailViewContainer from './event/event_detail_view_container';
+import NewEventFormContainer from './event_form/new_event_form_container';
 import UserContainer from './user_container';
-import CategoriesContainer from './categories_container';
-import TicketModalContainer from './ticket_modal_container';
-import SearchContainer from './search_container';
+import CategoriesContainer from './categories/categories_container';
+import TicketModalContainer from './ticket_modal/ticket_modal_container';
+import SearchContainer from './search/search_container';
 import { updateFilter } from '../actions/filter_actions';
 
 class AppRouter extends React.Component{

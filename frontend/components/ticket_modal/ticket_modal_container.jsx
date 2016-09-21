@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { createTicket, removeTicket } from '../actions/ticket_actions'; 
+import { createTicket, removeTicket } from '../../actions/ticket_actions'; 
 import TicketModal from './ticket_modal';
 
 const mapStateToProps = (state, ownProps) => ({

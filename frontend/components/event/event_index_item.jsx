@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { findBookmark, findTicket, dateStringify } from '../reducers/selector';
+import { findBookmark, findTicket, dateStringify } from '../../reducers/selector';
 
 
 class EventIndexItem extends React.Component {

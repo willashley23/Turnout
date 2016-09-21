@@ -1,9 +1,9 @@
 import React from 'react';
 import {Router, Root} from 'react-router';
 import { withRouter } from 'react-router';
-import EventIndex from './event_index';
-import EventIndexContainer from './event_index_container';
-import { allEventsByTag } from '../reducers/selector';
+import EventIndex from '../event/event_index';
+import EventIndexContainer from '../event/event_index_container';
+import { allEventsByTag } from '../../reducers/selector';
 import Footer from './footer';
 
 class Home extends React.Component {

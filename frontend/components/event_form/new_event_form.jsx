@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import Footer from './footer';
+import Footer from '../home/footer';
 
 class EventForm extends React.Component {
   constructor(props) {

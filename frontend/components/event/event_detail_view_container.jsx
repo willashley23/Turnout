@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import EventDetailView from './event_detail_view';
-import { allEvents } from '../reducers/selector';
-import { requestEvent } from '../actions/event_actions';
-import { createTicket, removeTicket } from '../actions/ticket_actions';
-import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
+import { allEvents } from '../../reducers/selector';
+import { requestEvent } from '../../actions/event_actions';
+import { createTicket, removeTicket } from '../../actions/ticket_actions';
+import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
 
 const mapDispatchToProps = (dispatch) => ({
   requestEvent: (id) => {dispatch(requestEvent(id))},

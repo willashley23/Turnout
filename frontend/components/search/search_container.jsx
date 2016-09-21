@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
 import Search from './search'; 
-import { allEventsBySearch, userBookmarks, userTickets } from '../reducers/selector';
-import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
-import {receiveQuery} from '../actions/search_actions';
-import {requestEvents} from '../actions/event_actions';
+import { allEventsBySearch, userBookmarks, userTickets } from '../../reducers/selector';
+import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
+import {receiveQuery} from '../../actions/search_actions';
+import {requestEvents} from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let bookmarks;

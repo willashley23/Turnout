@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import Home from './home';
-import { allEvents } from '../reducers/selector';
-import { requestEvents } from '../actions/event_actions';
-import { requestBookmarks } from '../actions/bookmark_actions';
-import { updateFilter } from '../actions/filter_actions';
-import { increaseLimit, clearLimit } from '../actions/limit_actions';
+import { allEvents } from '../../reducers/selector';
+import { requestEvents } from '../../actions/event_actions';
+import { requestBookmarks } from '../../actions/bookmark_actions';
+import { updateFilter } from '../../actions/filter_actions';
+import { increaseLimit, clearLimit } from '../../actions/limit_actions';
 
 const mapStateToProps = (state) => ({
   events: allEvents(state.events),

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createEvent, clearEventErrors } from '../actions/event_actions';
+import { createEvent, clearEventErrors } from '../../actions/event_actions';
 import EventForm from './new_event_form';
 
 

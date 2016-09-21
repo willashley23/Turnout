@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import Categories from './categories';
-import { allEventsByTag, userBookmarks, userTickets } from '../reducers/selector';
-import { createBookmark, destroyBookmark } from '../actions/bookmark_actions';
-import { requestEvents } from "../actions/event_actions"
+import { allEventsByTag, userBookmarks, userTickets } from '../../reducers/selector';
+import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
+import { requestEvents } from "../../actions/event_actions"
 
 const mapStateToProps = (state, ownProps) => {
   let bookmarks;
