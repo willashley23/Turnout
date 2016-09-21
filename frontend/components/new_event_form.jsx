@@ -20,7 +20,6 @@ class EventForm extends React.Component {
   }
 
   componentDidMount() {
-    console.log("errors cleared")
     this.props.resetErrors();
   }
 

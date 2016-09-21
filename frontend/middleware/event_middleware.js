@@ -34,7 +34,6 @@ const EventMiddleware = ({getState, dispatch}) => next => action => {
       break;
 
     case CREATE_EVENT:
-    debugger
       createEvent(action.event, receiveNewEventSuccess, failCallback)
       break;
 

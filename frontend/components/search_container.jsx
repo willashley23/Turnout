@@ -15,15 +15,14 @@ const mapStateToProps = (state, ownProps) => {
     bookmarks = state.bookmarks;
     tickets = state.tickets;
    }
-   debugger
- return {
-  events: allEventsBySearch(state.events, ownProps.routeParams.query),
-  query: ownProps.routeParams.query,
-  currentUser: state.session.currentUser,
-  bookmarks: bookmarks,
-  tickets: tickets,
-  filter: state.filter
- }
+  return {
+    events: allEventsBySearch(state.events, ownProps.routeParams.query),
+    query: ownProps.routeParams.query,
+    currentUser: state.session.currentUser,
+    bookmarks: bookmarks,
+    tickets: tickets,
+    filter: state.filter
+  }
 };
 
 const mapDispatchToProps = (dispatch) => ({

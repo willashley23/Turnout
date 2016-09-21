@@ -114,7 +114,6 @@ class EventIndexItem extends React.Component {
   }
 
   handleDelete() {
-    debugger
     let t = findTicket(this.props.ticket, this.props.event.id)
     this.props.destroyTicket(t);
   }
@@ -127,7 +126,6 @@ class EventIndexItem extends React.Component {
         let b = findBookmark(this.props.bookmark, this.props.event.id)
         this.props.destroyBookmark(b)
       } else {
-        console.log("not clicked")
        this.props.createBookmark(this.props.event.id)
       } 
     }

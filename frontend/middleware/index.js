@@ -6,7 +6,6 @@ import BookmarkMiddleware from './bookmark_middleware';
 import TicketMiddleware from './ticket_middleware';
 
 export default applyMiddleware(
-  logger(),
   EventMiddleware,
   BookmarkMiddleware,
   TicketMiddleware,

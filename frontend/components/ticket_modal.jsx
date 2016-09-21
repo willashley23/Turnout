@@ -13,7 +13,6 @@ class TicketModal extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     window.setTimeout(() => {
      this.setState({enter: "auto-enter auto-enter-active"});
     }, 0);
