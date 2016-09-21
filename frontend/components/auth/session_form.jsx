@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import { login } from '../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
-
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -77,19 +76,9 @@ class SessionForm extends React.Component {
     }
   }
 
-
   cancelForm() {
     this.props.resetErrors();
     this.props.router.push("/home")
-  }
-
-
-  navLink(){
-    if (this.props.formType === "login") {
-      return <Link to="/home/signup">sign up</Link>;
-    } else {
-      return <Link to="/home/login">log in</Link>;
-    }
   }
 
   renderErrors(){
@@ -139,9 +128,6 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-
 }
 
-
 export default withRouter(SessionForm);
-

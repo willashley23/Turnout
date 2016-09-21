@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import EventIndexItem from './event/event_index_item';
-
+import EventIndexItem from '../event/event_index_item';
 
 class UserProfile extends React.Component {
   constructor(props) {

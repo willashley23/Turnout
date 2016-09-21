@@ -4,11 +4,11 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 //Components
 import App from './app';
 import HomeContainer from './home/home_container';
-import SessionFormContainer from './session_form_container';
+import SessionFormContainer from './auth/session_form_container';
 import EventIndexContainer from './event/event_index_container';
 import EventDetailViewContainer from './event/event_detail_view_container';
 import NewEventFormContainer from './event_form/new_event_form_container';
-import UserContainer from './user_container';
+import UserContainer from './auth/user_container';
 import CategoriesContainer from './categories/categories_container';
 import TicketModalContainer from './ticket_modal/ticket_modal_container';
 import SearchContainer from './search/search_container';

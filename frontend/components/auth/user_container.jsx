@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { requestEvents } from '../actions/event_actions';
-import { requestBookmarks, destroyBookmark, createBookmark } from '../actions/bookmark_actions';
-import { requestTickets, destroyTicket } from '../actions/ticket_actions'
-import { allEvents, userBookmarks, userTickets } from '../reducers/selector';
-import { allEventsByFilter } from '../reducers/selector';
-import { updateFilter } from '../actions/filter_actions';
+import { requestEvents } from '../../actions/event_actions';
+import { requestBookmarks, destroyBookmark, createBookmark } from '../../actions/bookmark_actions';
+import { requestTickets, destroyTicket } from '../../actions/ticket_actions'
+import { allEvents, userBookmarks, userTickets } from '../../reducers/selector';
+import { allEventsByFilter } from '../../reducers/selector';
+import { updateFilter } from '../../actions/filter_actions';
 import UserProfile from "./user";
 
 const mapStateToProps = (state) => {
