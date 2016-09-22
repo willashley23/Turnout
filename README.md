@@ -27,28 +27,29 @@ Users can bookmark events from nearly any place on the site, and view these even
 
 ### Tags
 
-Users can add tags to their events. The do so by adding tags seperated with a comma. `selector` will use these tags in the `Categories` and `Search` containers to filter the `events` in the store by tags. `EventIndexItem` uses `parseFirstTags` and `parseSecondTags` to display up to two tags on the event cards. This is due to space limitations of the cards. Here is an example of the filtering algorithm used in this feature:
+Users can add tags to their events. The do so by adding tags seperated with a comma. `selector` will use these tags in the `Categories` and `Search` containers to filter the `events` in the store by tags. `EventIndexItem` uses `parseFirstTags` and `parseSecondTags` to display up to two tags on the event cards. This is due to space limitations of the cards.
+
+
+### Search
+
+The `Search` component uses tags to filter events, however, it allows users to input a query string. It will call a special filter, `allEventsBySearch` in `selector`, which will break up the query string by using `split(" ")`, and generating an array of individual terms, and use lodash's `intersection` method to compare that with the array of tags held by each individual event. The algorithm runs in O(n) time with a constant factor *K*, where *K* is the length of the longest tag:
 
 ```
-export const allEventsByTag = (events, tag) => {
-  let eventKeys = Object.keys(events).filter( (key) => {
-    if (events[key].tag.split(", ").length > 1) {
-      let lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
-      return (lowerCaseTags.includes(tag))
-    } else {
-      return (events[key].tag.toLowerCase() === tag.toLowerCase())
-    }
+export const allEventsBySearch = (events, query) => {
+  let lowerCaseQuery = query.split(" ").map(q => q.toLowerCase());
+  let lowerCaseTags;
+  let eventKeysFromSearch = Object.keys(events).filter( (key) => {
+    lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
+    return (intersection(lowerCaseTags, lowerCaseQuery).length > 0)
   })
-  let eventsByTag = []
-  eventKeys.forEach( (key) => eventsByTag[key] = events[key])
-  return eventsByTag
+  let eventsBySearch = []
+  eventKeysFromSearch.forEach( (key) => eventsBySearch[key] = events[key])
+  eventsBySearch = eventsBySearch.filter(function(n){ return n != undefined });
+  return eventsBySearch
 };
-
 ```
 
 Users can also click on tags from anywhere on the site to see a filtered list of events by tag. The same logic that handles these click events is used on the `category-cards` displayed on the home page. 
-
-The `Search` component also uses tags to filter events, however, it allows users to input a query string. It will call a special filter, `allEventsBySearch` in `selector`, which will break up the query string by using `split(" ")`, and generating an array of individual terms, and use lodash's `intersection` method to compare that with the array of tags held by each individual event. 
 
 
 ### Tickets

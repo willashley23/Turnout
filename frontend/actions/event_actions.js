@@ -1,4 +1,3 @@
-
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const REQUEST_EVENTS = "REQUEST_EVENTS";

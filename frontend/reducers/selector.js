@@ -67,9 +67,9 @@ export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks 
       let keys = Object.keys(events).filter( (id) => {
         return(currentUserId === events[id].author_id)
       });
-      let newEvents = {}
-      keys.forEach( (key) => newEvents[key] = events[key])
-      return newEvents;
+      let userEvents = {}
+      keys.forEach( (key) => userEvents[key] = events[key])
+      return userEvents;
 
     case "myBookmarks":
       let bookmarkKeys = Object.keys(bookmarks).filter( (id) => {
@@ -77,11 +77,11 @@ export const allEventsByFilter = (events = {}, filter, currentUserId, bookmarks 
       });
       let userBookmarks = {}
       bookmarkKeys.forEach( (key) => userBookmarks[key] = bookmarks[key])
-      let newEvents2 = {}
+      let eventsByBookmark = {}
       let converted = bookmarkKeys.map(key => bookmarks[key].event_id)
-      converted.forEach( (key) => newEvents2[key] = events[key])
+      converted.forEach( (key) => eventsByBookmark[key] = events[key])
 
-      return newEvents2
+      return eventsByBookmark
 
     case "upcomingEvents":
       let ticketKeys = Object.keys(tickets).filter( (id) => {
@@ -116,12 +116,12 @@ export const allEventsByTag = (events, tag) => {
 export const allEventsBySearch = (events, query) => {
   let lowerCaseQuery = query.split(" ").map(q => q.toLowerCase());
   let lowerCaseTags;
-  let eventKeys2 = Object.keys(events).filter( (key) => {
+  let eventKeysFromSearch = Object.keys(events).filter( (key) => {
     lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
     return (intersection(lowerCaseTags, lowerCaseQuery).length > 0)
   })
-  let newEvents4 = []
-  eventKeys2.forEach( (key) => newEvents4[key] = events[key])
-  newEvents4 = newEvents4.filter(function(n){ return n != undefined });
-  return newEvents4
+  let eventsBySearch = []
+  eventKeysFromSearch.forEach( (key) => eventsBySearch[key] = events[key])
+  eventsBySearch = eventsBySearch.filter(function(n){ return n != undefined });
+  return eventsBySearch
 };
