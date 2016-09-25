@@ -111,7 +111,7 @@ class UserProfile extends React.Component {
                </div>
                <div>
                <li className="tab-option">
-                 <em>{this.props.currentUser.events.length}</em>
+                 <em>{Object.keys(this.props.userEvents).length}</em>
                  <div className="my-events" onClick={this.filterMyEvents}>My Events</div>
                </li>
                  <div className={this.toggleMyEvents()}/>

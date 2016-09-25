@@ -18,6 +18,7 @@ let tickets;
     currentUser: state.session.currentUser,
     requestEvents: requestEvents,
     ticket: tickets,
+    userEvents: allEventsByFilter(state.events, "myEvents", state.session.currentUser.id, state.bookmarks),
     bookmark: userBookmarks(state.bookmarks, state.session.currentUser.id),
     events: allEventsByFilter(state.events, state.filter, state.session.currentUser.id, state.bookmarks, state.tickets),
     filter: state.filter

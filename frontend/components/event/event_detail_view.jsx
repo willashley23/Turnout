@@ -40,12 +40,14 @@ class EventDetailView extends React.Component {
       if (this.toggle() === "clicked hvr-icon-pop") {
         this.props.event.bookmarks.forEach( (bookmark) => {
           if (bookmark.user_id === this.props.currentUser.id){
+            document.getElementsByClassName("bookmark-icon")[0].style.color = "#282C35";
             let found = bookmark
             this.props.destroyBookmark(found)
           }
         });
       } else {
        this.props.createBookmark(this.props.event.id)
+       document.getElementsByClassName("bookmark-icon")[0].style.color = "#22b8ff";
       } 
     }
   }
