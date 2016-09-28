@@ -992,7 +992,6 @@ small {
   color: white;
 }
 .event-form-header {
-  // border-bottom: 1px solid #D2D6DF;
   background-color: white;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,.1);
 }
@@ -1011,7 +1010,6 @@ small {
   letter-spacing: 1px;
   transition: all .2s;
   text-transform: uppercase;
-  // flex-direction: column;
   position: relative;
   top: 38px;
 }
@@ -1048,7 +1046,6 @@ small {
 }
 
 input[type="file"] {
-  // width: 250px;
   height: auto;
 }
 
@@ -1072,7 +1069,6 @@ input[type="file"] {
 input[type="date"], 
 input[type="number"],
 select {
-  // width: 273px;
   height: 40px;
   border-radius: 3px;
   border: 1px solid #D2D6DF;
