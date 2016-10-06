@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
 
   cancelForm() {
     this.props.resetErrors();
-    this.props.router.push("/home")
+    this.props.router.replace("/home")
   }
 
   renderErrors(){
