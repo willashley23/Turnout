@@ -2,9 +2,6 @@
 
 export default class MarkerManager {
   constructor() {
-    // this.map = map;
-    // this.handleClick = handleClick;
-    // this.markers = [];
     this.generateMap = this.generateMap.bind(this);
     this.geocoder = new google.maps.Geocoder();
     this.latlng = new google.maps.LatLng(37.7758, -122.435);

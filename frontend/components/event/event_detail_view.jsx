@@ -21,7 +21,9 @@ class EventDetailView extends React.Component {
       this.props.requestEvent(this.props.params.id);
     }
     let mapMaker = new MarkerManager()
-    mapMaker.generateMap(this.props.event.location);
+    window.setTimeout( () => {
+      mapMaker.generateMap(this.props.event.location);
+    }, 1500);
   }
 
   componentWillMount() {
@@ -101,12 +103,6 @@ class EventDetailView extends React.Component {
     return eventClass;
   }
 
-  // Google Maps API // 
-
-
-
-
-
   render() {
     let title;
     let date;
@@ -169,11 +165,12 @@ class EventDetailView extends React.Component {
             <div className="event-description">
               <h2 className="event-description-header">Event Description</h2>
               <p className="event-description-body">{description}</p>
+              <div className="map_" ref="map" id="map">Map</div>
             </div>
           </div>
+          <br />
       </div>
       </div>
-              <div className="map_" ref="map" id="map">Map</div> ;
         <footer>
           <Footer />
         </footer>
