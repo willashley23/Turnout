@@ -114,11 +114,18 @@ export const allEventsByTag = (events, tag) => {
 };
 
 export const allEventsBySearch = (events, query) => {
+  let bannedWords = ["and, of, in, to, for, the, on, over, under, or, it, is, a, an"]
   let lowerCaseQuery = query.split(" ").map(q => q.toLowerCase());
   let lowerCaseTags;
+  let lowerCaseTitle;
+  let sortedbyTitle;
+  let sortedByTag;
   let eventKeysFromSearch = Object.keys(events).filter( (key) => {
     lowerCaseTags = events[key].tag.split(", ").map(tag => tag.toLowerCase())
-    return (intersection(lowerCaseTags, lowerCaseQuery).length > 0)
+    lowerCaseTitle = events[key].title.split(" ").map(t => t.toLowerCase())
+    sortedbyTitle = intersection(lowerCaseQuery, lowerCaseTitle)
+    sortedByTag = intersection(lowerCaseTags, lowerCaseQuery)
+    return (sortedbyTitle.length > 0 || sortedByTag.length > 0)
   })
   let eventsBySearch = []
   eventKeysFromSearch.forEach( (key) => eventsBySearch[key] = events[key])
