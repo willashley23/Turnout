@@ -14,13 +14,14 @@ class EventDetailView extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.listTags = this.listTags.bind(this);
     this.handleTagClick = this.handleTagClick.bind(this);
-    
   }
   
   componentDidMount() {
     if (!this.props.event) {
       this.props.requestEvent(this.props.params.id);
     }
+    let mapMaker = new MarkerManager()
+    mapMaker.generateMap(this.props.event.location);
   }
 
   componentWillMount() {
@@ -172,6 +173,7 @@ class EventDetailView extends React.Component {
           </div>
       </div>
       </div>
+              <div className="map_" ref="map" id="map">Map</div> ;
         <footer>
           <Footer />
         </footer>

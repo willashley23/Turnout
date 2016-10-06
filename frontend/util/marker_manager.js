@@ -1,34 +1,33 @@
 /* global google:false */
 
 export default class MarkerManager {
-  constructor(map, handleClick){
-    this.map = map;
-    this.handleClick = handleClick;
-    this.markers = [];
-    //permanently bind instance methods
-    this._createMarkerFromBench = this._createMarkerFromBench.bind(this);
+  constructor() {
+    // this.map = map;
+    // this.handleClick = handleClick;
+    // this.markers = [];
+    this.generateMap = this.generateMap.bind(this);
+    this.geocoder = new google.maps.Geocoder();
+    this.latlng = new google.maps.LatLng(37.7758, -122.435);
+    this.mapOptions = {
+      zoom: 13,
+      center: this.latlng
+    }
+    this.map = new google.maps.Map(document.getElementById('map'), this.mapOptions);
   }
 
-  updateMarkers(location){
-    this.location = location;
-    this._locationToAdd().forEach(this._createMarkerFromBench);
-    this._markersToRemove().forEach(this._removeMarker);
-  }
-
-  _locationToAdd() {
-    const currentLocation = this.markers.map( marker => marker.benchId );
-    return this.location.filter( bench => !currentLocation.includes(bench.id) );
-  }
-
-  _createMarkerFromBench(bench) {
-    const pos = new google.maps.LatLng(bench.lat, bench.lng);
-    const marker = new google.maps.Marker({
-      position: pos,
-      map: this.map,
-      benchId: bench.id
+  generateMap(address) {
+    let that = this;
+    this.geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        that.map.setCenter(results[0].geometry.location);
+        let marker = new google.maps.Marker({
+            map: that.map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
     });
-    marker.addListener('click', () => this.handleClick(bench));
-    this.markers.push(marker);
   }
 
 }
