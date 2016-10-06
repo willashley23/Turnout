@@ -4,6 +4,7 @@ import {dateStringify} from '../../reducers/selector';
 import { Link } from 'react-router';
 import TicketModalContainer from '../ticket_modal/ticket_modal_container'
 import Footer from '../home/footer';
+import MarkerManager from '../../util/marker_manager';
 
 class EventDetailView extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class EventDetailView extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.listTags = this.listTags.bind(this);
     this.handleTagClick = this.handleTagClick.bind(this);
+    
   }
   
   componentDidMount() {
@@ -97,6 +99,12 @@ class EventDetailView extends React.Component {
     }
     return eventClass;
   }
+
+  // Google Maps API // 
+
+
+
+
 
   render() {
     let title;
