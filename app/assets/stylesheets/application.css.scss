@@ -869,7 +869,7 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
 .event-detail-body {
   display: flex;
   padding-top: 30px;
-  padding-bottom: 160px;
+  padding-bottom: 40px;
   justify-content: center;
   width: 70%;
   background-color: white;
@@ -957,6 +957,15 @@ input[type=submit]:hover, .purchase-tickets-button:hover {
   height: 200px;
   width: 100%;
 }
+
+#direction-link {
+  position: relative;
+  bottom: 200px;
+  display: block;
+  height: 200px;
+}
+
+
 
 /* Event Form */
 

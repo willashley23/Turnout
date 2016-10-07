@@ -23,6 +23,8 @@ class EventDetailView extends React.Component {
     let mapMaker = new MarkerManager()
     window.setTimeout( () => {
       mapMaker.generateMap(this.props.event.location);
+      debugger
+      document.getElementById('direction-link').href = `http://maps.google.com/maps?daddr=${this.props.event.location}`
     }, 1500);
   }
 
@@ -165,7 +167,9 @@ class EventDetailView extends React.Component {
             <div className="event-description">
               <h2 className="event-description-header">Event Description</h2>
               <p className="event-description-body">{description}</p>
-              <div className="map_" ref="map" id="map">Map</div>
+              <h2 className="event-description-header directions">Directions</h2>
+              <div className="map_" ref="map" id="map"></div>
+              <a href="" id="direction-link"></a>
             </div>
           </div>
           <br />
