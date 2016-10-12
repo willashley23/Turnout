@@ -1,5 +1,4 @@
 import React from 'react';
-//Router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 //Components
 import App from './app';

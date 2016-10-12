@@ -8,7 +8,6 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
-
   has_many :bookmarks
   has_many :tickets
   has_many :events,

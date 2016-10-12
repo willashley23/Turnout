@@ -48,9 +48,9 @@ class Home extends React.Component {
     )
   }
 
-update(property) {
-    return e => this.setState({[property]: e.target.value});
-  }
+  update(property) {
+      return e => this.setState({[property]: e.target.value});
+    }
 
   render() {
     return (

@@ -109,8 +109,6 @@ class EventDetailView extends React.Component {
     let title;
     let date;
     let options;
-    let dateStr;
-    let d;
     let image_url;
     let style;
     let price;
