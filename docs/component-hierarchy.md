@@ -4,21 +4,21 @@
 **SessionContainer**
  - SessionForm
 
-**HomeContainer
+**HomeContainer**
  - Home
  - Navbar
 
-*EventsContainer
+*EventsContainer*
  - EventIndex
 
-*TagContainer
+*TagContainer*
  - EventIndex
 
-*SearchResultsContainer
+*SearchResultsContainer*
  - Search
  - EventIndex
 
-*EventIndex
+*EventIndex*
  - EventIndexItem
   + EventDetail
    * EventSearch
@@ -33,11 +33,11 @@
 **NewTag**
  - NewTag
 
-*EventSearch
+*EventSearch*
  - AutoSearch
  - AutoSearchResults
 
-*TagsSearch
+*TagsSearch*
  - AutoSearch
  - AutoSearchResults
 

@@ -69,10 +69,12 @@ Event creation is handled by the `NewEventForm`, which, upon submit, dispatches 
 ## The Future of Turnout
 
 ### Google Maps API Integration
+## Added 10/1/16
 
 Both the `EventDetailView` and `Search` containers have the ability to make heavy use of the Google Maps API. Events could be filtered by geolocation, while the event detail view can display a map showing the location of the event. Search could also show a minimap with pins indicating the relative position of all the events returned by the search.
 
 ### Enhanced Search 
+## Added 9/30/16
 
 Right now, `Search` only operates over the `tags` of events. In the future, this will be expanded to operate on the event's date, location, title, and description, allowing a more comprehensive and accurate search.
 
