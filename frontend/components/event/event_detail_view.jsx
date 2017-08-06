@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import {dateStringify} from '../../reducers/selector';
 import { Link } from 'react-router';
-import TicketModalContainer from '../ticket_modal/ticket_modal_container'
+import TicketModalContainer from '../ticket_modal/ticket_modal_container';
 import Footer from '../home/footer';
 import MarkerManager from '../../util/marker_manager';
 

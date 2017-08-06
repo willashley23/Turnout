@@ -4,7 +4,7 @@ import { AllEventsByTag } from '../../reducers/selector';
 
 export default class Category extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
