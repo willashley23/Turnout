@@ -78,3 +78,12 @@ Both the `EventDetailView` and `Search` containers have the ability to make heav
 
 Right now, `Search` only operates over the `tags` of events. In the future, this will be expanded to operate on the event's date, location, title, and description, allowing a more comprehensive and accurate search.
 
+### Less migration and modularization of CSS
+
+Add the less-loader for Webpack and refactor all CSS into Less, possibly create a file for each major component or modularize shared styles such as colors and animations.
+
+### Thunk integration
+
+
+### Jest integration  
+
